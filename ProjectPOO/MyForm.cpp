@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "MyForm.h"//indispensable
 #
 //MyForm.cpp 
 using namespace System;
