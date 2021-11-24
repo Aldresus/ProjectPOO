@@ -1,3 +1,3 @@
-### PROJET POO
+# PROJET POO
 
 Par **Hugo**, **Sebastien**, **Maxime** et **Alexandre**.
