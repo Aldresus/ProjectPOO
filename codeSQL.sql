@@ -1,179 +1,202 @@
-/*------------------------------------------------------------
-*        Script SQLSERVER 
-------------------------------------------------------------*/
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
 
 
-/*------------------------------------------------------------
--- Table: Adresse
-------------------------------------------------------------*/
+#------------------------------------------------------------
+# Table: Adresse
+#------------------------------------------------------------
+
 CREATE TABLE Adresse(
-	ID_adresse     INT  NOT NULL ,
-	numero_voie    INT  NOT NULL ,
-	nom_rue        VARCHAR (255) NOT NULL ,
-	nom_batiment   VARCHAR (255) NOT NULL ,
-	numero_etage   INT  NOT NULL ,
-	code_postal    INT  NOT NULL ,
-	ville          VARCHAR (255) NOT NULL ,
-	autres_infos   VARCHAR (255) NOT NULL  ,
-	CONSTRAINT Adresse_PK PRIMARY KEY (ID_adresse)
-);
+        ID_adresse   Int NOT NULL ,
+        numero_voie  Int NOT NULL ,
+        nom_rue      Varchar (255) NOT NULL ,
+        nom_batiment Varchar (255) NOT NULL ,
+        numero_etage Int NOT NULL ,
+        code_postal  Int NOT NULL ,
+        ville        Varchar (255) NOT NULL ,
+        autres_infos Varchar (255) NOT NULL
+	,CONSTRAINT Adresse_PK PRIMARY KEY (ID_adresse)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Date
-------------------------------------------------------------*/
-CREATE TABLE Date(
-	ID_date   INT IDENTITY (1,1) NOT NULL ,
-	date      INT  NOT NULL  ,
-	CONSTRAINT Date_PK PRIMARY KEY (ID_date)
-);
+#------------------------------------------------------------
+# Table: Superviseurs
+#------------------------------------------------------------
 
-
-/*------------------------------------------------------------
--- Table: Superviseurs
-------------------------------------------------------------*/
 CREATE TABLE Superviseurs(
-	ID_personnel   INT IDENTITY (1,1) NOT NULL  ,
-	CONSTRAINT Superviseurs_PK PRIMARY KEY (ID_personnel)
-);
+        ID_personnel Int  Auto_increment  NOT NULL
+	,CONSTRAINT Superviseurs_PK PRIMARY KEY (ID_personnel)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Personne
-------------------------------------------------------------*/
-CREATE TABLE Personne(
-	ID_personne   INT IDENTITY (1,1) NOT NULL ,
-	nom           VARCHAR (255) NOT NULL ,
-	prenom        VARCHAR (255) NOT NULL ,
-	ID_date       INT  NOT NULL  ,
-	CONSTRAINT Personne_PK PRIMARY KEY (ID_personne)
-);
+#------------------------------------------------------------
+# Table: Client
+#------------------------------------------------------------
+
+CREATE TABLE Client(
+        id_client             Int  Auto_increment  NOT NULL ,
+        nom_client            Varchar (255) NOT NULL ,
+        prenom_client         Varchar (255) NOT NULL ,
+        date_naissance_client Date NOT NULL ,
+        date_inscription      Date NOT NULL
+	,CONSTRAINT Client_PK PRIMARY KEY (id_client)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Couleurs
-------------------------------------------------------------*/
+#------------------------------------------------------------
+# Table: Couleurs
+#------------------------------------------------------------
+
 CREATE TABLE Couleurs(
-	id_couleur   INT IDENTITY (1,1) NOT NULL ,
-	couleur      VARCHAR (50) NOT NULL  ,
-	CONSTRAINT Couleurs_PK PRIMARY KEY (id_couleur)
-);
+        id_couleur Int  Auto_increment  NOT NULL ,
+        couleur    Varchar (50) NOT NULL
+	,CONSTRAINT Couleurs_PK PRIMARY KEY (id_couleur)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Natures
-------------------------------------------------------------*/
+#------------------------------------------------------------
+# Table: Natures
+#------------------------------------------------------------
+
 CREATE TABLE Natures(
-	id_natures   INT IDENTITY (1,1) NOT NULL ,
-	nature       VARCHAR (50) NOT NULL  ,
-	CONSTRAINT Natures_PK PRIMARY KEY (id_natures)
-);
+        id_natures Int  Auto_increment  NOT NULL ,
+        nature     Varchar (50) NOT NULL
+	,CONSTRAINT Natures_PK PRIMARY KEY (id_natures)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Article
-------------------------------------------------------------*/
-CREATE TABLE Article(
-	reference_article          INT  NOT NULL ,
-	nom_article                VARCHAR (255) NOT NULL ,
-	seuil_reaprovisionnement   INT  NOT NULL ,
-	quantite_stock             INT  NOT NULL ,
-	prix_produit_HT            INT  NOT NULL ,
-	id_couleur                 INT  NOT NULL ,
-	id_natures                 INT  NOT NULL  ,
-	CONSTRAINT Article_PK PRIMARY KEY (reference_article)
-);
+#------------------------------------------------------------
+# Table: Employe
+#------------------------------------------------------------
 
-
-/*------------------------------------------------------------
--- Table: Employe
-------------------------------------------------------------*/
 CREATE TABLE Employe(
-	ID_employe     INT IDENTITY (1,1) NOT NULL ,
-	ID_personnel   INT  NOT NULL ,
-	ID_personne    INT  NOT NULL  ,
-	CONSTRAINT Employe_PK PRIMARY KEY (ID_employe)
-);
+        ID_employe             Int  Auto_increment  NOT NULL ,
+        nom_employe            Varchar (50) NOT NULL ,
+        prenom_employe         Varchar (50) NOT NULL ,
+        date_naissance_employe Date NOT NULL ,
+        ID_personnel           Int NOT NULL
+	,CONSTRAINT Employe_PK PRIMARY KEY (ID_employe)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Societe
-------------------------------------------------------------*/
-CREATE TABLE Societe(
-	id_societe              INT IDENTITY (1,1) NOT NULL ,
-	nom_societe             VARCHAR (255) NOT NULL ,
-	logo_entreprise         VARCHAR (255) NOT NULL ,
-	numero_service_client   VARCHAR (255) NOT NULL  ,
-	CONSTRAINT Societe_PK PRIMARY KEY (id_societe)
-);
+#------------------------------------------------------------
+# Table: Commande
+#------------------------------------------------------------
 
-
-/*------------------------------------------------------------
--- Table: Localiser
-------------------------------------------------------------*/
-CREATE TABLE Localiser(
-	ID_personne   INT  NOT NULL ,
-	ID_adresse    INT  NOT NULL  ,
-	CONSTRAINT Localiser_PK PRIMARY KEY (ID_personne,ID_adresse)
-);
-
-
-/*------------------------------------------------------------
--- Table: Commande
-------------------------------------------------------------*/
 CREATE TABLE Commande(
-	reference_commande   INT  NOT NULL ,
-	moyen_paiement       VARCHAR (255) NOT NULL ,
-	ID_personne          INT  NOT NULL ,
-	ID_facture           INT  NOT NULL ,
-	ID_date              INT  NOT NULL  ,
-	CONSTRAINT Commande_PK PRIMARY KEY (reference_commande)
-);
+        reference_commande  Int NOT NULL ,
+        total_HT            Int NOT NULL ,
+        TVA                 Int NOT NULL ,
+        date_commande       Date NOT NULL ,
+        date_livraison      Date NOT NULL ,
+        id_client           Int NOT NULL ,
+        ID_facture          Int NOT NULL ,
+        ID_adresse          Int NOT NULL ,
+        ID_adresse_Facturer Int NOT NULL
+	,CONSTRAINT Commande_PK PRIMARY KEY (reference_commande)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Facture
-------------------------------------------------------------*/
+#------------------------------------------------------------
+# Table: Article
+#------------------------------------------------------------
+
+CREATE TABLE Article(
+        reference_article Int NOT NULL ,
+        nom_article       Varchar (255) NOT NULL ,
+        prix_produit_HT   Int NOT NULL ,
+        id_couleur        Int NOT NULL ,
+        id_natures        Int NOT NULL ,
+        id_stocks         Int NOT NULL
+	,CONSTRAINT Article_PK PRIMARY KEY (reference_article)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Facture
+#------------------------------------------------------------
+
 CREATE TABLE Facture(
-	ID_facture           INT  NOT NULL ,
-	tva                  FLOAT  NOT NULL ,
-	total_ht             FLOAT  NOT NULL ,
-	reference_commande   INT  NOT NULL ,
-	ID_date              INT  NOT NULL ,
-	id_societe           INT  NOT NULL  ,
-	CONSTRAINT Facture_PK PRIMARY KEY (ID_facture)
-);
+        ID_facture         Int NOT NULL ,
+        date_facturation   Date NOT NULL ,
+        logo               Varchar (50) NOT NULL ,
+        num_service        Varchar (50) NOT NULL ,
+        nom_societe        Varchar (50) NOT NULL ,
+        reference_commande Int NOT NULL
+	,CONSTRAINT Facture_PK PRIMARY KEY (ID_facture)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Paiement
-------------------------------------------------------------*/
+#------------------------------------------------------------
+# Table: Paiement
+#------------------------------------------------------------
+
 CREATE TABLE Paiement(
-	id_payement       INT IDENTITY (1,1) NOT NULL ,
-	numero_paiement   VARCHAR (255) NOT NULL ,
-	ID_facture        INT  NOT NULL ,
-	ID_date           INT  NOT NULL  ,
-	CONSTRAINT Paiement_PK PRIMARY KEY (id_payement)
-);
+        id_payement     Int  Auto_increment  NOT NULL ,
+        numero_paiement Varchar (255) NOT NULL ,
+        date_paiement   Date NOT NULL ,
+        moyen_paiement  Varchar (50) NOT NULL ,
+        ID_facture      Int NOT NULL
+	,CONSTRAINT Paiement_PK PRIMARY KEY (id_payement)
+)ENGINE=InnoDB;
 
 
-/*------------------------------------------------------------
--- Table: Contenir
-------------------------------------------------------------*/
-CREATE TABLE Contenir(
-	reference_article    INT  NOT NULL ,
-	reference_commande   INT  NOT NULL ,
-	quantite             INT  NOT NULL  ,
-	CONSTRAINT Contenir_PK PRIMARY KEY (reference_article,reference_commande)
-);
+#------------------------------------------------------------
+# Table: Stocks
+#------------------------------------------------------------
+
+CREATE TABLE Stocks(
+        id_stocks         Int  Auto_increment  NOT NULL ,
+        quantite_stock    Int NOT NULL ,
+        seuil_reapro      Int NOT NULL ,
+        reference_article Int NOT NULL
+	,CONSTRAINT Stocks_PK PRIMARY KEY (id_stocks)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Composer
+#------------------------------------------------------------
+
+CREATE TABLE Composer(
+        reference_article  Int NOT NULL ,
+        reference_commande Int NOT NULL ,
+        quantite           Int NOT NULL
+	,CONSTRAINT Composer_PK PRIMARY KEY (reference_article,reference_commande)
+)ENGINE=InnoDB;
 
 
 
 
-ALTER TABLE Personne
-	ADD CONSTRAINT Personne_Date0_FK
-	FOREIGN KEY (ID_date)
-	REFERENCES Date(ID_date);
+ALTER TABLE Employe
+	ADD CONSTRAINT Employe_Superviseurs0_FK
+	FOREIGN KEY (ID_personnel)
+	REFERENCES Superviseurs(ID_personnel);
+
+ALTER TABLE Commande
+	ADD CONSTRAINT Commande_Client0_FK
+	FOREIGN KEY (id_client)
+	REFERENCES Client(id_client);
+
+ALTER TABLE Commande
+	ADD CONSTRAINT Commande_Facture1_FK
+	FOREIGN KEY (ID_facture)
+	REFERENCES Facture(ID_facture);
+
+ALTER TABLE Commande
+	ADD CONSTRAINT Commande_Adresse2_FK
+	FOREIGN KEY (ID_adresse)
+	REFERENCES Adresse(ID_adresse);
+
+ALTER TABLE Commande
+	ADD CONSTRAINT Commande_Adresse3_FK
+	FOREIGN KEY (ID_adresse_Facturer)
+	REFERENCES Adresse(ID_adresse);
+
+ALTER TABLE Commande 
+	ADD CONSTRAINT Commande_Facture0_AK 
+	UNIQUE (ID_facture);
 
 ALTER TABLE Article
 	ADD CONSTRAINT Article_Couleurs0_FK
@@ -185,63 +208,19 @@ ALTER TABLE Article
 	FOREIGN KEY (id_natures)
 	REFERENCES Natures(id_natures);
 
-ALTER TABLE Employe
-	ADD CONSTRAINT Employe_Superviseurs0_FK
-	FOREIGN KEY (ID_personnel)
-	REFERENCES Superviseurs(ID_personnel);
+ALTER TABLE Article
+	ADD CONSTRAINT Article_Stocks2_FK
+	FOREIGN KEY (id_stocks)
+	REFERENCES Stocks(id_stocks);
 
-ALTER TABLE Employe
-	ADD CONSTRAINT Employe_Personne1_FK
-	FOREIGN KEY (ID_personne)
-	REFERENCES Personne(ID_personne);
-
-ALTER TABLE Employe 
-	ADD CONSTRAINT Employe_Personne0_AK 
-	UNIQUE (ID_personne);
-
-ALTER TABLE Localiser
-	ADD CONSTRAINT Localiser_Personne0_FK
-	FOREIGN KEY (ID_personne)
-	REFERENCES Personne(ID_personne);
-
-ALTER TABLE Localiser
-	ADD CONSTRAINT Localiser_Adresse1_FK
-	FOREIGN KEY (ID_adresse)
-	REFERENCES Adresse(ID_adresse);
-
-ALTER TABLE Commande
-	ADD CONSTRAINT Commande_Personne0_FK
-	FOREIGN KEY (ID_personne)
-	REFERENCES Personne(ID_personne);
-
-ALTER TABLE Commande
-	ADD CONSTRAINT Commande_Facture1_FK
-	FOREIGN KEY (ID_facture)
-	REFERENCES Facture(ID_facture);
-
-ALTER TABLE Commande
-	ADD CONSTRAINT Commande_Date2_FK
-	FOREIGN KEY (ID_date)
-	REFERENCES Date(ID_date);
-
-ALTER TABLE Commande 
-	ADD CONSTRAINT Commande_Facture0_AK 
-	UNIQUE (ID_facture);
+ALTER TABLE Article 
+	ADD CONSTRAINT Article_Stocks0_AK 
+	UNIQUE (id_stocks);
 
 ALTER TABLE Facture
 	ADD CONSTRAINT Facture_Commande0_FK
 	FOREIGN KEY (reference_commande)
 	REFERENCES Commande(reference_commande);
-
-ALTER TABLE Facture
-	ADD CONSTRAINT Facture_Date1_FK
-	FOREIGN KEY (ID_date)
-	REFERENCES Date(ID_date);
-
-ALTER TABLE Facture
-	ADD CONSTRAINT Facture_Societe2_FK
-	FOREIGN KEY (id_societe)
-	REFERENCES Societe(id_societe);
 
 ALTER TABLE Facture 
 	ADD CONSTRAINT Facture_Commande0_AK 
@@ -252,17 +231,21 @@ ALTER TABLE Paiement
 	FOREIGN KEY (ID_facture)
 	REFERENCES Facture(ID_facture);
 
-ALTER TABLE Paiement
-	ADD CONSTRAINT Paiement_Date1_FK
-	FOREIGN KEY (ID_date)
-	REFERENCES Date(ID_date);
-
-ALTER TABLE Contenir
-	ADD CONSTRAINT Contenir_Article0_FK
+ALTER TABLE Stocks
+	ADD CONSTRAINT Stocks_Article0_FK
 	FOREIGN KEY (reference_article)
 	REFERENCES Article(reference_article);
 
-ALTER TABLE Contenir
-	ADD CONSTRAINT Contenir_Commande1_FK
+ALTER TABLE Stocks 
+	ADD CONSTRAINT Stocks_Article0_AK 
+	UNIQUE (reference_article);
+
+ALTER TABLE Composer
+	ADD CONSTRAINT Composer_Article0_FK
+	FOREIGN KEY (reference_article)
+	REFERENCES Article(reference_article);
+
+ALTER TABLE Composer
+	ADD CONSTRAINT Composer_Commande1_FK
 	FOREIGN KEY (reference_commande)
 	REFERENCES Commande(reference_commande);
