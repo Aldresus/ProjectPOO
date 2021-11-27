@@ -9,8 +9,6 @@ ref class CLPaiement{
 		int id_facture;
 
 	public:
-		CLPaiement();
-		~CLPaiement();
 		void setID_paiement(int id_paiement);
 		int getID_paiement();
 		void setNumero_paiement(int numero_paiement);
