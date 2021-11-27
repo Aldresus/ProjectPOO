@@ -9,8 +9,6 @@ ref class CLFacture{
 		System::String^ nom_societe;
 
 	public:
-		CLFacture();
-		~CLFacture();
 		void setID_facture(int id_facture);
 		int getID_facture();
 		void setDate_facturation(System::String^ date_facturation);
