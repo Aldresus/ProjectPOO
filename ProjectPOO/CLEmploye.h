@@ -8,8 +8,6 @@ ref class CLEmploye{
 		System::String^ date_naissance_employe;
 
 	public:
-		CLEmploye();
-		~CLEmploye();
 		void setID_employe(int id_employe);
 		int getID_employe(void);
 		void setNom_employe(System::String^ nom_employe);
