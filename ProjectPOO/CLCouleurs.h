@@ -6,11 +6,9 @@ ref class CLCouleurs{
 		System::String^ couleur;
 
 	public:
-		CLCouleurs();
-		~CLCouleurs();
 		void setID_couleur(int id_couleur);
 		int getID_couleur();
 		void setCouleur(System::String^ couleur);
-		int getCouleur();
+		System::String^ getCouleur();
 };
 
