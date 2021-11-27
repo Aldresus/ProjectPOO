@@ -7,13 +7,11 @@ ref class CLStocks{
 		int seuil_reapro;
 
 	public:
-		CLStocks();
-		~CLStocks();
 		void setID_stocks(int id_stocks);
-		int getID_stocks(void);
+		int getID_stocks();
 		void setQuantite_stocks(int quantite_stocks);
-		int getQuantite_stocks(void);
+		int getQuantite_stocks();
 		void setSeuil_reapro(int seuil_reapro);
-		int getSeuil_reapro(void);
+		int getSeuil_reapro();
 };
 

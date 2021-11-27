@@ -9,8 +9,6 @@ ref class CLCommande{
 		System::String^ date_livraison;
 
 	public:
-		CLCommande();
-		~CLCommande();
 		void setReference_commande(System::String^ reference_commande);
 		System::String^ getReference_commande();
 		void setTotal_HT(float total_HT);
