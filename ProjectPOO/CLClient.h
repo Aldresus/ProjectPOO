@@ -9,8 +9,6 @@ ref class CLClient{
 		System::String^ date_inscription;
 
 	public:
-		CLClient();
-		~CLClient();
 		void setID_client(int id_client);
 		int getID_client();
 		void setNom_client(System::String^ nom_client);
