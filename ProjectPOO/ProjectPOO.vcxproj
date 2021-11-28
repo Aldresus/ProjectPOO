@@ -136,6 +136,7 @@
     <ClCompile Include="CLStocks.cpp" />
     <ClCompile Include="CLSuperviseurs.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="MyForm1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLAdresse.h" />
@@ -154,6 +155,9 @@
     <ClInclude Include="CLStocks.h" />
     <ClInclude Include="CLSuperviseurs.h" />
     <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
