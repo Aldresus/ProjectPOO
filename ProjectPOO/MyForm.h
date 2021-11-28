@@ -1,4 +1,9 @@
 #pragma once
+#include "MyForm1.h"
+#include "MyForm2.h"
+#include "MyForm3.h"
+#include "MyForm4.h"
+#include "MyForm5.h"
 
 namespace ProjectPOO {
 
@@ -74,7 +79,7 @@ namespace ProjectPOO {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(284, 23);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Gestion utilisateur";
+			this->button1->Text = L"Statistiques";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -89,7 +94,7 @@ namespace ProjectPOO {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(284, 23);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"Gestion client";
+			this->button2->Text = L"Gestion commandes";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
@@ -119,8 +124,9 @@ namespace ProjectPOO {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(284, 23);
 			this->button4->TabIndex = 3;
-			this->button4->Text = L"Gestion commandes";
+			this->button4->Text = L"Gestion client";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -133,8 +139,9 @@ namespace ProjectPOO {
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(284, 23);
 			this->button5->TabIndex = 4;
-			this->button5->Text = L"Statistiques";
+			this->button5->Text = L"Gestion employés";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// label1
 			// 
@@ -172,14 +179,30 @@ namespace ProjectPOO {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm1^ stats = gcnew MyForm1;
+		stats->ShowDialog();
 	}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm2^ commandes = gcnew MyForm2;
+		commandes->ShowDialog();
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm3^ stocks = gcnew MyForm3;
+		stocks->ShowDialog();
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm4^ client = gcnew MyForm4;
+		client->ShowDialog();
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm5^ employe = gcnew MyForm5;
+		employe->ShowDialog();
+	}
+
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
 };
 }
