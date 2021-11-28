@@ -181,22 +181,32 @@ namespace ProjectPOO {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm1^ stats = gcnew MyForm1;
 		stats->ShowDialog();
+		stats->Close();
+		delete stats;
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm2^ commandes = gcnew MyForm2;
 		commandes->ShowDialog();
+		commandes->Close();
+		delete commandes;
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm3^ stocks = gcnew MyForm3;
 		stocks->ShowDialog();
+		stocks->Close();
+		delete stocks;
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm4^ client = gcnew MyForm4;
 		client->ShowDialog();
+		client->Close();
+		delete client;
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm5^ employe = gcnew MyForm5;
 		employe->ShowDialog();
+		employe->Close();
+		delete employe;
 	}
 
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
