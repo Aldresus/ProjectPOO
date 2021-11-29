@@ -1,4 +1,3 @@
-
 CREATE TABLE Adresse(
 	ID_adresse     INT  NOT NULL ,
 	numero_voie    INT  NOT NULL ,
@@ -16,7 +15,6 @@ CREATE TABLE Superviseurs(
 	ID_personnel   INT IDENTITY (1,1) NOT NULL  ,
 	CONSTRAINT Superviseurs_PK PRIMARY KEY (ID_personnel)
 );
-
 
 
 CREATE TABLE Client(
@@ -98,7 +96,7 @@ CREATE TABLE Facture(
 
 CREATE TABLE Paiement(
 	id_payement       INT IDENTITY (1,1) NOT NULL ,
-	numero_paiement   INT (255) NOT NULL ,
+	numero_paiement   INT NOT NULL ,
 	date_paiement     DATETIME NOT NULL ,
 	moyen_paiement    VARCHAR (50) NOT NULL ,
 	ID_facture        INT  NOT NULL  ,
@@ -118,7 +116,7 @@ CREATE TABLE Stocks(
 
 CREATE TABLE Composer(
 	reference_article    INT  NOT NULL ,
-	reference_commande   INT  NOT NULL ,
+	reference_commande   VARCHAR  NOT NULL ,
 	quantite             INT  NOT NULL  ,
 	CONSTRAINT Composer_PK PRIMARY KEY (reference_article,reference_commande)
 );
