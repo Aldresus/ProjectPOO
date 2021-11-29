@@ -1,6 +1,6 @@
-#include "CLservices.h"
+#pragma once
 
-namespace Prosit_6 {
+namespace ProjectPOO {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -34,23 +34,32 @@ namespace Prosit_6 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^ dgv_enr;
-	protected:
-
-	private: System::Windows::Forms::Button^ btn_load;
-	private: System::Windows::Forms::Button^ btn_insert;
-	private: System::Windows::Forms::Button^ btn_delete;
-	private: System::Windows::Forms::Button^ btn_update;
-	private: System::Windows::Forms::TextBox^ txt_id;
-	private: System::Windows::Forms::TextBox^ txt_nom_employe;
-	private: System::Windows::Forms::TextBox^ txt_prenom_employe;
-	private: System::Windows::Forms::TextBox^ txt_date_de_naissance_employe;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
 
-	private: NS_Comp_Svc::CLservices^ oSvc;
-	private: System::Data::DataSet^ oDs;
+
+
+
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ textBox8;
+
+
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+
+
+
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
 
 	private:
@@ -66,167 +75,192 @@ namespace Prosit_6 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->dgv_enr = (gcnew System::Windows::Forms::DataGridView());
-			this->btn_load = (gcnew System::Windows::Forms::Button());
-			this->btn_insert = (gcnew System::Windows::Forms::Button());
-			this->btn_delete = (gcnew System::Windows::Forms::Button());
-			this->btn_update = (gcnew System::Windows::Forms::Button());
-			this->txt_id = (gcnew System::Windows::Forms::TextBox());
-			this->txt_nom_employe = (gcnew System::Windows::Forms::TextBox());
-			this->txt_prenom_employe = (gcnew System::Windows::Forms::TextBox());
-			this->txt_date_de_naissance_employe = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// dgv_enr
+			// dataGridView1
 			// 
-			this->dgv_enr->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgv_enr->Location = System::Drawing::Point(16, 15);
-			this->dgv_enr->Margin = System::Windows::Forms::Padding(4);
-			this->dgv_enr->Name = L"dgv_enr";
-			this->dgv_enr->RowHeadersWidth = 51;
-			this->dgv_enr->Size = System::Drawing::Size(629, 185);
-			this->dgv_enr->TabIndex = 0;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(12, 12);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(527, 194);
+			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
-			// btn_load
+			// textBox4
 			// 
-			this->btn_load->Location = System::Drawing::Point(20, 225);
-			this->btn_load->Margin = System::Windows::Forms::Padding(4);
-			this->btn_load->Name = L"btn_load";
-			this->btn_load->Size = System::Drawing::Size(100, 159);
-			this->btn_load->TabIndex = 1;
-			this->btn_load->Text = L"Load DB";
-			this->btn_load->UseVisualStyleBackColor = true;
-			this->btn_load->Click += gcnew System::EventHandler(this, &MyForm::btn_load_Click);
+			this->textBox4->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox4->Location = System::Drawing::Point(595, 31);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(370, 20);
+			this->textBox4->TabIndex = 10;
+			this->textBox4->Text = L"Nom employe";
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
-			// btn_insert
+			// textBox5
 			// 
-			this->btn_insert->Location = System::Drawing::Point(128, 225);
-			this->btn_insert->Margin = System::Windows::Forms::Padding(4);
-			this->btn_insert->Name = L"btn_insert";
-			this->btn_insert->Size = System::Drawing::Size(100, 46);
-			this->btn_insert->TabIndex = 2;
-			this->btn_insert->Text = L"INS";
-			this->btn_insert->UseVisualStyleBackColor = true;
-			this->btn_insert->Click += gcnew System::EventHandler(this, &MyForm::btn_insert_Click);
+			this->textBox5->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox5->Location = System::Drawing::Point(595, 57);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(370, 20);
+			this->textBox5->TabIndex = 9;
+			this->textBox5->Text = L"Prenom employe";
+			this->textBox5->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox5_TextChanged);
 			// 
-			// btn_delete
+			// textBox6
 			// 
-			this->btn_delete->Location = System::Drawing::Point(128, 338);
-			this->btn_delete->Margin = System::Windows::Forms::Padding(4);
-			this->btn_delete->Name = L"btn_delete";
-			this->btn_delete->Size = System::Drawing::Size(100, 46);
-			this->btn_delete->TabIndex = 3;
-			this->btn_delete->Text = L"DEL";
-			this->btn_delete->UseVisualStyleBackColor = true;
-			this->btn_delete->Click += gcnew System::EventHandler(this, &MyForm::btn_delete_Click);
+			this->textBox6->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox6->Location = System::Drawing::Point(595, 83);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(370, 20);
+			this->textBox6->TabIndex = 8;
+			this->textBox6->Text = L"date naissance employe";
 			// 
-			// btn_update
+			// label2
 			// 
-			this->btn_update->Location = System::Drawing::Point(128, 282);
-			this->btn_update->Margin = System::Windows::Forms::Padding(4);
-			this->btn_update->Name = L"btn_update";
-			this->btn_update->Size = System::Drawing::Size(100, 46);
-			this->btn_update->TabIndex = 4;
-			this->btn_update->Text = L"UPD";
-			this->btn_update->UseVisualStyleBackColor = true;
-			this->btn_update->Click += gcnew System::EventHandler(this, &MyForm::btn_update_Click);
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(592, 12);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(69, 16);
+			this->label2->TabIndex = 7;
+			this->label2->Text = L"Employe";
+			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
-			// txt_id
+			// textBox7
 			// 
-			this->txt_id->Location = System::Drawing::Point(236, 225);
-			this->txt_id->Margin = System::Windows::Forms::Padding(4);
-			this->txt_id->Name = L"txt_id";
-			this->txt_id->Size = System::Drawing::Size(408, 22);
-			this->txt_id->TabIndex = 5;
+			this->textBox7->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox7->Location = System::Drawing::Point(595, 109);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(370, 20);
+			this->textBox7->TabIndex = 14;
+			this->textBox7->Text = L"Nom superviseur";
+			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
 			// 
-			// txt_nom_employe
+			// textBox8
 			// 
-			this->txt_nom_employe->Location = System::Drawing::Point(236, 257);
-			this->txt_nom_employe->Margin = System::Windows::Forms::Padding(4);
-			this->txt_nom_employe->Name = L"txt_nom_employe";
-			this->txt_nom_employe->Size = System::Drawing::Size(408, 22);
-			this->txt_nom_employe->TabIndex = 6;
+			this->textBox8->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox8->Location = System::Drawing::Point(595, 135);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(370, 20);
+			this->textBox8->TabIndex = 13;
+			this->textBox8->Text = L"Prenom superviseur";
 			// 
-			// txt_prenom_employe
+			// button1
 			// 
-			this->txt_prenom_employe->Location = System::Drawing::Point(236, 293);
-			this->txt_prenom_employe->Margin = System::Windows::Forms::Padding(4);
-			this->txt_prenom_employe->Name = L"txt_prenom_employe";
-			this->txt_prenom_employe->Size = System::Drawing::Size(408, 22);
-			this->txt_prenom_employe->TabIndex = 7;
-			// 
-			// txt_date_de_naissance_employe
-			// 
-			this->txt_date_de_naissance_employe->Location = System::Drawing::Point(266, 323);
-			this->txt_date_de_naissance_employe->Margin = System::Windows::Forms::Padding(4);
-			this->txt_date_de_naissance_employe->Name = L"txt_date_de_naissance_employe";
-			this->txt_date_de_naissance_employe->Size = System::Drawing::Size(408, 22);
-			this->txt_date_de_naissance_employe->TabIndex = 8;
-			// 
-			// btn load table adresse
-			// 
-			this->button1->Location = System::Drawing::Point(309, 338);
+			this->button1->Location = System::Drawing::Point(12, 230);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(116, 45);
-			this->button1->TabIndex = 9;
-			this->button1->Text = L"Load table adresse";
+			this->button1->Size = System::Drawing::Size(120, 149);
+			this->button1->TabIndex = 15;
+			this->button1->Text = L"Load";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(153, 230);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(99, 40);
+			this->button2->TabIndex = 16;
+			this->button2->Text = L"Insert";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(153, 284);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(99, 40);
+			this->button3->TabIndex = 17;
+			this->button3->Text = L"Update";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(153, 339);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(99, 40);
+			this->button4->TabIndex = 18;
+			this->button4->Text = L"Delete";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
+				L"at.png";
+			this->pictureBox1->Location = System::Drawing::Point(652, 251);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(313, 110);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 22;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
+			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(675, 409);
+			this->ClientSize = System::Drawing::Size(992, 385);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->txt_date_de_naissance_employe);
-			this->Controls->Add(this->txt_prenom_employe);
-			this->Controls->Add(this->txt_nom_employe);
-			this->Controls->Add(this->txt_id);
-			this->Controls->Add(this->btn_update);
-			this->Controls->Add(this->btn_delete);
-			this->Controls->Add(this->btn_insert);
-			this->Controls->Add(this->btn_load);
-			this->Controls->Add(this->dgv_enr);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->textBox8);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->dataGridView1);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"GestionEmploye.exe";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void btn_load_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		this->dgv_enr->Refresh();
-		this->oDs = this->oSvc->selectionnerTousLesEmployes("Rsl");
-		this->dgv_enr->DataSource = this->oDs;
-		this->dgv_enr->DataMember = "Rsl";
+	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
-	{
-		this->oSvc = gcnew NS_Comp_Svc::CLservices();
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void btn_insert_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		this->oSvc->ajouterUnEmploye(Convert::ToString(this->txt_nom_employe->Text), Convert::ToString(this->txt_prenom_employe->Text), Convert::ToDateTime(this->txt_date_de_naissance_employe));
-	}
-	private: System::Void btn_update_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->updateUnEmploye(Convert::ToInt32(this->txt_id->Text), Convert::ToString(this->txt_nom_employe->Text), Convert::ToString(this->txt_prenom_employe->Text), Convert::ToDateTime(this->txt_date_de_naissance_employe));
-	}
-	private: System::Void btn_delete_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->supprimerEmployes();
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->dgv_enr->Refresh();
-		this->oDs = this->oSvc->selectionnerTousLesEmployes1("Rsl");
-		this->dgv_enr->DataSource = this->oDs;
-		this->dgv_enr->DataMember = "Rsl";
 	}
-	};
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
 
