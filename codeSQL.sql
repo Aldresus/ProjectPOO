@@ -5,7 +5,7 @@ CREATE TABLE Adresse(
 	nom_rue        VARCHAR (255) NOT NULL ,
 	nom_batiment   VARCHAR (255) NOT NULL ,
 	numero_etage   INT  NOT NULL ,
-	code_postal    INT  NOT NULL ,
+	code_postal    VARCHAR  NOT NULL ,
 	ville          VARCHAR (255) NOT NULL ,
 	autres_infos   VARCHAR (255) NOT NULL  ,
 	CONSTRAINT Adresse_PK PRIMARY KEY (ID_adresse)
@@ -58,8 +58,8 @@ CREATE TABLE Employe(
 
 
 CREATE TABLE Commande(
-	reference_commande    INT  NOT NULL ,
-	total_HT              INT  NOT NULL ,
+	reference_commande    VARCHAR  NOT NULL ,
+	total_HT              FLOAT  NOT NULL ,
 	TVA                   INT  NOT NULL ,
 	date_commande         DATETIME NOT NULL ,
 	date_livraison        DATETIME NOT NULL ,
@@ -75,7 +75,7 @@ CREATE TABLE Commande(
 CREATE TABLE Article(
 	reference_article   INT  NOT NULL ,
 	nom_article         VARCHAR (255) NOT NULL ,
-	prix_produit_HT     INT  NOT NULL ,
+	prix_produit_HT     FLOAT  NOT NULL ,
 	id_couleur          INT  NOT NULL ,
 	id_natures          INT  NOT NULL ,
 	id_stocks           INT  NOT NULL  ,
@@ -98,7 +98,7 @@ CREATE TABLE Facture(
 
 CREATE TABLE Paiement(
 	id_payement       INT IDENTITY (1,1) NOT NULL ,
-	numero_paiement   VARCHAR (255) NOT NULL ,
+	numero_paiement   INT (255) NOT NULL ,
 	date_paiement     DATETIME NOT NULL ,
 	moyen_paiement    VARCHAR (50) NOT NULL ,
 	ID_facture        INT  NOT NULL  ,
