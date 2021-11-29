@@ -1,3 +1,11 @@
+/*------------------------------------------------------------
+*        Script SQLSERVER 
+------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------
+-- Table: Adresse
+------------------------------------------------------------*/
 CREATE TABLE Adresse(
 	ID_adresse     INT  NOT NULL ,
 	numero_voie    INT  NOT NULL ,
@@ -11,6 +19,9 @@ CREATE TABLE Adresse(
 );
 
 
+/*------------------------------------------------------------
+-- Table: Superviseurs
+------------------------------------------------------------*/
 CREATE TABLE Superviseurs(
 	id_superviseur       INT IDENTITY (1,1) NOT NULL ,
 	nom_superviseur      VARCHAR (50) NOT NULL ,
@@ -18,6 +29,10 @@ CREATE TABLE Superviseurs(
 	CONSTRAINT Superviseurs_PK PRIMARY KEY (id_superviseur)
 );
 
+
+/*------------------------------------------------------------
+-- Table: Client
+------------------------------------------------------------*/
 CREATE TABLE Client(
 	id_client               INT IDENTITY (1,1) NOT NULL ,
 	nom_client              VARCHAR (255) NOT NULL ,
@@ -28,7 +43,9 @@ CREATE TABLE Client(
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Couleurs
+------------------------------------------------------------*/
 CREATE TABLE Couleurs(
 	id_couleur   INT IDENTITY (1,1) NOT NULL ,
 	couleur      VARCHAR (50) NOT NULL  ,
@@ -36,7 +53,9 @@ CREATE TABLE Couleurs(
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Natures
+------------------------------------------------------------*/
 CREATE TABLE Natures(
 	id_natures   INT IDENTITY (1,1) NOT NULL ,
 	nature       VARCHAR (50) NOT NULL  ,
@@ -44,22 +63,26 @@ CREATE TABLE Natures(
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Employe
+------------------------------------------------------------*/
 CREATE TABLE Employe(
 	ID_employe               INT IDENTITY (1,1) NOT NULL ,
 	nom_employe              VARCHAR (50) NOT NULL ,
 	prenom_employe           VARCHAR (50) NOT NULL ,
 	date_naissance_employe   DATETIME NOT NULL ,
-	ID_personnel             INT  NOT NULL  ,
+	id_superviseur           INT  NOT NULL  ,
 	CONSTRAINT Employe_PK PRIMARY KEY (ID_employe)
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Commande
+------------------------------------------------------------*/
 CREATE TABLE Commande(
 	reference_commande    VARCHAR  NOT NULL ,
 	total_HT              FLOAT  NOT NULL ,
-	TVA                   INT  NOT NULL ,
+	TVA                   FLOAT  NOT NULL ,
 	date_commande         DATETIME NOT NULL ,
 	date_livraison        DATETIME NOT NULL ,
 	id_client             INT  NOT NULL ,
@@ -70,7 +93,9 @@ CREATE TABLE Commande(
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Article
+------------------------------------------------------------*/
 CREATE TABLE Article(
 	reference_article   INT  NOT NULL ,
 	nom_article         VARCHAR (255) NOT NULL ,
@@ -82,7 +107,9 @@ CREATE TABLE Article(
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Facture
+------------------------------------------------------------*/
 CREATE TABLE Facture(
 	ID_facture           INT  NOT NULL ,
 	date_facturation     DATETIME NOT NULL ,
@@ -94,10 +121,12 @@ CREATE TABLE Facture(
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Paiement
+------------------------------------------------------------*/
 CREATE TABLE Paiement(
 	id_payement       INT IDENTITY (1,1) NOT NULL ,
-	numero_paiement   INT NOT NULL ,
+	numero_paiement   INT (255) NOT NULL ,
 	date_paiement     DATETIME NOT NULL ,
 	moyen_paiement    VARCHAR (50) NOT NULL ,
 	ID_facture        INT  NOT NULL  ,
@@ -105,7 +134,9 @@ CREATE TABLE Paiement(
 );
 
 
-
+/*------------------------------------------------------------
+-- Table: Stocks
+------------------------------------------------------------*/
 CREATE TABLE Stocks(
 	id_stocks           INT IDENTITY (1,1) NOT NULL ,
 	quantite_stock      INT  NOT NULL ,
@@ -115,9 +146,12 @@ CREATE TABLE Stocks(
 );
 
 
+/*------------------------------------------------------------
+-- Table: Composer
+------------------------------------------------------------*/
 CREATE TABLE Composer(
 	reference_article    INT  NOT NULL ,
-	reference_commande   VARCHAR  NOT NULL ,
+	reference_commande   INT  NOT NULL ,
 	quantite             INT  NOT NULL  ,
 	CONSTRAINT Composer_PK PRIMARY KEY (reference_article,reference_commande)
 );
