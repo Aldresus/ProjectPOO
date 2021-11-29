@@ -33,11 +33,6 @@ ref class CLService
 		CLAdresse oAdresse;
 		CLClient oClient;
 		CLCad ocad;
-		  
-	/*public:
-		//CAD
-		System::Data::DataSet^ getRows(System::String^ sSql, System::String^ sDataTableName);
-		void actionRows(System::String^);
-		*/
+		
 };
 

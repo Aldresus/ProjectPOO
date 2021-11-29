@@ -1,7 +1,7 @@
 #include "CLCad.h"
 
 CLCad::CLCad() {
-	this->sCnx = "Data Source = DESKTOP-7SAG648\\MSSQL_MANU;Initial Catalog = DB_P6;User ID = CNX_P6; Password=azerty";
+	this->sCnx = "Data Source = projetpoo.database.windows.net;Initial Catalog = Poo;User ID = hugo; Password=Aldresus123";
 
 	this->sSql = "Rien";
 

@@ -1,6 +1,6 @@
 #pragma once
 
-ref class CLClient{
+ref class CLClient {
 	private:
 		int id_client;
 		System::String^ nom_client;
@@ -11,11 +11,19 @@ ref class CLClient{
 	public:
 		void setID_client(int id_client);
 		int getID_client();
+
 		void setNom_client(System::String^ nom_client);
 		System::String^ getNom_client();
+
 		void setDate_de_naissance(System::String^ date_de_naissance);
 		System::String^ getDate_de_naissance();
+
 		void setDate_inscription(System::String^ date_inscription);
 		System::String^ getDate_inscription();
+
+		System::String^ Select(void);
+		System::String^ Insert(void);
+		System::String^ Update(void);
+		System::String^ Delete(void);
 };
 

@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include 
 
 namespace ProjectPOO {
 
@@ -226,6 +227,7 @@ namespace ProjectPOO {
 		}
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		dataGridView1->DataSource()
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

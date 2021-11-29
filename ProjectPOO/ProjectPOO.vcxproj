@@ -129,14 +129,12 @@
     <ClCompile Include="CLCouleurs.cpp" />
     <ClCompile Include="CLEmploye.cpp" />
     <ClCompile Include="CLFacture.cpp" />
-    <ClCompile Include="CLMappage.cpp" />
     <ClCompile Include="CLNature.cpp" />
     <ClCompile Include="CLPaiement.cpp" />
     <ClCompile Include="CLService.cpp" />
     <ClCompile Include="CLStocks.cpp" />
     <ClCompile Include="CLSuperviseurs.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="MyForm1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLAdresse.h" />
@@ -148,16 +146,12 @@
     <ClInclude Include="CLCouleurs.h" />
     <ClInclude Include="CLEmploye.h" />
     <ClInclude Include="CLFacture.h" />
-    <ClInclude Include="CLMappage.h" />
     <ClInclude Include="CLNature.h" />
     <ClInclude Include="CLPaiement.h" />
     <ClInclude Include="CLService.h" />
     <ClInclude Include="CLStocks.h" />
     <ClInclude Include="CLSuperviseurs.h" />
     <ClInclude Include="MyForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
