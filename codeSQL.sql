@@ -130,7 +130,6 @@ ALTER TABLE Employe
 	FOREIGN KEY (id_superviseur)
 	REFERENCES Superviseurs(id_superviseur);
 
-
 ALTER TABLE Commande
 	ADD CONSTRAINT Commande_Client0_FK
 	FOREIGN KEY (id_client)
