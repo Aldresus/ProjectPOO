@@ -1,8 +1,7 @@
 /*------------------------------------------------------------
 *        Script SQLSERVER 
 ------------------------------------------------------------*/
-
-
+USE projetPoo
 /*------------------------------------------------------------
 -- Table: Adresse
 ------------------------------------------------------------*/
@@ -37,8 +36,8 @@ CREATE TABLE Client(
 	id_client               INT IDENTITY (1,1) NOT NULL ,
 	nom_client              VARCHAR (255) NOT NULL ,
 	prenom_client           VARCHAR (255) NOT NULL ,
-	date_naissance_client   DATETIME NOT NULL ,
-	date_inscription        DATETIME NOT NULL  ,
+	date_naissance_client   DATE NOT NULL ,
+	date_inscription        DATE NOT NULL  ,
 	CONSTRAINT Client_PK PRIMARY KEY (id_client)
 );
 
@@ -70,7 +69,7 @@ CREATE TABLE Employe(
 	ID_employe               INT IDENTITY (1,1) NOT NULL ,
 	nom_employe              VARCHAR (50) NOT NULL ,
 	prenom_employe           VARCHAR (50) NOT NULL ,
-	date_naissance_employe   DATETIME NOT NULL ,
+	date_naissance_employe   DATE NOT NULL ,
 	id_superviseur           INT  NOT NULL  ,
 	CONSTRAINT Employe_PK PRIMARY KEY (ID_employe)
 );
@@ -83,8 +82,8 @@ CREATE TABLE Commande(
 	reference_commande    VARCHAR  NOT NULL ,
 	total_HT              FLOAT  NOT NULL ,
 	TVA                   FLOAT  NOT NULL ,
-	date_commande         DATETIME NOT NULL ,
-	date_livraison        DATETIME NOT NULL ,
+	date_commande         DATE NOT NULL ,
+	date_livraison        DATE NOT NULL ,
 	id_client             INT  NOT NULL ,
 	ID_facture            INT  NOT NULL ,
 	ID_adresse            INT  NOT NULL ,
@@ -112,11 +111,11 @@ CREATE TABLE Article(
 ------------------------------------------------------------*/
 CREATE TABLE Facture(
 	ID_facture           INT  NOT NULL ,
-	date_facturation     DATETIME NOT NULL ,
+	date_facturation     DATE NOT NULL ,
 	logo                 VARCHAR (50) NOT NULL ,
 	num_service          VARCHAR (50) NOT NULL ,
 	nom_societe          VARCHAR (50) NOT NULL ,
-	reference_commande   INT  NOT NULL  ,
+	reference_commande   VARCHAR  NOT NULL  ,
 	CONSTRAINT Facture_PK PRIMARY KEY (ID_facture)
 );
 
@@ -126,8 +125,8 @@ CREATE TABLE Facture(
 ------------------------------------------------------------*/
 CREATE TABLE Paiement(
 	id_payement       INT IDENTITY (1,1) NOT NULL ,
-	numero_paiement   INT (255) NOT NULL ,
-	date_paiement     DATETIME NOT NULL ,
+	numero_paiement   INT NOT NULL ,
+	date_paiement     DATE NOT NULL ,
 	moyen_paiement    VARCHAR (50) NOT NULL ,
 	ID_facture        INT  NOT NULL  ,
 	CONSTRAINT Paiement_PK PRIMARY KEY (id_payement)
@@ -151,7 +150,7 @@ CREATE TABLE Stocks(
 ------------------------------------------------------------*/
 CREATE TABLE Composer(
 	reference_article    INT  NOT NULL ,
-	reference_commande   INT  NOT NULL ,
+	reference_commande   VARCHAR  NOT NULL ,
 	quantite             INT  NOT NULL  ,
 	CONSTRAINT Composer_PK PRIMARY KEY (reference_article,reference_commande)
 );
