@@ -12,10 +12,11 @@ CREATE TABLE Adresse(
 
 
 CREATE TABLE Superviseurs(
-	ID_personnel   INT IDENTITY (1,1) NOT NULL  ,
-	CONSTRAINT Superviseurs_PK PRIMARY KEY (ID_personnel)
+	id_superviseur       INT IDENTITY (1,1) NOT NULL ,
+	nom_superviseur      VARCHAR (50) NOT NULL ,
+	prenom_superviseur   VARCHAR (50) NOT NULL  ,
+	CONSTRAINT Superviseurs_PK PRIMARY KEY (id_superviseur)
 );
-
 
 CREATE TABLE Client(
 	id_client               INT IDENTITY (1,1) NOT NULL ,
@@ -126,8 +127,9 @@ CREATE TABLE Composer(
 
 ALTER TABLE Employe
 	ADD CONSTRAINT Employe_Superviseurs0_FK
-	FOREIGN KEY (ID_personnel)
-	REFERENCES Superviseurs(ID_personnel);
+	FOREIGN KEY (id_superviseur)
+	REFERENCES Superviseurs(id_superviseur);
+
 
 ALTER TABLE Commande
 	ADD CONSTRAINT Commande_Client0_FK
