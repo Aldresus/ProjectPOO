@@ -64,7 +64,7 @@ CREATE TABLE Commande(
 -- Table: Article
 ------------------------------------------------------------*/
 CREATE TABLE Article(
-	reference_article   INT  NOT NULL ,
+	reference_article   INT IDENTITY NOT NULL ,
 	nom_article         VARCHAR (255) NOT NULL ,
 	prix_produit_HT     FLOAT  NOT NULL ,
 	couleur             VARCHAR (50) NOT NULL ,
