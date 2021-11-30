@@ -127,7 +127,6 @@
     <ClCompile Include="CLCommande.cpp" />
     <ClCompile Include="CLComposer.cpp" />
     <ClCompile Include="CLCouleurs.cpp" />
-    <ClCompile Include="CLEmploye.cpp" />
     <ClCompile Include="CLFacture.cpp" />
     <ClCompile Include="CLMappage.cpp" />
     <ClCompile Include="CLNature.cpp" />
@@ -145,7 +144,6 @@
     <ClInclude Include="CLCommande.h" />
     <ClInclude Include="CLComposer.h" />
     <ClInclude Include="CLCouleurs.h" />
-    <ClInclude Include="CLEmploye.h" />
     <ClInclude Include="CLFacture.h" />
     <ClInclude Include="CLMappage.h" />
     <ClInclude Include="CLNature.h" />

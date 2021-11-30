@@ -230,10 +230,13 @@ namespace ProjectPOO {
 			// 
 			this->dateTimePicker1->CalendarTitleForeColor = System::Drawing::SystemColors::ControlText;
 			this->dateTimePicker1->CalendarTrailingForeColor = System::Drawing::SystemColors::ButtonShadow;
+			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
+			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(760, 107);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(205, 20);
 			this->dateTimePicker1->TabIndex = 25;
+			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &MyForm::dateTimePicker1_ValueChanged);
 			// 
 			// numericUpDown1
 			// 
@@ -353,6 +356,8 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 
