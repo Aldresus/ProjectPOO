@@ -123,12 +123,12 @@
     <ClCompile Include="CLAdresse.cpp" />
     <ClCompile Include="CLArticle.cpp" />
     <ClCompile Include="CLCad.cpp" />
-    <ClCompile Include="CLClient.cpp" />
     <ClCompile Include="CLCommande.cpp" />
     <ClCompile Include="CLComposer.cpp" />
     <ClCompile Include="CLCouleurs.cpp" />
     <ClCompile Include="CLEmploye.cpp" />
     <ClCompile Include="CLFacture.cpp" />
+    <ClCompile Include="CLMappageClient.cpp" />
     <ClCompile Include="CLNature.cpp" />
     <ClCompile Include="CLPaiement.cpp" />
     <ClCompile Include="CLService.cpp" />
@@ -140,12 +140,12 @@
     <ClInclude Include="CLAdresse.h" />
     <ClInclude Include="CLArticle.h" />
     <ClInclude Include="CLCad.h" />
-    <ClInclude Include="CLClient.h" />
     <ClInclude Include="CLCommande.h" />
     <ClInclude Include="CLComposer.h" />
     <ClInclude Include="CLCouleurs.h" />
     <ClInclude Include="CLEmploye.h" />
     <ClInclude Include="CLFacture.h" />
+    <ClInclude Include="CLMappageClient.h" />
     <ClInclude Include="CLNature.h" />
     <ClInclude Include="CLPaiement.h" />
     <ClInclude Include="CLService.h" />

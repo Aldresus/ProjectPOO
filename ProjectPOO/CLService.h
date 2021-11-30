@@ -1,38 +1,18 @@
 #pragma once
-#include "CLAdresse.h"
-#include "CLArticle.h"
+#include "CLMappageClient.h"
 #include "CLCad.h"
-#include "CLClient.h"
-#include "CLCommande.h"
-#include "CLComposer.h"
-#include "CLCouleurs.h"
-#include "CLFacture.h"
-#include "CLStocks.h"
-#include "CLPaiement.h"
-#include "ClNature.h"
-#include "CLEmploye.h"
-#include "CLSuperviseurs.h"
 
 
-
-
-
-ref class CLService
+namespace NS_Comp_Svc
 {
-	private:
-		CLFacture oFacture;
-		CLPaiement oPaiement;
-		CLArticle oArticle;
-		CLStocks oStocks;
-		CLNature oNature;
-		CLCouleurs oCouleurs;
-		CLEmploye oEmploye;
-		CLSuperviseurs oSuperviseurs;
-		CLCommande oCommande;
-		CLComposer oComposer;
-		CLAdresse oAdresse;
-		CLClient oClient;
-		CLCad ocad;
-		
-};
-
+    ref class CLservices
+    {
+    private:
+        NS_Comp_Data::CLCad^ oCad;
+        NS_Comp_Mappage::CLMappageClient^ oMappClient;
+    public:
+        CLservices(void);
+        System::Data::DataSet^ selectionnerToutesLesClient(System::String^);
+        void ajouterUnePersonne(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+    };
+}
