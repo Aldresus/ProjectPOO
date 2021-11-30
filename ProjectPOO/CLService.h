@@ -1,6 +1,7 @@
 #pragma once
-#include "CLMappage.h"
+#include "CLMappageEmploye.h"
 #include "CLCad.h"
+#include "CLMappageSuperviseurs.h"
 
 namespace NS_Comp_Svc
 {
@@ -8,10 +9,12 @@ namespace NS_Comp_Svc
 	{
 	private:
 		NS_Comp_Data::CLCad^ oCad;
-		NS_Comp_Mappage::CLMappage^ oMappTB;
+		NS_Comp_Mappage::CLMappageEmploye^ oMappEmploye;
+		NS_Comp_Mappage::CLMappageSuperviseurs^ oMappSuperviseurs;
 	public:
 		CLservices(void);
-		System::Data::DataSet^ selectionnerToutesLesPersonnes(System::String^);
+		System::Data::DataSet^ selectionnerToutesLesEmploye(System::String^);
+		System::Data::DataSet^ selectionnerToutesLesSuperviseurs(System::String^);
 		void ajouterUnePersonne(System::String^, System::String^, System::String^, System::String^);
 	};
 }

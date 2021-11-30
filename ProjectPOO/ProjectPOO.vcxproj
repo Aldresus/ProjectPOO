@@ -128,7 +128,8 @@
     <ClCompile Include="CLComposer.cpp" />
     <ClCompile Include="CLCouleurs.cpp" />
     <ClCompile Include="CLFacture.cpp" />
-    <ClCompile Include="CLMappage.cpp" />
+    <ClCompile Include="CLMappageEmploye.cpp" />
+    <ClCompile Include="CLMappageSuperviseurs.cpp" />
     <ClCompile Include="CLNature.cpp" />
     <ClCompile Include="CLPaiement.cpp" />
     <ClCompile Include="CLService.cpp" />
@@ -145,7 +146,8 @@
     <ClInclude Include="CLComposer.h" />
     <ClInclude Include="CLCouleurs.h" />
     <ClInclude Include="CLFacture.h" />
-    <ClInclude Include="CLMappage.h" />
+    <ClInclude Include="CLMappageEmploye.h" />
+    <ClInclude Include="CLMappageSuperviseurs.h" />
     <ClInclude Include="CLNature.h" />
     <ClInclude Include="CLPaiement.h" />
     <ClInclude Include="CLService.h" />

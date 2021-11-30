@@ -45,7 +45,7 @@
     <ClCompile Include="CLCad.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLMappage.cpp">
+    <ClCompile Include="CLMappageEmploye.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="CLFacture.cpp">
@@ -58,6 +58,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="CLService.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMappageSuperviseurs.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,7 +95,7 @@
     <ClInclude Include="CLCad.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLMappage.h">
+    <ClInclude Include="CLMappageEmploye.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="CLFacture.h">
@@ -105,6 +108,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="CLService.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMappageSuperviseurs.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
