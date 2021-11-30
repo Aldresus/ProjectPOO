@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 ref class CLEmploye{
 	private:
 		int id_employe;
