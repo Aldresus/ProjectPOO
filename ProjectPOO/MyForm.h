@@ -160,9 +160,9 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(503, 12);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(69, 16);
+			this->label2->Size = System::Drawing::Size(47, 16);
 			this->label2->TabIndex = 7;
-			this->label2->Text = L"Employe";
+			this->label2->Text = L"Client";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
 			// button1
@@ -208,7 +208,7 @@ namespace ProjectPOO {
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(367, 269);
+			this->pictureBox1->Location = System::Drawing::Point(355, 253);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(313, 110);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -230,7 +230,7 @@ namespace ProjectPOO {
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(597, 36);
+			this->numericUpDown1->Location = System::Drawing::Point(597, 32);
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(82, 20);
 			this->numericUpDown1->TabIndex = 26;
@@ -238,17 +238,17 @@ namespace ProjectPOO {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(506, 36);
+			this->label1->Location = System::Drawing::Point(506, 38);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(49, 13);
+			this->label1->Size = System::Drawing::Size(44, 13);
 			this->label1->TabIndex = 28;
-			this->label1->Text = L"id Clients";
+			this->label1->Text = L"id Client";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(455, 117);
+			this->label4->Location = System::Drawing::Point(469, 117);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(122, 13);
 			this->label4->TabIndex = 30;
@@ -277,7 +277,7 @@ namespace ProjectPOO {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(461, 143);
+			this->label3->Location = System::Drawing::Point(485, 143);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(106, 13);
 			this->label3->TabIndex = 32;
@@ -287,7 +287,7 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(734, 690);
+			this->ClientSize = System::Drawing::Size(692, 391);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->label4);
