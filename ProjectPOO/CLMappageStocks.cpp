@@ -2,48 +2,53 @@
 
 System::String ^ NS_Comp_Mappage::CLMappageStocks::Select(void)
 {
-	return "SELECT Article.reference_article, Article.nom_article, Article.prix_produit_HT, Article.couleur, Article.nature, Stocks.quantite_stock, Stocks.seuil_reapro FROM Article INNER JOIN Stocks ON Article.id_stocks = Stocks.id_stocks;";
+	return "SELECT Article.reference_article, Article.nom_article, Article.prix_produit_HT, Article.couleur, Article.nature, Stocks.quantite_stock, Stocks.seuil_reapro FROM Article INNER JOIN Stocks ON Article.reference_article = Stocks.reference_article;";
 }
 System::String^ NS_Comp_Mappage::CLMappageStocks::Insert(void)
 {
-	return "INSERT INTO Employe (nom_employe, prenom_employe,id_superviseur,date_naissance_employe, adresse_employe) VALUES('" + this->nom_employe + "','" + this->prenom_employe + "'," + this->id_superviseur_employe + ",CAST(' " + this->date_naissance_employe + "'AS date),'" + this->adresse_employe + "');";
+	return "INSERT INTO Article(nom_article, prix_produit_HT, couleur, nature) VALUES ('" + this->nom_article + "', " + this->prix_produit_HT + ", '" + this->couleur + "','" + nature + "'); INSERT INTO Stocks(reference_article,quantite_stock, seuil_reapro) VALUES (SCOPE_IDENTITY()," + this->quantite_stock + "," + this->seuil_reapro + ");";
 }
 System::String^ NS_Comp_Mappage::CLMappageStocks::Delete(void)
 {
-	return "DELETE FROM Employe WHERE [ID_employe]=" + this->id_employe + ";";
+	return "DELETE FROM Stocks WHERE reference_article=" + this->reference_article + ";DELETE FROM Article WHERE reference_article=" + this->reference_article + ";";
 }
 System::String^ NS_Comp_Mappage::CLMappageStocks::Update(void)
 {
-	return "UPDATE Employe SET nom_employe='" + this->nom_employe + "', prenom_employe='" + this->prenom_employe + "', date_naissance_employe='" + this->date_naissance_employe + "', adresse_employe='" + this->adresse_employe + "', id_superviseur=" + this->id_superviseur_employe + " WHERE id_employe=" + this->id_employe + ";";
+	return "";
 }
-void NS_Comp_Mappage::CLMappageStocks::setid_employe(System::String^ id_employe)
+void NS_Comp_Mappage::CLMappageStocks::setreference_article(System::String^ reference_article)
 {
-	this->id_employe = id_employe;
+	this->reference_article = reference_article;
 }
-void NS_Comp_Mappage::CLMappageStocks::setnom_employe(System::String^ nom_employe)
+void NS_Comp_Mappage::CLMappageStocks::setprix_produit_HT(System::String^ prix_produit_HT)
 {
-	this->nom_employe = nom_employe;
+	this->prix_produit_HT = prix_produit_HT;
 }
-void NS_Comp_Mappage::CLMappageStocks::setprenom_employe(System::String^ prenom_employe)
+void NS_Comp_Mappage::CLMappageStocks::setcouleur(System::String^ couleur)
 {
-	this->prenom_employe = prenom_employe;
+	this->couleur = couleur;
 }
-void NS_Comp_Mappage::CLMappageStocks::setdate_naissance_employe(System::String^ date_naissance_employe)
+void NS_Comp_Mappage::CLMappageStocks::setnature(System::String^ nature)
 {
-	this->date_naissance_employe = date_naissance_employe;
+	this->nature = nature;
 }
-void NS_Comp_Mappage::CLMappageStocks::setid_superviseur_employe(System::String^ id_superviseur)
+void NS_Comp_Mappage::CLMappageStocks::setquantite_stock(System::String^ quantite_stock)
 {
-	this->id_superviseur_employe = id_superviseur;
+	this->quantite_stock = quantite_stock;
 }
-void NS_Comp_Mappage::CLMappageStocks::setadresse_employe(System::String^ adresse_employe)
+void NS_Comp_Mappage::CLMappageStocks::setseuil_reapro(System::String^ seuil_reapro)
 {
-	this->adresse_employe = adresse_employe;
+	this->seuil_reapro = seuil_reapro;
+}
+void NS_Comp_Mappage::CLMappageStocks::setnom_article(System::String^ nom_article)
+{
+	this->nom_article = nom_article;
 }
 
-System::String^ NS_Comp_Mappage::CLMappageStocks::getid_employe(void) { return this->id_employe; }
-System::String^ NS_Comp_Mappage::CLMappageStocks::getnom_employe(void) { return this->nom_employe; }
-System::String^ NS_Comp_Mappage::CLMappageStocks::getprenom_employe(void) { return this->prenom_employe; }
-System::String^ NS_Comp_Mappage::CLMappageStocks::getdate_naissance_employe(void) { return this->date_naissance_employe; }
-System::String^ NS_Comp_Mappage::CLMappageStocks::getid_superviseur_employe(void) { return this->id_superviseur_employe; }
-System::String^ NS_Comp_Mappage::CLMappageStocks::getadresse_employe(void) { return this->adresse_employe; }
+System::String^ NS_Comp_Mappage::CLMappageStocks::getreference_article(void) { return this->reference_article; }
+System::String^ NS_Comp_Mappage::CLMappageStocks::getprix_produit_HT(void) { return this->prix_produit_HT; }
+System::String^ NS_Comp_Mappage::CLMappageStocks::getcouleur(void) { return this->couleur; }
+System::String^ NS_Comp_Mappage::CLMappageStocks::getnature(void) { return this->nature; }
+System::String^ NS_Comp_Mappage::CLMappageStocks::getquantite_stock(void) { return this->quantite_stock; }
+System::String^ NS_Comp_Mappage::CLMappageStocks::getseuil_reapro(void) { return this->seuil_reapro; }
+System::String^ NS_Comp_Mappage::CLMappageStocks::getnom_article(void) { return this->nom_article; }

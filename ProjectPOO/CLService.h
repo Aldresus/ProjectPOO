@@ -14,6 +14,9 @@ namespace NS_Comp_Svc
 	public:
 		CLservices(void);
 		System::Data::DataSet^ selectionnerToutesLesArticles(System::String^);
+		void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnArticle(System::String^);
+		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
 
 

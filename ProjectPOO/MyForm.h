@@ -104,7 +104,6 @@ namespace ProjectPOO {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(537, 194);
 			this->dataGridView1->TabIndex = 0;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
 			// textBox2
 			// 
@@ -114,7 +113,6 @@ namespace ProjectPOO {
 			this->textBox2->Size = System::Drawing::Size(201, 20);
 			this->textBox2->TabIndex = 5;
 			this->textBox2->Text = L"Seuil réapro";
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
 			// textBox3
 			// 
@@ -124,7 +122,6 @@ namespace ProjectPOO {
 			this->textBox3->Size = System::Drawing::Size(201, 20);
 			this->textBox3->TabIndex = 6;
 			this->textBox3->Text = L"Quantité stocks";
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
 			// 
 			// textBox4
 			// 
@@ -134,7 +131,6 @@ namespace ProjectPOO {
 			this->textBox4->Size = System::Drawing::Size(201, 20);
 			this->textBox4->TabIndex = 10;
 			this->textBox4->Text = L"Reference";
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
 			// textBox5
 			// 
@@ -144,7 +140,6 @@ namespace ProjectPOO {
 			this->textBox5->Size = System::Drawing::Size(201, 20);
 			this->textBox5->TabIndex = 9;
 			this->textBox5->Text = L"Nom article";
-			this->textBox5->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox5_TextChanged);
 			// 
 			// textBox6
 			// 
@@ -174,7 +169,6 @@ namespace ProjectPOO {
 			this->textBox7->Size = System::Drawing::Size(201, 20);
 			this->textBox7->TabIndex = 14;
 			this->textBox7->Text = L"Couleur";
-			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
 			// 
 			// textBox8
 			// 
@@ -203,6 +197,7 @@ namespace ProjectPOO {
 			this->button2->TabIndex = 16;
 			this->button2->Text = L"Insert";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -233,7 +228,6 @@ namespace ProjectPOO {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 22;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
 			// 
 			// MyForm
 			// 
@@ -264,29 +258,15 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView1->Refresh();
-		this->oDs = this->oSvc->selectionnerToutesLesArticles("Superviseurs");
+		this->oDs = this->oSvc->selectionnerToutesLesArticles("Article, Stocks");
 		this->dataGridView1->DataSource = this->oDs;
-		this->dataGridView1->DataMember = "Superviseurs";
+		this->dataGridView1->DataMember = "Article";
 	}
-	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->ajouterUnArticle(this->textBox5->Text, this->textBox6->Text, this->textBox7->Text, this->textBox8->Text, this->textBox3->Text, this->textBox2->Text);
+
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew NS_Comp_Svc::CLservices();
