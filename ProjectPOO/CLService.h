@@ -12,7 +12,7 @@ namespace NS_Comp_Svc
 	public:
 		CLservices(void);
 		System::Data::DataSet^ selectionnerToutesLesPersonnes(System::String^);
-		void ajouterUnePersonne(System::String^, System::String^);
+		void ajouterUnePersonne(System::String^, System::String^, System::String^, System::String^);
 	};
 }
 
