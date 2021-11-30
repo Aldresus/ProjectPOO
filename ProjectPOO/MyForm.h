@@ -80,6 +80,10 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
+	private: System::Windows::Forms::Label^ label6;
 
 
 
@@ -123,6 +127,10 @@ namespace ProjectPOO {
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -137,17 +145,15 @@ namespace ProjectPOO {
 			this->dgv_enr->Name = L"dgv_enr";
 			this->dgv_enr->Size = System::Drawing::Size(437, 194);
 			this->dgv_enr->TabIndex = 0;
-			this->dgv_enr->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
 			// textBox4
 			// 
 			this->textBox4->ForeColor = System::Drawing::Color::DarkGray;
-			this->textBox4->Location = System::Drawing::Point(506, 58);
+			this->textBox4->Location = System::Drawing::Point(507, 58);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(173, 20);
 			this->textBox4->TabIndex = 10;
 			this->textBox4->Text = L"Nom employe";
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
 			// textBox5
 			// 
@@ -157,7 +163,6 @@ namespace ProjectPOO {
 			this->textBox5->Size = System::Drawing::Size(173, 20);
 			this->textBox5->TabIndex = 9;
 			this->textBox5->Text = L"Prenom employe";
-			this->textBox5->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox5_TextChanged);
 			// 
 			// label2
 			// 
@@ -169,22 +174,20 @@ namespace ProjectPOO {
 			this->label2->Size = System::Drawing::Size(69, 16);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Employe";
-			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
 			// textBox7
 			// 
 			this->textBox7->ForeColor = System::Drawing::Color::DarkGray;
-			this->textBox7->Location = System::Drawing::Point(705, 36);
+			this->textBox7->Location = System::Drawing::Point(717, 58);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(171, 20);
 			this->textBox7->TabIndex = 14;
 			this->textBox7->Text = L"Nom superviseur";
-			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
 			// 
 			// textBox8
 			// 
 			this->textBox8->ForeColor = System::Drawing::Color::DarkGray;
-			this->textBox8->Location = System::Drawing::Point(705, 62);
+			this->textBox8->Location = System::Drawing::Point(717, 84);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(171, 20);
 			this->textBox8->TabIndex = 13;
@@ -218,6 +221,7 @@ namespace ProjectPOO {
 			this->button3->TabIndex = 17;
 			this->button3->Text = L"Update";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button4
 			// 
@@ -227,19 +231,20 @@ namespace ProjectPOO {
 			this->button4->TabIndex = 18;
 			this->button4->Text = L"Delete";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Left | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(550, 252);
+			this->pictureBox1->Location = System::Drawing::Point(558, 265);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(313, 110);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 22;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
 			// 
 			// dateTimePicker1
 			// 
@@ -247,25 +252,30 @@ namespace ProjectPOO {
 			this->dateTimePicker1->CalendarTrailingForeColor = System::Drawing::SystemColors::ButtonShadow;
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(597, 111);
+			this->dateTimePicker1->Location = System::Drawing::Point(597, 136);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(82, 20);
 			this->dateTimePicker1->TabIndex = 25;
-			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &MyForm::dateTimePicker1_ValueChanged);
 			// 
 			// numericUpDown1
 			// 
 			this->numericUpDown1->Location = System::Drawing::Point(597, 36);
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(82, 20);
 			this->numericUpDown1->TabIndex = 26;
+			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// numericUpDown2
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(600, 142);
+			this->numericUpDown2->Location = System::Drawing::Point(600, 167);
+			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
 			this->numericUpDown2->Size = System::Drawing::Size(79, 20);
 			this->numericUpDown2->TabIndex = 27;
+			this->numericUpDown2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
 			// label1
 			// 
@@ -275,22 +285,20 @@ namespace ProjectPOO {
 			this->label1->Size = System::Drawing::Size(58, 13);
 			this->label1->TabIndex = 28;
 			this->label1->Text = L"id Employe";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(506, 144);
+			this->label3->Location = System::Drawing::Point(506, 169);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(74, 13);
 			this->label3->TabIndex = 29;
 			this->label3->Text = L"id Superviseur";
-			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(455, 111);
+			this->label4->Location = System::Drawing::Point(455, 136);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(136, 13);
 			this->label4->TabIndex = 30;
@@ -303,7 +311,6 @@ namespace ProjectPOO {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(437, 194);
 			this->dataGridView1->TabIndex = 31;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick_1);
 			// 
 			// button5
 			// 
@@ -313,6 +320,7 @@ namespace ProjectPOO {
 			this->button5->TabIndex = 35;
 			this->button5->Text = L"Delete";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// button6
 			// 
@@ -322,6 +330,7 @@ namespace ProjectPOO {
 			this->button6->TabIndex = 34;
 			this->button6->Text = L"Update";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
 			// 
 			// button7
 			// 
@@ -331,6 +340,7 @@ namespace ProjectPOO {
 			this->button7->TabIndex = 33;
 			this->button7->Text = L"Insert";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
 			// 
 			// button8
 			// 
@@ -352,13 +362,54 @@ namespace ProjectPOO {
 			this->label5->Size = System::Drawing::Size(91, 16);
 			this->label5->TabIndex = 36;
 			this->label5->Text = L"Superviseur";
-			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox1->Location = System::Drawing::Point(717, 110);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(171, 20);
+			this->textBox1->TabIndex = 37;
+			this->textBox1->Text = L"Adresse superviseur";
+			// 
+			// textBox2
+			// 
+			this->textBox2->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox2->Location = System::Drawing::Point(506, 110);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(173, 20);
+			this->textBox2->TabIndex = 38;
+			this->textBox2->Text = L"Adresse employe";
+			// 
+			// dateTimePicker2
+			// 
+			this->dateTimePicker2->CalendarTitleForeColor = System::Drawing::SystemColors::ControlText;
+			this->dateTimePicker2->CalendarTrailingForeColor = System::Drawing::SystemColors::ButtonShadow;
+			this->dateTimePicker2->CustomFormat = L"yyyy-MM-dd";
+			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateTimePicker2->Location = System::Drawing::Point(842, 136);
+			this->dateTimePicker2->Name = L"dateTimePicker2";
+			this->dateTimePicker2->Size = System::Drawing::Size(82, 20);
+			this->dateTimePicker2->TabIndex = 39;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(685, 136);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(151, 13);
+			this->label6->TabIndex = 40;
+			this->label6->Text = L"date de naissance superviseur";
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1448, 690);
+			this->ClientSize = System::Drawing::Size(1395, 387);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->dateTimePicker2);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button6);
@@ -395,62 +446,42 @@ namespace ProjectPOO {
 
 		}
 
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_enr->Refresh();
 		this->oDs = this->oSvc->selectionnerToutesLesEmploye("Employe");
 		this->dgv_enr->DataSource = this->oDs;
 		this->dgv_enr->DataMember = "Employe";
 	}
-	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
+	{
+		this->oSvc = gcnew NS_Comp_Svc::CLservices();
+		this->oSvc2 = gcnew NS_Comp_Svc::CLservices();
 	}
 
-	private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->ajouterUnEmploye(this->textBox5->Text, this->textBox4->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->numericUpDown2->Text);
 	}
-
-
-	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc2->ajouterUnSuperviseur(this->textBox8->Text, this->textBox7->Text, this->dateTimePicker2->Text, this->textBox1->Text);
 	}
-	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->supprimerUnSuperviseur(this->numericUpDown2->Text);
 	}
-	
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->supprimerUnEmploye(this->numericUpDown1->Text);
 	}
-
-
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
-{
-	this->oSvc = gcnew NS_Comp_Svc::CLservices();
-	this->oSvc2 = gcnew NS_Comp_Svc::CLservices();
-}
-
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc->ajouterUnePersonne(this->textBox4->Text, this->textBox5->Text, this->numericUpDown1->Text, this->dateTimePicker1->Text);
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
-
-private: System::Void button8_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView1->Refresh();
-	this->oDs2 = this->oSvc2->selectionnerToutesLesSuperviseurs("Superviseurs");
-	this->dataGridView1->DataSource = this->oDs2;
-	this->dataGridView1->DataMember = "Superviseurs";
-}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->updateUnEmploye(this->numericUpDown1->Text, this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->numericUpDown1->Text);
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->updateUnSuperviseur(this->numericUpDown2->Text, this->textBox7->Text, this->textBox8->Text, this->dateTimePicker2->Text, this->textBox1->Text);
+	}
+	private: System::Void button8_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->oDs2 = this->oSvc2->selectionnerToutesLesSuperviseurs("Superviseurs");
+		this->dataGridView1->DataSource = this->oDs2;
+		this->dataGridView1->DataMember = "Superviseurs";
+	}
 };
 
 }

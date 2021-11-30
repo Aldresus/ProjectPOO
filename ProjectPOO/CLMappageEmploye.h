@@ -9,7 +9,8 @@ namespace NS_Comp_Mappage
 		System::String^ nom_employe;
 		System::String^ prenom_employe;
 		System::String^ date_naissance_employe;
-		System::String^ id_superviseur;
+		System::String^ id_superviseur_employe;
+		System::String^ adresse_employe;
 
 	public:
 		System::String^ Select(void);
@@ -20,12 +21,14 @@ namespace NS_Comp_Mappage
 		void setnom_employe(System::String^);
 		void setprenom_employe(System::String^);
 		void setdate_naissance_employe(System::String^);
-		void setid_superviseur(System::String^);
+		void setid_superviseur_employe(System::String^);
+		void setadresse_employe(System::String^);
 
 		System::String^ getid_employe(void);
 		System::String^ getnom_employe(void);
 		System::String^ getprenom_employe(void);
 		System::String^ getdate_naissance_employe(void);
-		System::String^ getid_superviseur(void);
+		System::String^ getid_superviseur_employe(void);
+		System::String^ getadresse_employe(void);
 	};
 }

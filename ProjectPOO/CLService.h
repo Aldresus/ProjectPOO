@@ -14,8 +14,16 @@ namespace NS_Comp_Svc
 	public:
 		CLservices(void);
 		System::Data::DataSet^ selectionnerToutesLesEmploye(System::String^);
+		void ajouterUnEmploye(System::String^, System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnEmploye(System::String^);
+		void updateUnEmploye(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+
 		System::Data::DataSet^ selectionnerToutesLesSuperviseurs(System::String^);
-		void ajouterUnePersonne(System::String^, System::String^, System::String^, System::String^);
+		void ajouterUnSuperviseur(System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnSuperviseur(System::String^);
+		void updateUnSuperviseur(System::String^, System::String^, System::String^, System::String^, System::String^);
+
+
 	};
 }
 
