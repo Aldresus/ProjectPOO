@@ -1,4 +1,5 @@
 #pragma once
+#include "CLService.h"
 
 namespace ProjectPOO {
 
@@ -34,7 +35,7 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dgv_enr;
 
 
 
@@ -54,7 +55,15 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 
+	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: System::Data::DataSet^ oDs;
+	protected:
 
+	private:
+		/// <summary>
+		/// Variable nécessaire au concepteur.
+		/// </summary>
+		System::ComponentModel::Container^ components;
 
 
 
@@ -66,7 +75,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -75,7 +84,7 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dgv_enr = (gcnew System::Windows::Forms::DataGridView());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
@@ -87,18 +96,18 @@ namespace ProjectPOO {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// dataGridView1
+			// dgv_enr
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(12, 12);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(527, 194);
-			this->dataGridView1->TabIndex = 0;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
+			this->dgv_enr->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_enr->Location = System::Drawing::Point(12, 12);
+			this->dgv_enr->Name = L"dgv_enr";
+			this->dgv_enr->Size = System::Drawing::Size(527, 194);
+			this->dgv_enr->TabIndex = 0;
+			this->dgv_enr->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
 			// textBox4
 			// 
@@ -178,6 +187,7 @@ namespace ProjectPOO {
 			this->button2->TabIndex = 16;
 			this->button2->Text = L"Insert";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -226,17 +236,17 @@ namespace ProjectPOO {
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dgv_enr);
 			this->Name = L"MyForm";
 			this->Text = L"GestionEmploye.exe";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
-#pragma endregion
+
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -244,23 +254,36 @@ namespace ProjectPOO {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dgv_enr->Refresh();
+		this->oDs = this->oSvc->selectionnerToutesLesPersonnes("Employe");
+		this->dgv_enr->DataSource = this->oDs;
+		this->dgv_enr->DataMember = "Employe";
 	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
+
 	private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
+
+
 	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
+	
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
+{
+	this->oSvc = gcnew NS_Comp_Svc::CLservices();
+}
+
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc->ajouterUnePersonne(this->textBox4->Text, this->textBox5->Text);
+}
 };
+
 }
 

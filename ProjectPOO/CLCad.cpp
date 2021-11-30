@@ -1,9 +1,12 @@
+
 #include "CLCad.h"
 
-CLCad::CLCad() {
-	this->sCnx = "Data Source = DESKTOP-7SAG648\\MSSQL_MANU;Initial Catalog = DB_P6;User ID = CNX_P6; Password=azerty";
 
-	this->sSql = "Rien";
+NS_Comp_Data::CLCad::CLCad(void)
+{
+	this->sCnx = "Data Source = projetpoo.database.windows.net;Initial Catalog = ProjetPoo;User ID = hugo; Password=Aldresus123";
+
+	this->sSql = "Rien";	
 
 	this->oCnx = gcnew System::Data::SqlClient::SqlConnection(this->sCnx);
 	this->oCmd = gcnew System::Data::SqlClient::SqlCommand(this->sSql, this->oCnx);
@@ -11,11 +14,9 @@ CLCad::CLCad() {
 	this->oDs = gcnew System::Data::DataSet();
 
 	this->oCmd->CommandType = System::Data::CommandType::Text;
-
-
 }
-
-System::Data::DataSet^ CLCad::getRows(System::String^ sSql, System::String^ sDataTableName) {
+System::Data::DataSet^ NS_Comp_Data::CLCad::getRows(System::String^ sSql, System::String^ sDataTableName)
+{
 	this->oDs->Clear();
 	this->sSql = sSql;
 	this->oCmd->CommandText = this->sSql;
@@ -24,8 +25,8 @@ System::Data::DataSet^ CLCad::getRows(System::String^ sSql, System::String^ sDat
 
 	return this->oDs;
 }
-
-void CLCad::actionRows(System::String^) {
+void NS_Comp_Data::CLCad::actionRows(System::String^ sSql)
+{
 	this->sSql = sSql;
 	this->oCmd->CommandText = this->sSql;
 	this->oDA->SelectCommand = this->oCmd;
