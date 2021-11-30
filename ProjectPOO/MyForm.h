@@ -1,4 +1,5 @@
 #pragma once
+#include "CLService.h"
 
 namespace ProjectPOO {
 
@@ -55,6 +56,9 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button4;
 
 
+	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: System::Data::DataSet^ oDs;
+
 
 
 
@@ -98,7 +102,7 @@ namespace ProjectPOO {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(12, 12);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(527, 194);
+			this->dataGridView1->Size = System::Drawing::Size(537, 194);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
@@ -107,7 +111,7 @@ namespace ProjectPOO {
 			this->textBox2->ForeColor = System::Drawing::Color::DarkGray;
 			this->textBox2->Location = System::Drawing::Point(595, 186);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(370, 20);
+			this->textBox2->Size = System::Drawing::Size(201, 20);
 			this->textBox2->TabIndex = 5;
 			this->textBox2->Text = L"Seuil réapro";
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
@@ -117,7 +121,7 @@ namespace ProjectPOO {
 			this->textBox3->ForeColor = System::Drawing::Color::DarkGray;
 			this->textBox3->Location = System::Drawing::Point(595, 161);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(370, 20);
+			this->textBox3->Size = System::Drawing::Size(201, 20);
 			this->textBox3->TabIndex = 6;
 			this->textBox3->Text = L"Quantité stocks";
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
@@ -127,7 +131,7 @@ namespace ProjectPOO {
 			this->textBox4->ForeColor = System::Drawing::Color::DarkGray;
 			this->textBox4->Location = System::Drawing::Point(595, 31);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(370, 20);
+			this->textBox4->Size = System::Drawing::Size(201, 20);
 			this->textBox4->TabIndex = 10;
 			this->textBox4->Text = L"Reference";
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
@@ -137,7 +141,7 @@ namespace ProjectPOO {
 			this->textBox5->ForeColor = System::Drawing::Color::DarkGray;
 			this->textBox5->Location = System::Drawing::Point(595, 57);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(370, 20);
+			this->textBox5->Size = System::Drawing::Size(201, 20);
 			this->textBox5->TabIndex = 9;
 			this->textBox5->Text = L"Nom article";
 			this->textBox5->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox5_TextChanged);
@@ -147,7 +151,7 @@ namespace ProjectPOO {
 			this->textBox6->ForeColor = System::Drawing::Color::DarkGray;
 			this->textBox6->Location = System::Drawing::Point(595, 83);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(370, 20);
+			this->textBox6->Size = System::Drawing::Size(201, 20);
 			this->textBox6->TabIndex = 8;
 			this->textBox6->Text = L"Prix produit HT";
 			// 
@@ -167,7 +171,7 @@ namespace ProjectPOO {
 			this->textBox7->ForeColor = System::Drawing::Color::DarkGray;
 			this->textBox7->Location = System::Drawing::Point(595, 109);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(370, 20);
+			this->textBox7->Size = System::Drawing::Size(201, 20);
 			this->textBox7->TabIndex = 14;
 			this->textBox7->Text = L"Couleur";
 			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
@@ -177,7 +181,7 @@ namespace ProjectPOO {
 			this->textBox8->ForeColor = System::Drawing::Color::DarkGray;
 			this->textBox8->Location = System::Drawing::Point(595, 135);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(370, 20);
+			this->textBox8->Size = System::Drawing::Size(201, 20);
 			this->textBox8->TabIndex = 13;
 			this->textBox8->Text = L"Nature";
 			// 
@@ -223,7 +227,7 @@ namespace ProjectPOO {
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(652, 251);
+			this->pictureBox1->Location = System::Drawing::Point(405, 250);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(313, 110);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -235,7 +239,7 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(992, 385);
+			this->ClientSize = System::Drawing::Size(806, 385);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -267,6 +271,10 @@ namespace ProjectPOO {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->oDs = this->oSvc->selectionnerToutesLesArticles("Superviseurs");
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "Superviseurs";
 	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -281,6 +289,7 @@ namespace ProjectPOO {
 	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew NS_Comp_Svc::CLservices();
 	}
 	};
 }
