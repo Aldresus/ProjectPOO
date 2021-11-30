@@ -45,6 +45,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
 
 	private:
@@ -66,6 +67,8 @@ namespace ProjectPOO {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -153,17 +156,30 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(83, 18);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(116, 49);
+			this->label1->Size = System::Drawing::Size(0, 49);
 			this->label1->TabIndex = 5;
-			this->label1->Text = L"Menu";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Left | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
+				L"at.png";
+			this->pictureBox1->Location = System::Drawing::Point(56, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(164, 55);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 23;
+			this->pictureBox1->TabStop = false;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 195);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
@@ -173,6 +189,7 @@ namespace ProjectPOO {
 			this->Name = L"MyForm";
 			this->Text = L"Logiciel de gestion.exe";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -182,31 +199,26 @@ namespace ProjectPOO {
 		MyForm1^ stats = gcnew MyForm1;
 		stats->ShowDialog();
 		stats->Close();
-		delete stats;
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm2^ commandes = gcnew MyForm2;
 		commandes->ShowDialog();
 		commandes->Close();
-		delete commandes;
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm3^ stocks = gcnew MyForm3;
 		stocks->ShowDialog();
 		stocks->Close();
-		delete stocks;
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm4^ client = gcnew MyForm4;
 		client->ShowDialog();
 		client->Close();
-		delete client;
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm5^ employe = gcnew MyForm5;
 		employe->ShowDialog();
 		employe->Close();
-		delete employe;
 	}
 
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
