@@ -69,7 +69,6 @@ CREATE TABLE Article(
 	prix_produit_HT     FLOAT  NOT NULL ,
 	couleur             VARCHAR (50) NOT NULL ,
 	nature              VARCHAR (50) NOT NULL ,
-	id_stocks           INT  NOT NULL  ,
 	CONSTRAINT Article_PK PRIMARY KEY (reference_article)
 );
 
@@ -145,15 +144,6 @@ ALTER TABLE Commande
 ALTER TABLE Commande 
 	ADD CONSTRAINT Commande_Facture0_AK 
 	UNIQUE (ID_facture);
-
-ALTER TABLE Article
-	ADD CONSTRAINT Article_Stocks0_FK
-	FOREIGN KEY (id_stocks)
-	REFERENCES Stocks(id_stocks);
-
-ALTER TABLE Article 
-	ADD CONSTRAINT Article_Stocks0_AK 
-	UNIQUE (id_stocks);
 
 ALTER TABLE Facture
 	ADD CONSTRAINT Facture_Commande0_FK
