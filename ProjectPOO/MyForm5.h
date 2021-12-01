@@ -456,6 +456,14 @@ namespace ProjectPOO {
 	{
 		this->oSvc = gcnew NS_Comp_Svc::CLservices();
 		this->oSvc2 = gcnew NS_Comp_Svc::CLservices();
+		this->dgv_enr->Refresh();
+		this->oDs = this->oSvc->selectionnerToutesLesEmploye("Employe");
+		this->dgv_enr->DataSource = this->oDs;
+		this->dgv_enr->DataMember = "Employe";
+		this->dataGridView1->Refresh();
+		this->oDs2 = this->oSvc2->selectionnerToutesLesSuperviseurs("Superviseurs");
+		this->dataGridView1->DataSource = this->oDs2;
+		this->dataGridView1->DataMember = "Superviseurs";
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {

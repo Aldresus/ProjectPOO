@@ -2,6 +2,7 @@
 #include "CLMappageEmploye.h"
 #include "CLCad.h"
 #include "CLMappageSuperviseurs.h"
+#include "CLMappageStocks.h"
 
 namespace NS_Comp_Svc
 {
@@ -11,6 +12,8 @@ namespace NS_Comp_Svc
 		NS_Comp_Data::CLCad^ oCad;
 		NS_Comp_Mappage::CLMappageEmploye^ oMappEmploye;
 		NS_Comp_Mappage::CLMappageSuperviseurs^ oMappSuperviseurs;
+		NS_Comp_Mappage::CLMappageStocks^ oMappageStocks;
+
 	public:
 		CLservices(void);
 		System::Data::DataSet^ selectionnerToutesLesEmploye(System::String^);
@@ -23,6 +26,10 @@ namespace NS_Comp_Svc
 		void supprimerUnSuperviseur(System::String^);
 		void updateUnSuperviseur(System::String^, System::String^, System::String^, System::String^, System::String^);
 
+		System::Data::DataSet^ selectionnerToutLesArticles(System::String^);
+		void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnArticle(System::String^);
+		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
 	};
 }
