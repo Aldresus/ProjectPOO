@@ -13,6 +13,9 @@
     <ClCompile Include="CLMappageCommandes.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="CLMappageFactures.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h" />
@@ -23,6 +26,9 @@
       <Filter>.h</Filter>
     </ClInclude>
     <ClInclude Include="CLMappageCommandes.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMappageFactures.h">
       <Filter>.h</Filter>
     </ClInclude>
   </ItemGroup>

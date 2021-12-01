@@ -2,7 +2,7 @@
 #include "CLMappageCommandes.h"
 #include "CLCad.h"
 //#include "CLMappageArticles.h"
-//#include "CLMappageFactures"
+#include "CLMappageFactures.h"
 
 namespace NS_Comp_Svc
 {
@@ -11,7 +11,7 @@ namespace NS_Comp_Svc
 	private:
 		NS_Comp_Data::CLCad^ oCad;
 		NS_Comp_Mappage::CLMappageCommandes^ oMappCommandes;
-		//NS_Comp_Mappage::CLMappageSuperviseurs^ oMappSuperviseurs;
+		NS_Comp_Mappage::CLMappageFactures^ oMappFactures;
 	public:
 		CLservices(void);
 		System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
@@ -19,11 +19,11 @@ namespace NS_Comp_Svc
 		void supprimerUnCommandes(System::String^);
 		void updateUnCommandes(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
-		/*System::Data::DataSet^ selectionnerToutesLesSuperviseurs(System::String^);
-		void ajouterUnSuperviseur(System::String^, System::String^, System::String^, System::String^);
-		void supprimerUnSuperviseur(System::String^);
-		void updateUnSuperviseur(System::String^, System::String^, System::String^, System::String^, System::String^);
-		*/
+		System::Data::DataSet^ selectionnerToutesLesFactures(System::String^);
+		void ajouterUnFacture(System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnFacture(System::String^);
+		void updateUnFacture(System::String^, System::String^, System::String^, System::String^, System::String^);
+		
 
 	};
 }

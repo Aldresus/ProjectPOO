@@ -122,12 +122,14 @@
   <ItemGroup>
     <ClCompile Include="CLCad.cpp" />
     <ClCompile Include="CLMappageCommandes.cpp" />
+    <ClCompile Include="CLMappageFactures.cpp" />
     <ClCompile Include="CLService.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLCad.h" />
     <ClInclude Include="CLMappageCommandes.h" />
+    <ClInclude Include="CLMappageFactures.h" />
     <ClInclude Include="CLService.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
