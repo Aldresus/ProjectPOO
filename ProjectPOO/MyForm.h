@@ -37,18 +37,10 @@ namespace ProjectPOO {
 		}
 	private: System::Windows::Forms::DataGridView^ dgv_enr;
 
-
-
-
-
-
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox5;
 
 	private: System::Windows::Forms::Label^ label2;
-
-
-
 
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
@@ -57,8 +49,6 @@ namespace ProjectPOO {
 
 	private: NS_Comp_Svc::CLservices^ oSvc;
 	private: System::Data::DataSet^ oDs;
-	private: NS_Comp_Svc::CLservices^ oSvc2;
-	private: System::Data::DataSet^ oDs2;
 	protected:
 
 	private:
@@ -77,15 +67,6 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
 	private: System::Windows::Forms::Label^ label3;
-
-
-
-
-
-
-
-
-
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
@@ -131,7 +112,6 @@ namespace ProjectPOO {
 			this->dgv_enr->Name = L"dgv_enr";
 			this->dgv_enr->Size = System::Drawing::Size(437, 194);
 			this->dgv_enr->TabIndex = 0;
-			this->dgv_enr->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
 			// textBox4
 			// 
@@ -141,7 +121,6 @@ namespace ProjectPOO {
 			this->textBox4->Size = System::Drawing::Size(173, 20);
 			this->textBox4->TabIndex = 10;
 			this->textBox4->Text = L"Nom Client";
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
 			// textBox5
 			// 
@@ -151,7 +130,6 @@ namespace ProjectPOO {
 			this->textBox5->Size = System::Drawing::Size(173, 20);
 			this->textBox5->TabIndex = 9;
 			this->textBox5->Text = L"Prenom Client";
-			this->textBox5->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox5_TextChanged);
 			// 
 			// label2
 			// 
@@ -163,7 +141,6 @@ namespace ProjectPOO {
 			this->label2->Size = System::Drawing::Size(47, 16);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Client";
-			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
 			// button1
 			// 
@@ -193,6 +170,7 @@ namespace ProjectPOO {
 			this->button3->TabIndex = 17;
 			this->button3->Text = L"Update";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button4
 			// 
@@ -202,6 +180,7 @@ namespace ProjectPOO {
 			this->button4->TabIndex = 18;
 			this->button4->Text = L"Delete";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// pictureBox1
 			// 
@@ -214,7 +193,6 @@ namespace ProjectPOO {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 22;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
 			// 
 			// dateTimePicker1
 			// 
@@ -226,7 +204,6 @@ namespace ProjectPOO {
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(82, 20);
 			this->dateTimePicker1->TabIndex = 25;
-			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &MyForm::dateTimePicker1_ValueChanged);
 			// 
 			// numericUpDown1
 			// 
@@ -243,7 +220,6 @@ namespace ProjectPOO {
 			this->label1->Size = System::Drawing::Size(44, 13);
 			this->label1->TabIndex = 28;
 			this->label1->Text = L"id Client";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
 			// 
 			// label4
 			// 
@@ -315,52 +291,30 @@ namespace ProjectPOO {
 
 		}
 
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_enr->Refresh();
 		this->oDs = this->oSvc->selectionnerToutesLesClient("Client");
 		this->dgv_enr->DataSource = this->oDs;
 		this->dgv_enr->DataMember = "Client";
 	}
-	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-
-	private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-
-
-	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
 
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSvc = gcnew NS_Comp_Svc::CLservices();
-		this->oSvc2 = gcnew NS_Comp_Svc::CLservices();
+		this->dgv_enr->Refresh();
+		this->oDs = this->oSvc->selectionnerToutesLesClient("Client");
+		this->dgv_enr->DataSource = this->oDs;
+		this->dgv_enr->DataMember = "Client";
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->ajouterUnePersonne(this->textBox4->Text, this->textBox5->Text, this->numericUpDown1->Text, this->dateTimePicker1->Text,this->dateTimePicker2->Text,this->textBox8->Text);
+		this->oSvc->ajouterUnePersonne(this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text,this->dateTimePicker2->Text,this->textBox8->Text);
 	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->updateUnePersonne(this->numericUpDown1->Text,this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text,this->dateTimePicker2->Text,this->textBox8->Text);
 	}
-	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->supprimerUnePersonne(this->numericUpDown1->Text);
 	}
 	
 	};

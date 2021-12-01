@@ -2,19 +2,19 @@
 
 System::String^ NS_Comp_Mappage::CLMappageClient::Select(void)
 {
-    return "SELECT [id_client], [nom_client], [prenom_client],[date_naissance_client],[date_inscription],[adresse_client] FROM Client ";
+    return "SELECT [id_client], [nom_client], [prenom_client], [date_naissance_client], [date_inscription], [adresse_client] FROM Client ";
 }
 System::String^ NS_Comp_Mappage::CLMappageClient::Insert(void)
 {
-    return "INSERT INTO Client (nom_client, prenom_client,date_naissance_client,date_inscription,adresse_client) VALUES('" + this->nom_client + "','" + this->prenom_client + "',CAST(' " + this->date_naissance_client + "'AS date),CAST(' " + this->date_inscription + "'AS date),'" + this->adresse_client + "'); ";
+    return "INSERT INTO Client (nom_client, prenom_client, date_naissance_client, date_inscription, adresse_client) VALUES('" + this->nom_client + "', '" + this->prenom_client + "', CAST(' " + this->date_naissance_client + "'AS date), CAST(' " + this->date_inscription + "'AS date),'" + this->adresse_client + "'); ";
 }
 System::String^ NS_Comp_Mappage::CLMappageClient::Delete(void)
 {
-    return "DELETE FROM Client WHERE (nom_client='" + this->nom_client + "'AND prenom_client='" + this->prenom_client + "' AND id_client=" + this->id_client + ");";
+    return "DELETE FROM Client WHERE (id_client=" + this->id_client + ");";
 }
 System::String^ NS_Comp_Mappage::CLMappageClient::Update(void)
 {
-    return "UPDATE Client SET nom_client='" + this->nom_client + "', prenom_client='" + this->prenom_client + "', date_naissance_client='" + this->date_naissance_client + "' WHERE id_client=" + id_client + ";";
+    return "UPDATE Client SET nom_client='" + this->nom_client + "', prenom_client='" + this->prenom_client + "', date_naissance_client='" + this->date_naissance_client + "', date_inscription='" + this->date_inscription + "' WHERE id_client=" + this->id_client + ";";
 }
 void NS_Comp_Mappage::CLMappageClient::setid_client(System::String^ id_client)
 {
