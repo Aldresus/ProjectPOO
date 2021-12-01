@@ -19,10 +19,11 @@ namespace NS_Comp_Svc
 		void supprimerUnCommandes(System::String^);
 		void updateUnCommandes(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
-		System::Data::DataSet^ selectionnerToutesLesSuperviseurs(System::String^);
+		/*System::Data::DataSet^ selectionnerToutesLesSuperviseurs(System::String^);
 		void ajouterUnSuperviseur(System::String^, System::String^, System::String^, System::String^);
 		void supprimerUnSuperviseur(System::String^);
 		void updateUnSuperviseur(System::String^, System::String^, System::String^, System::String^, System::String^);
-
+		*/
 
 	};
+}

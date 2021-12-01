@@ -15,13 +15,13 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesCommandes(S
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesSuperviseurs(System::String^ dataTableName)
+/*System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesSuperviseurs(System::String^ dataTableName)
 {
 	System::String^ sql;
 
 	//sql = this->oMappSuperviseurs->Select();
 	return this->oCad->getRows(sql, dataTableName);
-}
+}*/
 
 void NS_Comp_Svc::CLservices::ajouterUnCommandes(System::String^ TVA, System::String^ total_HT, System::String^ date_commande, System::String^ adresse_livraison, System::String^ date_livraison)
 {
