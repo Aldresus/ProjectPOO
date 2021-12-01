@@ -2,7 +2,7 @@
 
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Select(void)
 {
-	return "SELECT [reference_commande] as 'reference', [total_HT] as 'total hors taxe', [TVA] as 'TVA', [date_commande] as 'date de commande', [date_livraison] as 'date de livraison', [adresse_livraison] as 'adresse' FROM Commande";
+	return "SELECT [reference_commande] as 'reference', [total_HT] as 'total hors taxe', [TVA] as 'TVA', [date_commande] as 'date de commande', [date_livraison] as 'date de livraison', [adresse_livraison] as 'adresse', [id_facture] as 'facture' FROM Commande";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Insert(void)
 {
@@ -10,7 +10,7 @@ System::String^ NS_Comp_Mappage::CLMappageCommandes::Insert(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Delete(void)
 {
-	return "DELETE FROM Commande WHERE [ID_employe]=" + this->reference_commande + ";";
+	return "DELETE FROM Commande WHERE [reference_Commande]=" + this->reference_commande + ";";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Update(void)
 {
@@ -40,6 +40,11 @@ void NS_Comp_Mappage::CLMappageCommandes::setadresse_livraison(System::String^ a
 {
 	this->adresse_livraison = adresse_livraison;
 }
+void NS_Comp_Mappage::CLMappageCommandes::setid_facture(System::String^ id_facture)
+{
+	this->id_facture = id_facture;
+}
+
 
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getreference_commande(void) { return this->reference_commande; }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::gettotal_HT(void) { return this->total_HT; }
@@ -47,3 +52,4 @@ System::String^ NS_Comp_Mappage::CLMappageCommandes::getTVA(void) { return this-
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getdate_commande(void) { return this->date_commande; }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getdate_livraison(void) { return this->date_livraison; }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getadresse_livraison(void) { return this->adresse_livraison; }
+System::String^ NS_Comp_Mappage::CLMappageCommandes::getid_facture(void) { return this->id_facture; }

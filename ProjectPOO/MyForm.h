@@ -166,7 +166,7 @@ namespace ProjectPOO {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(173, 20);
 			this->textBox4->TabIndex = 10;
-			this->textBox4->Text = L"total_HT";
+			this->textBox4->Text = L"1.5";
 			// 
 			// textBox5
 			// 
@@ -175,7 +175,7 @@ namespace ProjectPOO {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(173, 20);
 			this->textBox5->TabIndex = 9;
-			this->textBox5->Text = L"TVA";
+			this->textBox5->Text = L"5";
 			// 
 			// label2
 			// 

@@ -11,6 +11,7 @@ namespace NS_Comp_Mappage
 		System::String^ date_commande;
 		System::String^ date_livraison;
 		System::String^ adresse_livraison;
+		System::String^ id_facture;
 
 	public:
 		System::String^ Select(void);
@@ -23,6 +24,7 @@ namespace NS_Comp_Mappage
 		void setdate_commande(System::String^);
 		void setdate_livraison(System::String^);
 		void setadresse_livraison(System::String^);
+		void setid_facture(System::String^);
 
 		System::String^ getreference_commande(void);
 		System::String^ gettotal_HT(void);
@@ -30,5 +32,6 @@ namespace NS_Comp_Mappage
 		System::String^ getdate_commande(void);
 		System::String^ getdate_livraison(void);
 		System::String^ getadresse_livraison(void);
+		System::String^ getid_facture(void);
 	};
 }
