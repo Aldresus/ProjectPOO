@@ -15,9 +15,10 @@ namespace NS_Comp_Mappage
 
 	public:
 		System::String^ Select(void);
-		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);
+		System::String^ Insert(void);
+
 
 		void setreference_article(System::String^);
 		void setprix_produit_HT(System::String^);

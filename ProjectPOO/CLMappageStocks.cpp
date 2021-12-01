@@ -4,10 +4,12 @@ System::String ^ NS_Comp_Mappage::CLMappageStocks::Select(void)
 {
 	return "SELECT Article.reference_article, Article.nom_article, Article.prix_produit_HT, Article.couleur, Article.nature, Stocks.quantite_stock, Stocks.seuil_reapro FROM Article INNER JOIN Stocks ON Article.reference_article = Stocks.reference_article;";
 }
+
 System::String^ NS_Comp_Mappage::CLMappageStocks::Insert(void)
 {
-	return "INSERT INTO Article(nom_article, prix_produit_HT, couleur, nature) VALUES ('" + this->nom_article + "', " + this->prix_produit_HT + ", '" + this->couleur + "','" + nature + "'); INSERT INTO Stocks(reference_article,quantite_stock, seuil_reapro) VALUES (SCOPE_IDENTITY()," + this->quantite_stock + "," + this->seuil_reapro + ");";
+	return "INSERT INTO Article(nom_article, prix_produit_HT, couleur, nature) VALUES ('" + this->nom_article + "', " + this->prix_produit_HT + ", '" + this->couleur + "','" + this->nature + "'); INSERT INTO Stocks(reference_article,quantite_stock, seuil_reapro) VALUES (SCOPE_IDENTITY()," + this->quantite_stock + "," + this->seuil_reapro + ");";
 }
+
 System::String^ NS_Comp_Mappage::CLMappageStocks::Delete(void)
 {
 	return "DELETE FROM Stocks WHERE reference_article=" + this->reference_article + ";DELETE FROM Article WHERE reference_article=" + this->reference_article + ";";
