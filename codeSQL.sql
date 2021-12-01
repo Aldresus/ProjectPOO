@@ -17,6 +17,21 @@ CREATE TABLE Superviseurs(
 
 
 /*------------------------------------------------------------
+-- Table: Article
+------------------------------------------------------------*/
+CREATE TABLE Article(
+	reference_article    INT IDENTITY (1,1) NOT NULL ,
+	nom_article          VARCHAR (255) NOT NULL ,
+	prix_produit_HT      FLOAT  NOT NULL ,
+	couleur              VARCHAR (50) NOT NULL ,
+	nature               VARCHAR (50) NOT NULL ,
+	remise_commerciale   FLOAT  NOT NULL ,
+	marge_commerciale    FLOAT  NOT NULL  ,
+	CONSTRAINT Article_PK PRIMARY KEY (reference_article)
+);
+
+
+/*------------------------------------------------------------
 -- Table: Client
 ------------------------------------------------------------*/
 CREATE TABLE Client(
@@ -45,6 +60,19 @@ CREATE TABLE Employe(
 
 
 /*------------------------------------------------------------
+-- Table: Stocks
+------------------------------------------------------------*/
+CREATE TABLE Stocks(
+	id_stocks           INT IDENTITY (1,1) NOT NULL ,
+	quantite_stock      INT  NOT NULL ,
+	seuil_reapro        INT  NOT NULL ,
+	demarque_inconnue   FLOAT  NOT NULL ,
+	reference_article   INT  NOT NULL  ,
+	CONSTRAINT Stocks_PK PRIMARY KEY (id_stocks)
+);
+
+
+/*------------------------------------------------------------
 -- Table: Commande
 ------------------------------------------------------------*/
 CREATE TABLE Commande(
@@ -57,19 +85,6 @@ CREATE TABLE Commande(
 	id_client            INT  NOT NULL ,
 	ID_facture           INT  NOT NULL  ,
 	CONSTRAINT Commande_PK PRIMARY KEY (reference_commande)
-);
-
-
-/*------------------------------------------------------------
--- Table: Article
-------------------------------------------------------------*/
-CREATE TABLE Article(
-	reference_article   INT IDENTITY NOT NULL ,
-	nom_article         VARCHAR (255) NOT NULL ,
-	prix_produit_HT     FLOAT  NOT NULL ,
-	couleur             VARCHAR (50) NOT NULL ,
-	nature              VARCHAR (50) NOT NULL ,
-	CONSTRAINT Article_PK PRIMARY KEY (reference_article)
 );
 
 
@@ -102,18 +117,6 @@ CREATE TABLE Paiement(
 
 
 /*------------------------------------------------------------
--- Table: Stocks
-------------------------------------------------------------*/
-CREATE TABLE Stocks(
-	id_stocks           INT IDENTITY (1,1) NOT NULL ,
-	quantite_stock      INT  NOT NULL ,
-	seuil_reapro        INT  NOT NULL ,
-	reference_article   INT  NOT NULL  ,
-	CONSTRAINT Stocks_PK PRIMARY KEY (id_stocks)
-);
-
-
-/*------------------------------------------------------------
 -- Table: Composer
 ------------------------------------------------------------*/
 CREATE TABLE Composer(
@@ -130,6 +133,15 @@ ALTER TABLE Employe
 	ADD CONSTRAINT Employe_Superviseurs0_FK
 	FOREIGN KEY (id_superviseur)
 	REFERENCES Superviseurs(id_superviseur);
+
+ALTER TABLE Stocks
+	ADD CONSTRAINT Stocks_Article0_FK
+	FOREIGN KEY (reference_article)
+	REFERENCES Article(reference_article);
+
+ALTER TABLE Stocks 
+	ADD CONSTRAINT Stocks_Article0_AK 
+	UNIQUE (reference_article);
 
 ALTER TABLE Commande
 	ADD CONSTRAINT Commande_Client0_FK
@@ -158,15 +170,6 @@ ALTER TABLE Paiement
 	ADD CONSTRAINT Paiement_Facture0_FK
 	FOREIGN KEY (ID_facture)
 	REFERENCES Facture(ID_facture);
-
-ALTER TABLE Stocks
-	ADD CONSTRAINT Stocks_Article0_FK
-	FOREIGN KEY (reference_article)
-	REFERENCES Article(reference_article);
-
-ALTER TABLE Stocks 
-	ADD CONSTRAINT Stocks_Article0_AK 
-	UNIQUE (reference_article);
 
 ALTER TABLE Composer
 	ADD CONSTRAINT Composer_Article0_FK
