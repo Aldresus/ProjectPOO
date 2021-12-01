@@ -37,15 +37,15 @@ void NS_Comp_Mappage::CLMappageFactures::setadresse_facturation(System::String^ 
 {
 	this->adresse_facturation = adresse_facturation;
 }
-void NS_Comp_Mappage::CLMappageFactures::setid_facture(System::String^ id_facture)
-{
-	this->id_facture = id_facture;
-}
 
+void NS_Comp_Mappage::CLMappageFactures::setreference_commande(System::String^ reference_commande)
+{
+	this->reference_commande = reference_commande;
+}
 
 System::String^ NS_Comp_Mappage::CLMappageFactures::getid_facture(void) { return this->id_facture; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getnom_societe(void) { return this->nom_societe; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getnum_service(void) { return this->num_service; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getdate_facturation(void) { return this->date_facturation; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getadresse_facturation(void) { return this->adresse_facturation; }
-System::String^ NS_Comp_Mappage::CLMappageFactures::getid_facture(void) { return this->id_facture; }
+System::String^ NS_Comp_Mappage::CLMappageFactures::getreference_commande(void) { return this->reference_commande; }
