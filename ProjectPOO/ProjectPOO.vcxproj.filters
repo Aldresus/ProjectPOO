@@ -10,7 +10,9 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="CLMappageCommandes.cpp" />
+    <ClCompile Include="CLMappageCommandes.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h" />
@@ -25,11 +27,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include=".h">
-      <UniqueIdentifier>{d58ee11e-9227-4b5d-9e11-8f4b50116df8}</UniqueIdentifier>
-    </Filter>
     <Filter Include=".cpp">
       <UniqueIdentifier>{5bd4df05-f49a-46f8-aab2-64201a9c3e9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include=".h">
+      <UniqueIdentifier>{d58ee11e-9227-4b5d-9e11-8f4b50116df8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

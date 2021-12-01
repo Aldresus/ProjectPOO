@@ -6,7 +6,7 @@ System::String^ NS_Comp_Mappage::CLMappageCommandes::Select(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Insert(void)
 {
-	return "INSERT INTO Commande (total_HT, TVA,date_commande, adresse_livraison, date_livraison) VALUES('" + this->total_HT + "','" + this->TVA + "',CAST(' " + this->date_commande + "'AS date)," + this->adresse_livraison + ",'CAST(' " + this->date_livraison + "'AS date2)');";
+	return "INSERT INTO Commande (total_HT, TVA,date_commande, adresse_livraison, date_livraison) VALUES('" + this->total_HT + "','" + this->TVA + "',CAST(' " + this->date_commande + "'AS date),'" + this->adresse_livraison + "',CAST(' " + this->date_livraison + "'AS date));";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Delete(void)
 {
