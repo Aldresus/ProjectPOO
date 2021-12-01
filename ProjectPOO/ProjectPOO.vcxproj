@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CLCad.cpp" />
+    <ClCompile Include="CLMappageClient.cpp" />
     <ClCompile Include="CLMappageEmploye.cpp" />
     <ClCompile Include="CLMappageStocks.cpp" />
     <ClCompile Include="CLMappageSuperviseurs.cpp" />
@@ -134,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLCad.h" />
+    <ClInclude Include="CLMappageClient.h" />
     <ClInclude Include="CLMappageEmploye.h" />
     <ClInclude Include="CLMappageStocks.h" />
     <ClInclude Include="CLMappageSuperviseurs.h" />

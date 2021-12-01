@@ -3,6 +3,7 @@
 #include "CLCad.h"
 #include "CLMappageSuperviseurs.h"
 #include "CLMappageStocks.h"
+#include "CLMappageClient.h"
 
 namespace NS_Comp_Svc
 {
@@ -13,6 +14,7 @@ namespace NS_Comp_Svc
 		NS_Comp_Mappage::CLMappageEmploye^ oMappEmploye;
 		NS_Comp_Mappage::CLMappageSuperviseurs^ oMappSuperviseurs;
 		NS_Comp_Mappage::CLMappageStocks^ oMappageStocks;
+		NS_Comp_Mappage::CLMappageClient^ oMappClient;
 
 	public:
 		CLservices(void);
@@ -31,6 +33,10 @@ namespace NS_Comp_Svc
 		void supprimerUnArticle(System::String^);
 		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
+		System::Data::DataSet^ selectionnerToutesLesClient(System::String^);
+		void ajouterUnePersonne(System::String^, System::String^, System::String^, System::String^, System::String^);
+		void updateUnePersonne(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnePersonne(System::String^);
 	};
 }
 
