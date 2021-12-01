@@ -123,6 +123,7 @@
     <ClCompile Include="CLCad.cpp" />
     <ClCompile Include="CLMappageClient.cpp" />
     <ClCompile Include="CLMappageEmploye.cpp" />
+    <ClCompile Include="CLMappageStats.cpp" />
     <ClCompile Include="CLMappageStocks.cpp" />
     <ClCompile Include="CLMappageSuperviseurs.cpp" />
     <ClCompile Include="CLService.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="CLCad.h" />
     <ClInclude Include="CLMappageClient.h" />
     <ClInclude Include="CLMappageEmploye.h" />
+    <ClInclude Include="CLMappageStats.h" />
     <ClInclude Include="CLMappageStocks.h" />
     <ClInclude Include="CLMappageSuperviseurs.h" />
     <ClInclude Include="CLService.h" />
