@@ -1,4 +1,5 @@
 #pragma once
+#include "CLService.h"
 
 namespace ProjectPOO {
 
@@ -48,6 +49,9 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
 
+	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: System::Data::DataSet^ oDs;
+
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -90,12 +94,13 @@ namespace ProjectPOO {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Panier moyen après remise";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(519, 240);
+			this->pictureBox1->Location = System::Drawing::Point(519, 238);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(241, 83);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -120,6 +125,7 @@ namespace ProjectPOO {
 			this->button3->TabIndex = 7;
 			this->button3->Text = L"Produits sous le seuil de réapprovisionnement";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button4
 			// 
@@ -181,8 +187,23 @@ namespace ProjectPOO {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew NS_Comp_Svc::CLservices();
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->oDs = this->oSvc->produitSousSeuilReapro("Client");
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "Client";
+
+	}	
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->oDs = this->oSvc->panierMoyenApresRemise("Article");
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "Article";
+
 	}
 };
 }
