@@ -541,27 +541,27 @@ namespace ProjectPOO {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc->ajouterUnCommandes(this->textBox5->Text, this->textBox4->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->dateTimePicker3->Text);
 	}
-	/*private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc2->ajouterUnArticle(this->textBox8->Text, this->textBox7->Text, this->dateTimePicker2->Text, this->textBox1->Text);
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc2->ajouterUnFactures(this->textBox8->Text, this->textBox7->Text, this->dateTimePicker2->Text, this->textBox1->Text);
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->supprimerUnArticles(this->numericUpDown2->Text);
-	}*/
+		this->oSvc->supprimerUnFactures(this->numericUpDown2->Text);
+	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc->supprimerUnCommandes(this->numericUpDown1->Text);
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc->updateUnCommandes(this->numericUpDown1->Text, this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->numericUpDown1->Text);
 	}
-	/*private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->updateUnArticles(this->numericUpDown2->Text, this->textBox7->Text, this->textBox8->Text, this->dateTimePicker2->Text, this->textBox1->Text);
-	}*
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc->updateUnFactures(this->numericUpDown2->Text, this->textBox7->Text, this->textBox8->Text, this->dateTimePicker2->Text, this->textBox1->Text);
+	}
 	private: System::Void button8_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView1->Refresh();
-		this->oDs2 = this->oSvc2->selectionnerToutesLesArticless("Articless");
+		this->oDs2 = this->oSvc2->selectionnerToutesLesFacturess("Facture");
 		this->dataGridView1->DataSource = this->oDs2;
-		this->dataGridView1->DataMember = "Articless";
-	}*/
+		this->dataGridView1->DataMember = "Facture";
+	}
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {

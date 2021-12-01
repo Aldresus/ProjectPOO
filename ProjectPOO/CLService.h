@@ -20,9 +20,9 @@ namespace NS_Comp_Svc
 		void updateUnCommandes(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
 		System::Data::DataSet^ selectionnerToutesLesFactures(System::String^);
-		void ajouterUnFacture(System::String^, System::String^, System::String^, System::String^);
-		void supprimerUnFacture(System::String^);
-		void updateUnFacture(System::String^, System::String^, System::String^, System::String^, System::String^);
+		void ajouterUnFactures(System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnFactures(System::String^);
+		void updateUnFactures(System::String^, System::String^, System::String^, System::String^, System::String^);
 		
 
 	};

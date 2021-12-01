@@ -62,7 +62,7 @@ void NS_Comp_Svc::CLservices::supprimerUnCommandes(System::String^ reference_com
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::ajouterUnFacture(System::String^ nom_societe, System::String^ num_service, System::String^ date_facturation, System::String^ adresse_facturation)
+void NS_Comp_Svc::CLservices::ajouterUnFactures(System::String^ nom_societe, System::String^ num_service, System::String^ date_facturation, System::String^ adresse_facturation)
 {
 	System::String^ sql;
 
@@ -76,7 +76,7 @@ void NS_Comp_Svc::CLservices::ajouterUnFacture(System::String^ nom_societe, Syst
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::supprimerUnFacture(System::String^ id_facture)
+void NS_Comp_Svc::CLservices::supprimerUnFactures(System::String^ id_facture)
 {
 	System::String^ sql;
 
@@ -86,7 +86,7 @@ void NS_Comp_Svc::CLservices::supprimerUnFacture(System::String^ id_facture)
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::updateUnFacture(System::String^ id_facture, System::String^ num_service, System::String^ nom_societe, System::String^ date_facturation, System::String^ adresse_facturation)
+void NS_Comp_Svc::CLservices::updateUnFactures(System::String^ id_facture, System::String^ num_service, System::String^ nom_societe, System::String^ date_facturation, System::String^ adresse_facturation)
 {
 	System::String^ sql;
 
