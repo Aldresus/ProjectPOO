@@ -12,6 +12,9 @@ namespace NS_Comp_Mappage
 		System::String^ nature;
 		System::String^ quantite_stock;
 		System::String^ seuil_reapro;
+		System::String^ remise_commerciale;
+		System::String^ marge_commerciale;
+
 
 	public:
 		System::String^ Select(void);
@@ -27,6 +30,8 @@ namespace NS_Comp_Mappage
 		void setquantite_stock(System::String^);
 		void setseuil_reapro(System::String^);
 		void setnom_article(System::String^);
+		void setremise_commerciale(System::String^);
+		void setmarge_commerciale(System::String^);
 
 		System::String^ getreference_article(void);
 		System::String^ getprix_produit_HT(void);
@@ -35,5 +40,7 @@ namespace NS_Comp_Mappage
 		System::String^ getquantite_stock(void);
 		System::String^ getseuil_reapro(void);
 		System::String^ getnom_article(void);
+		System::String^ getremise_commerciale(void);
+		System::String^ getmarge_commerciale(void);
 	};
 }
