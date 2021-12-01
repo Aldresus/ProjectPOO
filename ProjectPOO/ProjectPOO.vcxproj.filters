@@ -1,39 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="CLAdresse.cpp" />
-    <ClCompile Include="CLArticle.cpp" />
-    <ClCompile Include="CLCad.cpp" />
-    <ClCompile Include="CLClient.cpp" />
-    <ClCompile Include="CLCommande.cpp" />
-    <ClCompile Include="CLComposer.cpp" />
-    <ClCompile Include="CLCouleurs.cpp" />
-    <ClCompile Include="CLEmploye.cpp" />
-    <ClCompile Include="CLFacture.cpp" />
-    <ClCompile Include="CLMappage.cpp" />
-    <ClCompile Include="CLNature.cpp" />
-    <ClCompile Include="CLPaiement.cpp" />
-    <ClCompile Include="CLService.cpp" />
-    <ClCompile Include="CLStocks.cpp" />
-    <ClCompile Include="CLSuperviseurs.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="CLCad.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CLService.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMappageCommandes.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLAdresse.h" />
-    <ClInclude Include="CLArticle.h" />
-    <ClInclude Include="CLCad.h" />
-    <ClInclude Include="CLClient.h" />
-    <ClInclude Include="CLCommande.h" />
-    <ClInclude Include="CLComposer.h" />
-    <ClInclude Include="CLCouleurs.h" />
-    <ClInclude Include="CLEmploye.h" />
-    <ClInclude Include="CLFacture.h" />
-    <ClInclude Include="CLMappage.h" />
-    <ClInclude Include="CLNature.h" />
-    <ClInclude Include="CLPaiement.h" />
-    <ClInclude Include="CLService.h" />
-    <ClInclude Include="CLStocks.h" />
-    <ClInclude Include="CLSuperviseurs.h" />
     <ClInclude Include="MyForm.h" />
+    <ClInclude Include="CLCad.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="CLService.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMappageCommandes.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include=".h">
+      <UniqueIdentifier>{d58ee11e-9227-4b5d-9e11-8f4b50116df8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include=".cpp">
+      <UniqueIdentifier>{5bd4df05-f49a-46f8-aab2-64201a9c3e9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
