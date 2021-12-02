@@ -49,7 +49,7 @@ CREATE TABLE Client(
 -- Table: Commande
 ------------------------------------------------------------*/
 CREATE TABLE Commande(
-	id_commande   VARCHAR (255) NOT NULL ,
+	id_commande   INT IDENTITY NOT NULL ,
 	reference_commande   VARCHAR (255) NOT NULL ,
 	total_HT             FLOAT  NOT NULL ,
 	TVA                  INT  NOT NULL ,
@@ -73,7 +73,7 @@ CREATE TABLE Facture(
 	num_service           VARCHAR (50) NOT NULL ,
 	nom_societe           VARCHAR (50) NOT NULL ,
 	adresse_facturation   VARCHAR (50) NOT NULL ,
-	reference_commande    VARCHAR (255) NOT NULL  ,
+	id_commande    INT NOT NULL  ,
 	CONSTRAINT Facture_PK PRIMARY KEY (ID_facture)
 
 	,CONSTRAINT Facture_Commande_FK FOREIGN KEY (id_commande) REFERENCES Commande(id_commande)
@@ -132,7 +132,7 @@ CREATE TABLE Stocks(
 ------------------------------------------------------------*/
 CREATE TABLE Composer(
 	reference_article    INT  NOT NULL ,
-	reference_commande   VARCHAR (255) NOT NULL ,
+	id_commande INT NOT NULL ,
 	quantite             INT  NOT NULL  ,
 	CONSTRAINT Composer_PK PRIMARY KEY (reference_article,id_commande)
 
