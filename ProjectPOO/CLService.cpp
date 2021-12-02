@@ -137,11 +137,11 @@ void NS_Comp_Svc::CLservices::supprimerUnArticle(System::String^ reference_artic
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ reference_article, System::String^ prix_produit_HT, System::String^ nom_article, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale)
+void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ prix_produit_HT, System::String^ nom_article, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale)
 {
 System::String^ sql;
 
-this->oMappArticle->setreference_article(reference_article);
+
 this->oMappArticle->setprix_produit_HT(prix_produit_HT);
 this->oMappArticle->setnom_article(nom_article);
 this->oMappArticle->setcouleur(couleur);
