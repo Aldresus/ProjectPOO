@@ -7,7 +7,7 @@ System::String^ NS_Comp_Mappage::CLMappageArticle::Select(void)
 
 System::String^ NS_Comp_Mappage::CLMappageArticle::Insert(void)
 {
-	return "insert into Article(nom_article, prix_produit_HT, couleur, nature, remise_commerciale, marge_commerciale) values('" + this->nom_article + "','" + this->prix_produit_HT + "','" + this->couleur + "','" + this->nature + "','" + this->remise_commerciale + "','" + this->marge_commerciale; "')";
+	return "insert into Article(nom_article, prix_produit_HT, couleur, nature, remise_commerciale, marge_commerciale) values('" + this->nom_article + "','" + this->prix_produit_HT + "','" + this->couleur + "','" + this->nature + "','" + this->remise_commerciale + "','" + this->marge_commerciale + "')";
 }
 
 

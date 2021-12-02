@@ -115,6 +115,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Label^ label16;
+private: System::Windows::Forms::Label^ label17;
 
 
 
@@ -184,6 +185,7 @@ namespace ProjectPOO {
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -296,9 +298,9 @@ namespace ProjectPOO {
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(12, 638);
+			this->pictureBox1->Location = System::Drawing::Point(850, 227);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1464, 110);
+			this->pictureBox1->Size = System::Drawing::Size(366, 123);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 22;
 			this->pictureBox1->TabStop = false;
@@ -662,11 +664,23 @@ namespace ProjectPOO {
 			this->label16->TabIndex = 74;
 			this->label16->Text = L"nom produit";
 			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label17->Location = System::Drawing::Point(524, 246);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(52, 16);
+			this->label17->TabIndex = 75;
+			this->label17->Text = L"Article";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1488, 773);
+			this->ClientSize = System::Drawing::Size(1488, 611);
+			this->Controls->Add(this->label17);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->label14);
