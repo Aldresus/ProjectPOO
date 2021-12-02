@@ -328,9 +328,9 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(835, 479);
+			this->pictureBox1->Location = System::Drawing::Point(1829, 357);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(373, 123);
+			this->pictureBox1->Size = System::Drawing::Size(194, 67);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 22;
 			this->pictureBox1->TabStop = false;
@@ -885,7 +885,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(2035, 648);
+			this->ClientSize = System::Drawing::Size(2035, 436);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->numericUpDown11);
 			this->Controls->Add(this->label13);
