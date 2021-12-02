@@ -61,6 +61,8 @@ namespace ProjectPOO {
 	private: System::Data::DataSet^ oDs2;
 	private: NS_Comp_Svc::CLservices^ oSvc3;
 	private: System::Data::DataSet^ oDs3;
+	private: NS_Comp_Svc::CLservices^ oSvc4;
+	private: System::Data::DataSet^ oDs4;
 	protected:
 
 	private:
@@ -393,7 +395,6 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->label5->Size = System::Drawing::Size(60, 16);
 			this->label5->TabIndex = 36;
 			this->label5->Text = L"Facture";
-			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
 			// 
 			// dateTimePicker2
 			// 
@@ -575,7 +576,6 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->textBox10->Size = System::Drawing::Size(78, 20);
 			this->textBox10->TabIndex = 62;
 			this->textBox10->Text = L"Nature";
-			this->textBox10->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox10_TextChanged);
 			// 
 			// label8
 			// 
@@ -622,7 +622,6 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->label11->Size = System::Drawing::Size(42, 13);
 			this->label11->TabIndex = 69;
 			this->label11->Text = L"Remise";
-			this->label11->Click += gcnew System::EventHandler(this, &MyForm::label11_Click);
 			// 
 			// label12
 			// 
@@ -699,7 +698,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(78, 20);
 			this->textBox6->TabIndex = 80;
-			this->textBox6->Text = L"reference commande";
+			this->textBox6->Text = L"ref commande";
 			// 
 			// textBox11
 			// 
@@ -718,7 +717,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->label19->Size = System::Drawing::Size(89, 13);
 			this->label19->TabIndex = 85;
 			this->label19->Text = L"date de paiement";
-			this->label19->Click += gcnew System::EventHandler(this, &MyForm::label19_Click);
+			
 			// 
 			// dateTimePicker4
 			// 
@@ -812,6 +811,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->button16->TabIndex = 92;
 			this->button16->Text = L"Load";
 			this->button16->UseVisualStyleBackColor = true;
+			this->button16->Click += gcnew System::EventHandler(this, &MyForm::button16_Click);
 			// 
 			// label21
 			// 
@@ -1005,7 +1005,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 		this->oSvc->updateUnCommandes(this->numericUpDown1->Text, this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->numericUpDown1->Text);
 	}
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->updateUnArticle(this->textBox3->Text, this->numericUpDown5->Text->Replace(",", "."), this->textBox9->Text, this->textBox10->Text, this->numericUpDown8->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."), this->numericUpDown6->Text);
+		this->oSvc->updateUnArticle(this->numericUpDown5->Text->Replace(",", "."), this->textBox3->Text, this->textBox9->Text, this->textBox10->Text, this->numericUpDown8->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."), this->numericUpDown6->Text);
 	}
 	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView1->Refresh();
@@ -1031,13 +1031,11 @@ private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
 		this->dataGridView2->DataSource = this->oDs3;
 		this->dataGridView2->DataMember = "Article";
 	}
-private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label19_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView1->Refresh();
+		this->oDs3 = this->oSvc3->selectionnerToutesLesFactures("Facture");
+		this->dataGridView1->DataSource = this->oDs3;
+		this->dataGridView1->DataMember = "Facture";
 }
 };
 }

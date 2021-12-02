@@ -124,6 +124,7 @@
     <ClCompile Include="CLMappageArticle.cpp" />
     <ClCompile Include="CLMappageCommandes.cpp" />
     <ClCompile Include="CLMappageFactures.cpp" />
+    <ClCompile Include="CLMappagePaiement.cpp" />
     <ClCompile Include="CLService.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
@@ -132,6 +133,7 @@
     <ClInclude Include="CLMappageArticle.h" />
     <ClInclude Include="CLMappageCommandes.h" />
     <ClInclude Include="CLMappageFactures.h" />
+    <ClInclude Include="CLMappagePaiement.h" />
     <ClInclude Include="CLService.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>

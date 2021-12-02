@@ -6,6 +6,7 @@ NS_Comp_Svc::CLservices::CLservices(void)
 	this->oMappCommandes = gcnew NS_Comp_Mappage::CLMappageCommandes();
 	this->oMappFactures = gcnew NS_Comp_Mappage::CLMappageFactures();
 	this->oMappArticle = gcnew NS_Comp_Mappage::CLMappageArticle();
+	this->oMappPaiement = gcnew NS_Comp_Mappage::CLMappagePaiement();
 }
 
 System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesCommandes(System::String^ dataTableName)
@@ -153,4 +154,52 @@ this->oMappArticle->setreference_article(reference_article);
 sql = this->oMappArticle->Update();
 
 this->oCad->actionRows(sql);
+}
+
+
+
+System::Data::DataSet ^ NS_Comp_Svc::CLservices::selectionnerToutLesPaiement(System::String ^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oMappPaiement->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+void NS_Comp_Svc::CLservices::ajouterUnPaiement(System::String^ date_paiement, System::String^ moyen_paiement, System::String^ id_facture_paiement)
+{
+	System::String^ sql;
+
+
+	this->oMappPaiement->setdate_paiement(date_paiement);
+	this->oMappPaiement->setmoyen_paiement(moyen_paiement);
+	this->oMappPaiement->setid_facture_paiement(id_facture_paiement);
+
+	sql = this->oMappPaiement->Insert();
+
+	this->oCad->actionRows(sql);
+}
+
+void NS_Comp_Svc::CLservices::supprimerPaiement(System::String^ id_paiement)
+{
+	System::String^ sql;
+
+	this->oMappPaiement->setid_paiement(id_paiement);
+	sql = this->oMappPaiement->Delete();
+
+	this->oCad->actionRows(sql);
+}
+
+void NS_Comp_Svc::CLservices::updateUnPaiement(System::String^ date_paiement, System::String^ moyen_paiement, System::String^ id_paiement)
+{
+	System::String^ sql;
+
+
+	this->oMappPaiement->setdate_paiement(date_paiement);
+	this->oMappPaiement->setmoyen_paiement(moyen_paiement);
+	this->oMappPaiement->setid_paiement(id_paiement);
+
+	sql = this->oMappPaiement->Update();
+
+	this->oCad->actionRows(sql);
 }

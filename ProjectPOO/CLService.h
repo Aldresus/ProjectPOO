@@ -3,6 +3,7 @@
 #include "CLCad.h"
 #include "CLMappageArticle.h"
 #include "CLMappageFactures.h"
+#include "CLMappagePaiement.h"
 
 
 namespace NS_Comp_Svc
@@ -14,6 +15,8 @@ namespace NS_Comp_Svc
 		NS_Comp_Mappage::CLMappageCommandes^ oMappCommandes;
 		NS_Comp_Mappage::CLMappageFactures^ oMappFactures;
 		NS_Comp_Mappage::CLMappageArticle^ oMappArticle;
+		NS_Comp_Mappage::CLMappagePaiement^ oMappPaiement;
+
 
 	public:
 		CLservices(void);
@@ -31,6 +34,11 @@ namespace NS_Comp_Svc
 		void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void supprimerUnArticle(System::String^);
 		void updateUnArticle( System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+
+		System::Data::DataSet^ selectionnerToutLesPaiement(System::String^);
+		void ajouterUnPaiement(System::String^, System::String^, System::String^);
+		void supprimerPaiement(System::String^);
+		void updateUnPaiement( System::String^, System::String^, System::String^);
 		
 
 	};

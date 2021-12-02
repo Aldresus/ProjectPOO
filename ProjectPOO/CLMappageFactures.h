@@ -21,6 +21,7 @@ namespace NS_Comp_Mappage
 		System::String^ Insert(void);
 		System::String^ Delete(void);
 		System::String^ Update(void);
+
 		void setreference_commande(System::String^);
 		void setnum_service(System::String^);
 		void setnom_societe(System::String^);
