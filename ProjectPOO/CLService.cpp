@@ -18,7 +18,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesCommandes(S
 }
 
 
-void NS_Comp_Svc::CLservices::ajouterUnCommandes(System::String^ TVA, System::String^ total_HT, System::String^ date_commande, System::String^ adresse_livraison, System::String^ date_livraison)
+void NS_Comp_Svc::CLservices::ajouterUnCommandes(System::String^ TVA, System::String^ total_HT, System::String^ date_commande, System::String^ adresse_livraison, System::String^ date_livraison, System::String^ id_client)
 {
 	System::String^ sql;
 
@@ -27,6 +27,7 @@ void NS_Comp_Svc::CLservices::ajouterUnCommandes(System::String^ TVA, System::St
 	this->oMappCommandes->setadresse_livraison(adresse_livraison);
 	this->oMappCommandes->setdate_commande(date_commande);
 	this->oMappCommandes->setdate_livraison(date_livraison);
+	this->oMappCommandes->setid_client(id_client);
 	sql = this->oMappCommandes->Insert();
 
 	this->oCad->actionRows(sql);

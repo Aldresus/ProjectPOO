@@ -21,7 +21,7 @@ namespace NS_Comp_Svc
 	public:
 		CLservices(void);
 		System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);
-		void ajouterUnCommandes(System::String^, System::String^, System::String^, System::String^, System::String^);
+		void ajouterUnCommandes(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void supprimerUnCommandes(System::String^);
 		void updateUnCommandes(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 

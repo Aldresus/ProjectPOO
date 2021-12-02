@@ -6,7 +6,7 @@ System::String^ NS_Comp_Mappage::CLMappageCommandes::Select(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Insert(void)
 {
-	return "INSERT INTO Commande (total_HT, TVA,date_commande, adresse_livraison, date_livraison) VALUES('" + this->total_HT + "','" + this->TVA + "',CAST(' " + this->date_commande + "'AS date),'" + this->adresse_livraison + "',CAST(' " + this->date_livraison + "'AS date));";
+	return "INSERT INTO Commande (total_HT, TVA,date_commande, adresse_livraison, date_livraison, id_client) VALUES('" + this->total_HT + "','" + this->TVA + "',CAST(' " + this->date_commande + "'AS date),'" + this->adresse_livraison + "',CAST(' " + this->date_livraison + "'AS date), " + this->id_client + ");";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Delete(void)
 {
@@ -16,6 +16,13 @@ System::String^ NS_Comp_Mappage::CLMappageCommandes::Update(void)
 {
 	return "UPDATE Commande SET total_HT='" + this->total_HT + "', TVA='" + this->TVA + "', date_commande='" + this->date_commande + "', date_commande='" + this->date_commande + "', adresse_livraison='" + this->adresse_livraison + " WHERE reference_commande=" + this->reference_commande + ";";
 }
+
+
+// reference commande -> ppnnYYYYvvv1
+// p -> prenom / n->nom / YYYY->2021 / v->ville / 1->increment
+
+
+
 void NS_Comp_Mappage::CLMappageCommandes::setreference_commande(System::String^ reference_commande)
 {
 	this->reference_commande = reference_commande;
@@ -40,6 +47,10 @@ void NS_Comp_Mappage::CLMappageCommandes::setadresse_livraison(System::String^ a
 {
 	this->adresse_livraison = adresse_livraison;
 }
+void NS_Comp_Mappage::CLMappageCommandes::setid_client(System::String^ id_client)
+{
+	this->id_client = id_client;
+}
 
 
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getreference_commande(void) { return this->reference_commande; }
@@ -48,3 +59,4 @@ System::String^ NS_Comp_Mappage::CLMappageCommandes::getTVA(void) { return this-
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getdate_commande(void) { return this->date_commande; }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getdate_livraison(void) { return this->date_livraison; }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getadresse_livraison(void) { return this->adresse_livraison; }
+System::String^ NS_Comp_Mappage::CLMappageCommandes::getid_client(void) { return this->id_client; }
