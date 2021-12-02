@@ -2,7 +2,7 @@
 
 System::String^ NS_Comp_Mappage::CLMappageFactures::Select(void)
 {
-	return "SELECT [id_facture] as 'facture', [nom_societe] as 'nom societe', [num_service] as 'numero service', [date_facturation] as 'date de facturation', [adresse_facturation] as 'adresse', [reference_commande] as 'reference commande' FROM Facture";
+	return "select Facture.ID_facture, date_facturation, logo, num_service, nom_societe, adresse_facturation, reference_commande, id_payement, numero_paiement, date_paiement, moyen_paiement from Facture FULL OUTER JOIN Paiement ON Facture.ID_facture = Paiement.ID_facture";
 }
 System::String^ NS_Comp_Mappage::CLMappageFactures::Insert(void)
 {

@@ -100,6 +100,21 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::Label^ label16;
 
 
 
@@ -154,12 +169,30 @@ namespace ProjectPOO {
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dgv_enr
@@ -294,7 +327,7 @@ namespace ProjectPOO {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(52, 289);
+			this->label1->Location = System::Drawing::Point(245, 291);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(76, 13);
 			this->label1->TabIndex = 28;
@@ -303,7 +336,7 @@ namespace ProjectPOO {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(1, 369);
+			this->label4->Location = System::Drawing::Point(245, 369);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(98, 13);
 			this->label4->TabIndex = 30;
@@ -417,7 +450,7 @@ namespace ProjectPOO {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(1, 396);
+			this->label7->Location = System::Drawing::Point(245, 395);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(84, 13);
 			this->label7->TabIndex = 51;
@@ -478,6 +511,7 @@ namespace ProjectPOO {
 			this->button7->TabIndex = 56;
 			this->button7->Text = L"Insert";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
 			// 
 			// button8
 			// 
@@ -489,11 +523,165 @@ namespace ProjectPOO {
 			this->button8->UseVisualStyleBackColor = true;
 			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
 			// 
+			// textBox3
+			// 
+			this->textBox3->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox3->Location = System::Drawing::Point(527, 265);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(173, 20);
+			this->textBox3->TabIndex = 59;
+			this->textBox3->Text = L"1.5";
+			// 
+			// textBox9
+			// 
+			this->textBox9->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox9->Location = System::Drawing::Point(527, 317);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(173, 20);
+			this->textBox9->TabIndex = 61;
+			this->textBox9->Text = L"1.5";
+			// 
+			// textBox10
+			// 
+			this->textBox10->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox10->Location = System::Drawing::Point(527, 343);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(173, 20);
+			this->textBox10->TabIndex = 62;
+			this->textBox10->Text = L"1.5";
+			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Location = System::Drawing::Point(527, 370);
+			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown3->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown3->TabIndex = 63;
+			this->numericUpDown3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			// 
+			// numericUpDown4
+			// 
+			this->numericUpDown4->Location = System::Drawing::Point(527, 396);
+			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown4->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown4->Name = L"numericUpDown4";
+			this->numericUpDown4->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown4->TabIndex = 64;
+			this->numericUpDown4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(245, 314);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(69, 13);
+			this->label8->TabIndex = 65;
+			this->label8->Text = L"prix hors taxe";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(245, 343);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(28, 13);
+			this->label9->TabIndex = 66;
+			this->label9->Text = L"TVA";
+			// 
+			// numericUpDown5
+			// 
+			this->numericUpDown5->Location = System::Drawing::Point(527, 291);
+			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown5->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown5->Name = L"numericUpDown5";
+			this->numericUpDown5->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown5->TabIndex = 67;
+			this->numericUpDown5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(245, 418);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(85, 13);
+			this->label10->TabIndex = 68;
+			this->label10->Text = L"adresse livraison";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(706, 377);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(37, 13);
+			this->label11->TabIndex = 69;
+			this->label11->Text = L"remise";
+			this->label11->Click += gcnew System::EventHandler(this, &MyForm::label11_Click);
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(706, 403);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(36, 13);
+			this->label12->TabIndex = 70;
+			this->label12->Text = L"marge";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(714, 350);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(37, 13);
+			this->label13->TabIndex = 71;
+			this->label13->Text = L"nature";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(714, 324);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(42, 13);
+			this->label14->TabIndex = 72;
+			this->label14->Text = L"couleur";
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(714, 298);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(69, 13);
+			this->label15->TabIndex = 73;
+			this->label15->Text = L"prix hors taxe";
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(714, 272);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(62, 13);
+			this->label16->TabIndex = 74;
+			this->label16->Text = L"nom produit";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1488, 773);
+			this->Controls->Add(this->label16);
+			this->Controls->Add(this->label15);
+			this->Controls->Add(this->label14);
+			this->Controls->Add(this->label13);
+			this->Controls->Add(this->label12);
+			this->Controls->Add(this->label11);
+			this->Controls->Add(this->label10);
+			this->Controls->Add(this->numericUpDown5);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->numericUpDown4);
+			this->Controls->Add(this->numericUpDown3);
+			this->Controls->Add(this->textBox10);
+			this->Controls->Add(this->textBox9);
+			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button7);
@@ -537,6 +725,9 @@ namespace ProjectPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -559,7 +750,7 @@ namespace ProjectPOO {
 		this->oSvc->ajouterUnCommandes(this->textBox5->Text, this->textBox4->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->dateTimePicker3->Text);
 	}
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc2->ajouterUnFactures(this->textBox8->Text, this->textBox7->Text, this->dateTimePicker2->Text, this->textBox1->Text);
+		this->oSvc2->ajouterUnArticle(this->textBox3->Text, this->numericUpDown5->Text, this->textBox9->Text, this->textBox10->Text, this->numericUpDown3->Text, this->numericUpDown4->Text);
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc->supprimerUnFactures(this->numericUpDown2->Text);
@@ -591,5 +782,7 @@ private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
 		this->dataGridView2->DataSource = this->oDs3;
 		this->dataGridView2->DataMember = "Article";
 	}
+private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

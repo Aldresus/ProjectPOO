@@ -2,17 +2,18 @@
 
 System::String^ NS_Comp_Mappage::CLMappageArticle::Select(void)
 {
-	return "SELECT Article.reference_article, Article.nom_article, Article.prix_produit_HT, Article.couleur, Article.nature, Article.marge_commerciale, Article.remise_commerciale FROM Article ";
+	return "select * from Article";
 }
 
 System::String^ NS_Comp_Mappage::CLMappageArticle::Insert(void)
 {
-	return "INSERT INTO Article(nom_article, prix_produit_HT, couleur, nature, remise_commerciale, marge_commerciale) VALUES ('" + this->nom_article + "', " + this->prix_produit_HT + ", '" + this->couleur + "', '" + this->nature + "', " + this->remise_commerciale + ", " + this->marge_commerciale + "); INSERT INTO Article(reference_article,quantite_stock, seuil_reapro) VALUES (SCOPE_IDENTITY());";
+	return "insert into Article(nom_article, prix_produit_HT, couleur, nature, remise_commerciale, marge_commerciale) values('" + this->nom_article + "','" + this->prix_produit_HT + "','" + this->couleur + "','" + this->nature + "','" + this->remise_commerciale + "','" + this->marge_commerciale; "')";
 }
+
 
 System::String^ NS_Comp_Mappage::CLMappageArticle::Delete(void)
 {
-	return "DELETE FROM Article WHERE reference_article=" + this->reference_article + ";DELETE FROM Article WHERE reference_article=" + this->reference_article + ";";
+	return "delete from Article where reference_article = **; ";
 }
 System::String^ NS_Comp_Mappage::CLMappageArticle::Update(void)
 {
