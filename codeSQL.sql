@@ -49,6 +49,7 @@ CREATE TABLE Client(
 -- Table: Commande
 ------------------------------------------------------------*/
 CREATE TABLE Commande(
+	id_commande   VARCHAR (255) NOT NULL ,
 	reference_commande   VARCHAR (255) NOT NULL ,
 	total_HT             FLOAT  NOT NULL ,
 	TVA                  INT  NOT NULL ,
@@ -56,7 +57,7 @@ CREATE TABLE Commande(
 	date_livraison       DATETIME NOT NULL ,
 	adresse_livraison    VARCHAR (50) NOT NULL ,
 	id_client            INT  NOT NULL  ,
-	CONSTRAINT Commande_PK PRIMARY KEY (reference_commande)
+	CONSTRAINT Commande_PK PRIMARY KEY (id_commande)
 
 	,CONSTRAINT Commande_Client_FK FOREIGN KEY (id_client) REFERENCES Client(id_client)
 );
