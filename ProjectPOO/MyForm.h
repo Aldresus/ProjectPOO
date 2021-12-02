@@ -75,10 +75,10 @@ namespace ProjectPOO {
 
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button8;
+
+
+
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox1;
 
@@ -130,10 +130,6 @@ namespace ProjectPOO {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
@@ -312,34 +308,6 @@ namespace ProjectPOO {
 			this->dataGridView1->Size = System::Drawing::Size(437, 194);
 			this->dataGridView1->TabIndex = 31;
 			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(0, 0);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 23);
-			this->button5->TabIndex = 46;
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(0, 0);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 23);
-			this->button6->TabIndex = 47;
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(0, 0);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(75, 23);
-			this->button7->TabIndex = 48;
-			// 
-			// button8
-			// 
-			this->button8->Location = System::Drawing::Point(0, 0);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(75, 23);
-			this->button8->TabIndex = 49;
-			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
@@ -423,6 +391,8 @@ namespace ProjectPOO {
 			this->button12->TabIndex = 42;
 			this->button12->Text = L"Load";
 			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
+			// 
 			// 
 			// dateTimePicker3
 			// 
@@ -492,10 +462,6 @@ namespace ProjectPOO {
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button7);
-			this->Controls->Add(this->button8);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label1);
@@ -556,9 +522,9 @@ namespace ProjectPOO {
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc->updateUnFactures(this->numericUpDown2->Text, this->textBox7->Text, this->textBox8->Text, this->dateTimePicker2->Text, this->textBox1->Text);
 	}
-	private: System::Void button8_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView1->Refresh();
-		this->oDs2 = this->oSvc2->selectionnerToutesLesFacturess("Facture");
+		this->oDs2 = this->oSvc2->selectionnerToutesLesFactures("Facture");
 		this->dataGridView1->DataSource = this->oDs2;
 		this->dataGridView1->DataMember = "Facture";
 	}
