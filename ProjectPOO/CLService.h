@@ -3,7 +3,7 @@
 #include "CLCad.h"
 #include "CLMappageArticle.h"
 #include "CLMappageFactures.h"
-#include "CLMappagePaiement.h"
+
 
 namespace NS_Comp_Svc
 {
@@ -26,6 +26,11 @@ namespace NS_Comp_Svc
 		void ajouterUnFactures(System::String^, System::String^, System::String^, System::String^);
 		void supprimerUnFactures(System::String^);
 		void updateUnFactures(System::String^, System::String^, System::String^, System::String^, System::String^);
+
+		System::Data::DataSet^ selectionnerToutesLesArticle(System::String^);
+		void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void supprimerUnArticle(System::String^);
+		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^;
 		
 
 	};

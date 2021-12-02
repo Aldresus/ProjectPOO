@@ -15,13 +15,6 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesCommandes(S
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesFactures(System::String^ dataTableName)
-{
-	System::String^ sql;
-
-	sql = this->oMappFactures->Select();
-	return this->oCad->getRows(sql, dataTableName);
-}
 
 void NS_Comp_Svc::CLservices::ajouterUnCommandes(System::String^ TVA, System::String^ total_HT, System::String^ date_commande, System::String^ adresse_livraison, System::String^ date_livraison)
 {
@@ -62,6 +55,14 @@ void NS_Comp_Svc::CLservices::supprimerUnCommandes(System::String^ reference_com
 	this->oCad->actionRows(sql);
 }
 
+System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesFactures(System::String^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oMappFactures->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
 void NS_Comp_Svc::CLservices::ajouterUnFactures(System::String^ nom_societe, System::String^ num_service, System::String^ date_facturation, System::String^ adresse_facturation)
 {
 	System::String^ sql;
@@ -98,4 +99,55 @@ void NS_Comp_Svc::CLservices::updateUnFactures(System::String^ id_facture, Syste
 	sql = this->oMappFactures->Update();
 
 	this->oCad->actionRows(sql);
+}
+
+
+System::Data::DataSet ^ NS_Comp_Svc::CLservices::selectionnerToutesLesArticle(System::String ^ dataTableName)
+{
+	System::String^ sql;
+
+	sql = this->oMappArticle->Select();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+void NS_Comp_Svc::CLservices::ajouterUnArticle(System::String^ nom_article, System::String^ prix_produit_HT, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale)
+{
+	System::String^ sql;
+
+
+	this->oMappArticle->setnom_article(nom_article);
+	this->oMappArticle->setcouleur(couleur);
+	this->oMappArticle->setnature(nature);
+	this->oMappArticle->setprix_produit_HT(prix_produit_HT);
+	this->oMappArticle->setremise_commerciale(remise_commerciale);
+	this->oMappArticle->setmarge_commerciale(marge_commerciale);
+	sql = this->oMappArticle->Insert();
+
+	this->oCad->actionRows(sql);
+}
+
+void NS_Comp_Svc::CLservices::supprimerUnArticle(System::String^ reference_article)
+{
+	System::String^ sql;
+
+	this->oMappArticle->setreference_article(reference_article);
+	sql = this->oMappArticle->Delete();
+
+	this->oCad->actionRows(sql);
+}
+
+void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ reference_article, System::String^ prix_produit_HT, System::String^ nom_article, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale))
+{
+System::String^ sql;
+
+this->oMappArticle->setreference_article(reference_article);
+this->oMappArticle->setprix_produit_HT(prix_produit_HT);
+this->oMappArticle->setnom_article(nom_article);
+this->oMappArticle->setcouleur(couleur);
+this->oMappArticle->setnature(nature);
+this->oMappArticle->setremise_commerciale(remise_commerciale);
+this->oMappArticle->setmarge_commerciale(marge_commerciale);
+sql = this->oMappArticle->Update();
+
+this->oCad->actionRows(sql);
 }
