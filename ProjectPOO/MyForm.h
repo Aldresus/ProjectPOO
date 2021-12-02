@@ -103,8 +103,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::TextBox^ textBox10;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
@@ -118,6 +118,8 @@ namespace ProjectPOO {
 private: System::Windows::Forms::Label^ label17;
 private: System::Windows::Forms::NumericUpDown^ numericUpDown6;
 private: System::Windows::Forms::Label^ label18;
+private: System::Windows::Forms::NumericUpDown^ numericUpDown7;
+private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 
 
 
@@ -175,8 +177,6 @@ private: System::Windows::Forms::Label^ label18;
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
@@ -190,16 +190,18 @@ private: System::Windows::Forms::Label^ label18;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown6 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown7 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown8 = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown8))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dgv_enr
@@ -559,26 +561,6 @@ private: System::Windows::Forms::Label^ label18;
 			this->textBox10->TabIndex = 62;
 			this->textBox10->Text = L"1.5";
 			// 
-			// numericUpDown3
-			// 
-			this->numericUpDown3->Location = System::Drawing::Point(527, 412);
-			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
-			this->numericUpDown3->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(82, 20);
-			this->numericUpDown3->TabIndex = 63;
-			this->numericUpDown3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			// 
-			// numericUpDown4
-			// 
-			this->numericUpDown4->Location = System::Drawing::Point(527, 438);
-			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
-			this->numericUpDown4->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(82, 20);
-			this->numericUpDown4->TabIndex = 64;
-			this->numericUpDown4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -599,13 +581,13 @@ private: System::Windows::Forms::Label^ label18;
 			// 
 			// numericUpDown5
 			// 
+			this->numericUpDown5->DecimalPlaces = 2;
 			this->numericUpDown5->Location = System::Drawing::Point(527, 333);
+			this->numericUpDown5->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
-			this->numericUpDown5->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown5->Name = L"numericUpDown5";
 			this->numericUpDown5->Size = System::Drawing::Size(82, 20);
-			this->numericUpDown5->TabIndex = 67;
-			this->numericUpDown5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown5->TabIndex = 24;
 			// 
 			// label10
 			// 
@@ -701,11 +683,33 @@ private: System::Windows::Forms::Label^ label18;
 			this->label18->TabIndex = 77;
 			this->label18->Text = L"reference produit";
 			// 
+			// numericUpDown7
+			// 
+			this->numericUpDown7->DecimalPlaces = 2;
+			this->numericUpDown7->Location = System::Drawing::Point(527, 436);
+			this->numericUpDown7->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown7->Name = L"numericUpDown7";
+			this->numericUpDown7->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown7->TabIndex = 78;
+			// 
+			// numericUpDown8
+			// 
+			this->numericUpDown8->DecimalPlaces = 2;
+			this->numericUpDown8->Location = System::Drawing::Point(527, 411);
+			this->numericUpDown8->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown8->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown8->Name = L"numericUpDown8";
+			this->numericUpDown8->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown8->TabIndex = 79;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1488, 611);
+			this->Controls->Add(this->numericUpDown8);
+			this->Controls->Add(this->numericUpDown7);
 			this->Controls->Add(this->label18);
 			this->Controls->Add(this->numericUpDown6);
 			this->Controls->Add(this->label17);
@@ -719,8 +723,6 @@ private: System::Windows::Forms::Label^ label18;
 			this->Controls->Add(this->numericUpDown5);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->numericUpDown4);
-			this->Controls->Add(this->numericUpDown3);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->textBox3);
@@ -767,10 +769,10 @@ private: System::Windows::Forms::Label^ label18;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown8))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -793,7 +795,7 @@ private: System::Windows::Forms::Label^ label18;
 		this->oSvc->ajouterUnCommandes(this->textBox5->Text, this->textBox4->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->dateTimePicker3->Text);
 	}
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc2->ajouterUnArticle(this->textBox3->Text, this->numericUpDown5->Text, this->textBox9->Text, this->textBox10->Text, this->numericUpDown3->Text, this->numericUpDown4->Text);
+		this->oSvc2->ajouterUnArticle(this->textBox3->Text, this->numericUpDown5->Text->Replace(",", "."), this->textBox9->Text, this->textBox10->Text, this->numericUpDown8->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."));
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc->supprimerUnArticle(this->numericUpDown6->Text);
@@ -805,7 +807,7 @@ private: System::Windows::Forms::Label^ label18;
 		this->oSvc->updateUnCommandes(this->numericUpDown1->Text, this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->numericUpDown1->Text);
 	}
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->updateUnArticle(this->textBox3->Text, this->numericUpDown5->Text, this->textBox9->Text, this->textBox10->Text, this->numericUpDown3->Text, this->numericUpDown4->Text);
+		this->oSvc->updateUnArticle(this->textBox3->Text, this->numericUpDown5->Text->Replace(",", "."), this->textBox9->Text, this->textBox10->Text, this->numericUpDown8->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."));
 	}
 	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView1->Refresh();
