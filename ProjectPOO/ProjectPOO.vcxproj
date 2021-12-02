@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CLCad.cpp" />
+    <ClCompile Include="CLMappageArticle.cpp" />
     <ClCompile Include="CLMappageCommandes.cpp" />
     <ClCompile Include="CLMappageFactures.cpp" />
     <ClCompile Include="CLService.cpp" />
@@ -128,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLCad.h" />
+    <ClInclude Include="CLMappageArticle.h" />
     <ClInclude Include="CLMappageCommandes.h" />
     <ClInclude Include="CLMappageFactures.h" />
     <ClInclude Include="CLService.h" />

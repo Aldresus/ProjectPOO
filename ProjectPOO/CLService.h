@@ -1,8 +1,9 @@
 #pragma once
 #include "CLMappageCommandes.h"
 #include "CLCad.h"
-//#include "CLMappageArticles.h"
+#include "CLMappageArticle.h"
 #include "CLMappageFactures.h"
+#include "CLMappagePaiement.h"
 
 namespace NS_Comp_Svc
 {
@@ -12,6 +13,8 @@ namespace NS_Comp_Svc
 		NS_Comp_Data::CLCad^ oCad;
 		NS_Comp_Mappage::CLMappageCommandes^ oMappCommandes;
 		NS_Comp_Mappage::CLMappageFactures^ oMappFactures;
+		NS_Comp_Mappage::CLMappageArticle^ oMappArticle;
+
 	public:
 		CLservices(void);
 		System::Data::DataSet^ selectionnerToutesLesCommandes(System::String^);

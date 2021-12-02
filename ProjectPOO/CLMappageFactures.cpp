@@ -43,9 +43,32 @@ void NS_Comp_Mappage::CLMappageFactures::setreference_commande(System::String^ r
 	this->reference_commande = reference_commande;
 }
 
+void NS_Comp_Mappage::CLMappageFactures::setid_paiement(System::String^ id_paiement)
+{
+	this->id_paiement = id_paiement;
+}
+
+void NS_Comp_Mappage::CLMappageFactures::setdate_paiement(System::String^ date_paiement)
+{
+	this->date_paiement = date_paiement;
+}
+
+void NS_Comp_Mappage::CLMappageFactures::setmoyen_paiement(System::String^ moyen_paiement)
+{
+	this->moyen_paiement = moyen_paiement;
+}
+
+void NS_Comp_Mappage::CLMappageFactures::setnumero_paiement(System::String^ numero_paiement)
+{
+	this->numero_paiement = numero_paiement;
+}
 System::String^ NS_Comp_Mappage::CLMappageFactures::getid_facture(void) { return this->id_facture; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getnom_societe(void) { return this->nom_societe; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getnum_service(void) { return this->num_service; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getdate_facturation(void) { return this->date_facturation; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getadresse_facturation(void) { return this->adresse_facturation; }
 System::String^ NS_Comp_Mappage::CLMappageFactures::getreference_commande(void) { return this->reference_commande; }
+System::String^ NS_Comp_Mappage::CLMappageFactures::getid_paiement(void) { return this->id_paiement; }
+System::String^ NS_Comp_Mappage::CLMappageFactures::getdate_paiement(void) { return this->date_paiement; }
+System::String^ NS_Comp_Mappage::CLMappageFactures::getmoyen_paiement(void) { return this->moyen_paiement; }
+System::String^ NS_Comp_Mappage::CLMappageFactures::getnumero_paiement(void) { return this->numero_paiement; }
