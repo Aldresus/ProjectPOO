@@ -59,6 +59,8 @@ namespace ProjectPOO {
 	private: System::Data::DataSet^ oDs;
 	private: NS_Comp_Svc::CLservices^ oSvc2;
 	private: System::Data::DataSet^ oDs2;
+	private: NS_Comp_Svc::CLservices^ oSvc3;
+	private: System::Data::DataSet^ oDs3;
 	protected:
 
 	private:
@@ -75,7 +77,7 @@ namespace ProjectPOO {
 
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-
+	private: System::Windows::Forms::DataGridView^ dataGridView3;
 
 
 
@@ -94,6 +96,10 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button8;
 
 
 
@@ -144,6 +150,10 @@ namespace ProjectPOO {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -393,7 +403,6 @@ namespace ProjectPOO {
 			this->button12->UseVisualStyleBackColor = true;
 			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
 			// 
-			// 
 			// dateTimePicker3
 			// 
 			this->dateTimePicker3->CalendarTitleForeColor = System::Drawing::SystemColors::ControlText;
@@ -443,11 +452,52 @@ namespace ProjectPOO {
 			this->label3->Text = L"id Facture";
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
 			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(1180, 612);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(99, 40);
+			this->button5->TabIndex = 58;
+			this->button5->Text = L"Delete";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(1180, 557);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(99, 40);
+			this->button6->TabIndex = 57;
+			this->button6->Text = L"Update";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(1180, 503);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(99, 40);
+			this->button7->TabIndex = 56;
+			this->button7->Text = L"Insert";
+			this->button7->UseVisualStyleBackColor = true;
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(1039, 503);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(120, 149);
+			this->button8->TabIndex = 55;
+			this->button8->Text = L"Load";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1488, 773);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button7);
+			this->Controls->Add(this->button8);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->numericUpDown2);
 			this->Controls->Add(this->textBox2);
@@ -534,5 +584,11 @@ private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->dataGridView3->Refresh();
+		this->oDs3 = this->oSvc3->selectionnerToutesLesArticle("Article");
+		this->dataGridView3->DataSource = this->oDs;
+		this->dataGridView3->DataMember = "Article";
+	}
 };
 }

@@ -5,6 +5,7 @@ NS_Comp_Svc::CLservices::CLservices(void)
 	this->oCad = gcnew NS_Comp_Data::CLCad();
 	this->oMappCommandes = gcnew NS_Comp_Mappage::CLMappageCommandes();
 	this->oMappFactures = gcnew NS_Comp_Mappage::CLMappageFactures();
+	this->oMappArticle = gcnew NS_Comp_Mappage::CLMappageArticle();
 }
 
 System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesCommandes(System::String^ dataTableName)
@@ -136,7 +137,7 @@ void NS_Comp_Svc::CLservices::supprimerUnArticle(System::String^ reference_artic
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ reference_article, System::String^ prix_produit_HT, System::String^ nom_article, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale))
+void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ reference_article, System::String^ prix_produit_HT, System::String^ nom_article, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale)
 {
 System::String^ sql;
 

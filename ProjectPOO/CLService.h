@@ -30,7 +30,7 @@ namespace NS_Comp_Svc
 		System::Data::DataSet^ selectionnerToutesLesArticle(System::String^);
 		void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void supprimerUnArticle(System::String^);
-		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^;
+		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		
 
 	};
