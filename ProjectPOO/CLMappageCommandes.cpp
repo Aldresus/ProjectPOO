@@ -2,7 +2,7 @@
 
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Select(void)
 {
-	return "SELECT [reference_commande] as 'reference', [total_HT] as 'total hors taxe', [TVA] as 'TVA', [date_commande] as 'date de commande', [date_livraison] as 'date de livraison', [adresse_livraison] as 'adresse' FROM Commande";
+	return "select  Commande.reference_commande as 'reference commande', total_HT as 'total hors taxe', date_commande as 'date commande', date_livraison as 'date livraison', adresse_livraison as 'adresse livraison', Client.id_client as 'id client', nom_client as 'nom client', prenom_client as 'prenom client', ID_facture as 'Id facture', reference_article as 'reference article' from Client FULL OUTER JOIN Commande ON Commande.id_client = Client.id_client FULL OUTER JOIN Facture ON Facture.reference_commande = Commande.reference_commande full outer join Composer on composer.reference_article = Commande.reference_commande ";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Insert(void)
 {
