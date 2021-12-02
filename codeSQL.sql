@@ -66,7 +66,7 @@ CREATE TABLE Commande(
 -- Table: Facture
 ------------------------------------------------------------*/
 CREATE TABLE Facture(
-	ID_facture            INT  NOT NULL ,
+	ID_facture            INT IDENTITY NOT NULL ,
 	date_facturation      DATETIME NOT NULL ,
 	logo                  VARCHAR (50) NOT NULL ,
 	num_service           VARCHAR (50) NOT NULL ,
