@@ -15,7 +15,7 @@ System::String^ NS_Comp_Mappage::CLMappageEmploye::Delete(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageEmploye::Update(void)
 {
-	return "UPDATE Employe SET nom_employe='" + this->nom_employe + "', prenom_employe='" + this->prenom_employe + "', date_naissance_employe='" + this->date_naissance_employe + "', adresse_employe='" + this->adresse_employe + "', id_superviseur=" + this->id_superviseur_employe + " WHERE id_employe=" + this->id_employe + ";";
+	return "UPDATE Employe SET nom_employe='" + this->nom_employe + "', prenom_employe='" + this->prenom_employe + "', date_naissance_employe='" + this->date_naissance_employe + "', adresse_employe='" + this->adresse_employe + "'WHERE id_employe=" + this->id_employe + ";";
 }
 void NS_Comp_Mappage::CLMappageEmploye::setid_employe(System::String^ id_employe)
 {

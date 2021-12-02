@@ -14,7 +14,7 @@ System::String^ NS_Comp_Mappage::CLMappageSuperviseurs::Delete(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageSuperviseurs::Update(void)
 {
-	return "UPDATE Superviseurs SET nom_superviseur='" + this->nom_superviseur + "', prenom_superviseur='" + this->prenom_superviseur + "', date_naissance_employe='" + this->date_naissance_superviseur + "', adresse_employe='" + this->adresse_superviseur + "' WHERE id_superviseur=" + this->id_superviseur + ";";
+	return "UPDATE Superviseurs SET nom_superviseur='" + this->nom_superviseur + "', prenom_superviseur='" + this->prenom_superviseur + "', date_naissance_superviseur='" + this->date_naissance_superviseur + "', adresse_superviseur='" + this->adresse_superviseur + "' WHERE id_superviseur=" + this->id_superviseur + ";";
 }
 
 void NS_Comp_Mappage::CLMappageSuperviseurs::setid_superviseur(System::String^ id_superviseur)

@@ -113,7 +113,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutLesArticles(Syst
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices::ajouterUnArticle(System::String^ nom_article, System::String^ prix_produit_HT, System::String^ couleur, System::String^ nature, System::String^ quantite_stock, System::String^ seuil_reapro, System::String^ remise_commerciale, System::String^ marge_commerciale)
+void NS_Comp_Svc::CLservices::ajouterUnArticle(System::String^ nom_article, System::String^ prix_produit_HT, System::String^ couleur, System::String^ nature, System::String^ quantite_stock, System::String^ seuil_reapro, System::String^ remise_commerciale, System::String^ marge_commerciale, System::String^ demarque_inconnue)
 {
 	System::String^ sql;
 
@@ -125,6 +125,7 @@ void NS_Comp_Svc::CLservices::ajouterUnArticle(System::String^ nom_article, Syst
 	this->oMappageStocks->setseuil_reapro(seuil_reapro);
 	this->oMappageStocks->setremise_commerciale(remise_commerciale);
 	this->oMappageStocks->setmarge_commerciale(marge_commerciale);
+	this->oMappageStocks->setdemarque_inconnue(demarque_inconnue);
 	sql = this->oMappageStocks->Insert();
 
 	this->oCad->actionRows(sql);
@@ -140,7 +141,7 @@ void NS_Comp_Svc::CLservices::supprimerUnArticle(System::String^ reference_artic
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ reference_article, System::String^ nom_article, System::String^ prix_produit_HT, System::String^ couleur, System::String^ nature, System::String^ quantite_stock, System::String^ seuil_reapro, System::String^ remise_commerciale, System::String^ marge_commerciale)
+void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ reference_article, System::String^ nom_article, System::String^ prix_produit_HT, System::String^ couleur, System::String^ nature, System::String^ quantite_stock, System::String^ seuil_reapro, System::String^ remise_commerciale, System::String^ marge_commerciale, System::String^ demarque_inconnue)
 {
 	System::String^ sql;
 
@@ -153,6 +154,7 @@ void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ reference_article,
 	this->oMappageStocks->setseuil_reapro(seuil_reapro);
 	this->oMappageStocks->setremise_commerciale(remise_commerciale);
 	this->oMappageStocks->setmarge_commerciale(marge_commerciale);
+	this->oMappageStocks->setdemarque_inconnue(demarque_inconnue);
 	sql = this->oMappageStocks->Update();
 
 	this->oCad->actionRows(sql);

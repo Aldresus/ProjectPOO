@@ -14,6 +14,7 @@ namespace NS_Comp_Mappage
 		System::String^ seuil_reapro;
 		System::String^ remise_commerciale;
 		System::String^ marge_commerciale;
+		System::String^ demarque_inconnue;
 
 
 	public:
@@ -32,6 +33,7 @@ namespace NS_Comp_Mappage
 		void setnom_article(System::String^);
 		void setremise_commerciale(System::String^);
 		void setmarge_commerciale(System::String^);
+		void setdemarque_inconnue(System::String^);
 
 		System::String^ getreference_article(void);
 		System::String^ getprix_produit_HT(void);
@@ -42,5 +44,6 @@ namespace NS_Comp_Mappage
 		System::String^ getnom_article(void);
 		System::String^ getremise_commerciale(void);
 		System::String^ getmarge_commerciale(void);
+		System::String^ getdemarque_inconnue(void);
 	};
 }

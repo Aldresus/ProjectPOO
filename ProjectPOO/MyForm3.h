@@ -76,6 +76,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown6;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown7;
 
 
 	protected:
@@ -115,6 +117,8 @@ namespace ProjectPOO {
 			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown6 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown7 = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -123,6 +127,7 @@ namespace ProjectPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
@@ -133,7 +138,6 @@ namespace ProjectPOO {
 			this->dataGridView1->RowHeadersWidth = 82;
 			this->dataGridView1->Size = System::Drawing::Size(537, 194);
 			this->dataGridView1->TabIndex = 0;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm3::dataGridView1_CellContentClick);
 			// 
 			// textBox5
 			// 
@@ -218,7 +222,7 @@ namespace ProjectPOO {
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(405, 250);
+			this->pictureBox1->Location = System::Drawing::Point(488, 263);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(313, 110);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -238,7 +242,7 @@ namespace ProjectPOO {
 			// numericUpDown2
 			// 
 			this->numericUpDown2->DecimalPlaces = 2;
-			this->numericUpDown2->Location = System::Drawing::Point(719, 151);
+			this->numericUpDown2->Location = System::Drawing::Point(719, 155);
 			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
@@ -248,7 +252,7 @@ namespace ProjectPOO {
 			// numericUpDown3
 			// 
 			this->numericUpDown3->DecimalPlaces = 2;
-			this->numericUpDown3->Location = System::Drawing::Point(719, 175);
+			this->numericUpDown3->Location = System::Drawing::Point(719, 179);
 			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->numericUpDown3->Name = L"numericUpDown3";
@@ -258,33 +262,33 @@ namespace ProjectPOO {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(592, 79);
+			this->label1->Location = System::Drawing::Point(592, 81);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(111, 16);
+			this->label1->Size = System::Drawing::Size(77, 13);
 			this->label1->TabIndex = 26;
 			this->label1->Text = L"Prix produit HT";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(592, 151);
+			this->label3->Location = System::Drawing::Point(595, 157);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(106, 16);
+			this->label3->Size = System::Drawing::Size(76, 13);
 			this->label3->TabIndex = 27;
 			this->label3->Text = L"Quantité stock";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(592, 175);
+			this->label4->Location = System::Drawing::Point(595, 181);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(93, 16);
+			this->label4->Size = System::Drawing::Size(63, 13);
 			this->label4->TabIndex = 28;
 			this->label4->Text = L"Seuil réapro";
 			// 
@@ -299,29 +303,29 @@ namespace ProjectPOO {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(595, 31);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(80, 16);
+			this->label5->Size = System::Drawing::Size(57, 13);
 			this->label5->TabIndex = 30;
 			this->label5->Text = L"Reference";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(592, 199);
+			this->label6->Location = System::Drawing::Point(597, 205);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(52, 16);
+			this->label6->Size = System::Drawing::Size(37, 13);
 			this->label6->TabIndex = 32;
 			this->label6->Text = L"Marge";
 			// 
 			// numericUpDown5
 			// 
 			this->numericUpDown5->DecimalPlaces = 2;
-			this->numericUpDown5->Location = System::Drawing::Point(719, 199);
+			this->numericUpDown5->Location = System::Drawing::Point(719, 203);
 			this->numericUpDown5->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown5->Name = L"numericUpDown5";
 			this->numericUpDown5->Size = System::Drawing::Size(82, 20);
@@ -330,28 +334,50 @@ namespace ProjectPOO {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(592, 223);
+			this->label7->Location = System::Drawing::Point(597, 229);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(61, 16);
+			this->label7->Size = System::Drawing::Size(42, 13);
 			this->label7->TabIndex = 34;
 			this->label7->Text = L"Remise";
 			// 
 			// numericUpDown6
 			// 
 			this->numericUpDown6->DecimalPlaces = 2;
-			this->numericUpDown6->Location = System::Drawing::Point(719, 223);
+			this->numericUpDown6->Location = System::Drawing::Point(719, 227);
 			this->numericUpDown6->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown6->Name = L"numericUpDown6";
 			this->numericUpDown6->Size = System::Drawing::Size(82, 20);
 			this->numericUpDown6->TabIndex = 33;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(597, 253);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(103, 13);
+			this->label8->TabIndex = 35;
+			this->label8->Text = L"Demarque inconnue";
+			// 
+			// numericUpDown7
+			// 
+			this->numericUpDown7->DecimalPlaces = 2;
+			this->numericUpDown7->Location = System::Drawing::Point(719, 251);
+			this->numericUpDown7->Margin = System::Windows::Forms::Padding(2);
+			this->numericUpDown7->Name = L"numericUpDown7";
+			this->numericUpDown7->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown7->TabIndex = 36;
 			// 
 			// MyForm3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(817, 385);
+			this->Controls->Add(this->numericUpDown7);
+			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->numericUpDown6);
 			this->Controls->Add(this->label6);
@@ -385,6 +411,7 @@ namespace ProjectPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -397,11 +424,11 @@ namespace ProjectPOO {
 		this->dataGridView1->DataMember = "Article";
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->ajouterUnArticle(this->textBox5->Text, this->numericUpDown1->Text->Replace(",", "."), this->textBox7->Text, this->textBox8->Text, this->numericUpDown2->Text->Replace(",", "."), this->numericUpDown3->Text->Replace(",", "."), this->numericUpDown5->Text->Replace(",", "."), this->numericUpDown6->Text->Replace(",", "."));
+		this->oSvc->ajouterUnArticle(this->textBox5->Text, this->numericUpDown1->Text->Replace(",", "."), this->textBox7->Text, this->textBox8->Text, this->numericUpDown2->Text->Replace(",", "."), this->numericUpDown3->Text->Replace(",", "."), this->numericUpDown5->Text->Replace(",", "."), this->numericUpDown6->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."));
 
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->updateUnArticle(this->numericUpDown4->Text, this->textBox5->Text, this->numericUpDown1->Text->Replace(",", "."), this->textBox7->Text, this->textBox8->Text, this->numericUpDown2->Text->Replace(",", "."), this->numericUpDown3->Text->Replace(",", "."), this->numericUpDown5->Text->Replace(",", "."), this->numericUpDown6->Text->Replace(",", "."));
+		this->oSvc->updateUnArticle(this->numericUpDown4->Text, this->textBox5->Text, this->numericUpDown1->Text->Replace(",", "."), this->textBox7->Text, this->textBox8->Text, this->numericUpDown2->Text->Replace(",", "."), this->numericUpDown3->Text->Replace(",", "."), this->numericUpDown5->Text->Replace(",", "."), this->numericUpDown6->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."));
 
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -414,8 +441,6 @@ namespace ProjectPOO {
 		this->oDs = this->oSvc->selectionnerToutLesArticles("Article");
 		this->dataGridView1->DataSource = this->oDs;
 		this->dataGridView1->DataMember = "Article";
-	}
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	};
 }

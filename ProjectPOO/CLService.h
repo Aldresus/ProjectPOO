@@ -32,9 +32,9 @@ namespace NS_Comp_Svc
 		void updateUnSuperviseur(System::String^, System::String^, System::String^, System::String^, System::String^);
 
 		System::Data::DataSet^ selectionnerToutLesArticles(System::String^);
-		void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void ajouterUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void supprimerUnArticle(System::String^);
-		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void updateUnArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
 		System::Data::DataSet^ selectionnerToutesLesClient(System::String^);
 		void ajouterUnePersonne(System::String^, System::String^, System::String^, System::String^, System::String^);

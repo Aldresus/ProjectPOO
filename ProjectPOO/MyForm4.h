@@ -67,6 +67,9 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
+	private: System::Windows::Forms::Label^ label5;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
@@ -100,9 +103,13 @@ namespace ProjectPOO {
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dgv_enr
@@ -233,11 +240,11 @@ namespace ProjectPOO {
 			// textBox8
 			// 
 			this->textBox8->ForeColor = System::Drawing::Color::DarkGray;
-			this->textBox8->Location = System::Drawing::Point(509, 168);
+			this->textBox8->Location = System::Drawing::Point(509, 186);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(171, 20);
 			this->textBox8->TabIndex = 13;
-			this->textBox8->Text = L"adresse client";
+			this->textBox8->Text = L"Rue";
 			// 
 			// dateTimePicker2
 			// 
@@ -259,11 +266,39 @@ namespace ProjectPOO {
 			this->label3->TabIndex = 32;
 			this->label3->Text = L"date inscription client";
 			// 
+			// textBox1
+			// 
+			this->textBox1->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox1->Location = System::Drawing::Point(509, 212);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(171, 20);
+			this->textBox1->TabIndex = 33;
+			this->textBox1->Text = L"ville";
+			// 
+			// numericUpDown2
+			// 
+			this->numericUpDown2->Location = System::Drawing::Point(597, 163);
+			this->numericUpDown2->Name = L"numericUpDown2";
+			this->numericUpDown2->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown2->TabIndex = 34;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(506, 165);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(52, 13);
+			this->label5->TabIndex = 35;
+			this->label5->Text = L"Num voie";
+			// 
 			// MyForm4
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(692, 391);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->numericUpDown2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->label4);
@@ -286,6 +321,7 @@ namespace ProjectPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -308,15 +344,16 @@ namespace ProjectPOO {
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->ajouterUnePersonne(this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->dateTimePicker2->Text, this->textBox8->Text);
+		System::String^ adresse = this->numericUpDown2->Text + "; " + this->textBox8->Text + "; " + this->textBox1->Text;
+		this->oSvc->ajouterUnePersonne(this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->dateTimePicker2->Text, adresse);
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->updateUnePersonne(this->numericUpDown1->Text, this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->dateTimePicker2->Text, this->textBox8->Text);
+		System::String^ adresse = this->numericUpDown2->Text + "; " + this->textBox8->Text + "; " + this->textBox1->Text;
+		this->oSvc->updateUnePersonne(this->numericUpDown1->Text, this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->dateTimePicker2->Text, adresse);
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc->supprimerUnePersonne(this->numericUpDown1->Text);
 	}
-
-	};
+};
 
 }

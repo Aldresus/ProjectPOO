@@ -14,7 +14,7 @@ System::String^ NS_Comp_Mappage::CLMappageClient::Delete(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageClient::Update(void)
 {
-    return "UPDATE Client SET nom_client='" + this->nom_client + "', prenom_client='" + this->prenom_client + "', date_naissance_client='" + this->date_naissance_client + "', date_inscription='" + this->date_inscription + "' WHERE id_client=" + this->id_client + ";";
+    return "UPDATE Client SET nom_client='" + this->nom_client + "', prenom_client='" + this->prenom_client + "', date_naissance_client='" + this->date_naissance_client + "', date_inscription='" + this->date_inscription + "', adresse_client='" + this->adresse_client + "' WHERE id_client=" + this->id_client + ";";
 }
 void NS_Comp_Mappage::CLMappageClient::setid_client(System::String^ id_client)
 {
