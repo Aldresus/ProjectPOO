@@ -76,7 +76,7 @@ CREATE TABLE Facture(
 	reference_commande    VARCHAR (255) NOT NULL  ,
 	CONSTRAINT Facture_PK PRIMARY KEY (ID_facture)
 
-	,CONSTRAINT Facture_Commande_FK FOREIGN KEY (reference_commande) REFERENCES Commande(reference_commande)
+	,CONSTRAINT Facture_Commande_FK FOREIGN KEY (id_commande) REFERENCES Commande(id_commande)
 );
 
 
@@ -134,10 +134,10 @@ CREATE TABLE Composer(
 	reference_article    INT  NOT NULL ,
 	reference_commande   VARCHAR (255) NOT NULL ,
 	quantite             INT  NOT NULL  ,
-	CONSTRAINT Composer_PK PRIMARY KEY (reference_article,reference_commande)
+	CONSTRAINT Composer_PK PRIMARY KEY (reference_article,id_commande)
 
 	,CONSTRAINT Composer_Article_FK FOREIGN KEY (reference_article) REFERENCES Article(reference_article)
-	,CONSTRAINT Composer_Commande0_FK FOREIGN KEY (reference_commande) REFERENCES Commande(reference_commande)
+	,CONSTRAINT Composer_Commande0_FK FOREIGN KEY (id_commande) REFERENCES Commande(id_commande)
 );
 
 
