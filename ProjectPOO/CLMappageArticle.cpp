@@ -17,7 +17,7 @@ System::String^ NS_Comp_Mappage::CLMappageArticle::Delete(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageArticle::Update(void)
 {
-	return "update Article SET nom_article ='" + nom_article + "', prix_produit_HT = '" + this->prix_produit_HT + "', couleur = '" + this->couleur + "', nature = '" + this->nature + "', remise_commerciale = '" + this->remise_commerciale + "', marge_commerciale = '" + this->marge_commerciale + ";'";
+	return "update Article SET nom_article ='" + nom_article + "', prix_produit_HT = " + this->prix_produit_HT + ", couleur = '" + this->couleur + "', nature = '" + this->nature + "', remise_commerciale = " + this->remise_commerciale + ", marge_commerciale = " + this->marge_commerciale + "WHERE reference_article=" + this->reference_article + ";";
 }
 void NS_Comp_Mappage::CLMappageArticle::setreference_article(System::String^ reference_article)
 {

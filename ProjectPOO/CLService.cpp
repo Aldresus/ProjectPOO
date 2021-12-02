@@ -122,6 +122,7 @@ void NS_Comp_Svc::CLservices::ajouterUnArticle(System::String^ nom_article, Syst
 	this->oMappArticle->setprix_produit_HT(prix_produit_HT);
 	this->oMappArticle->setremise_commerciale(remise_commerciale);
 	this->oMappArticle->setmarge_commerciale(marge_commerciale);
+
 	sql = this->oMappArticle->Insert();
 
 	this->oCad->actionRows(sql);
@@ -137,7 +138,7 @@ void NS_Comp_Svc::CLservices::supprimerUnArticle(System::String^ reference_artic
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ prix_produit_HT, System::String^ nom_article, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale)
+void NS_Comp_Svc::CLservices::updateUnArticle(System::String^ prix_produit_HT, System::String^ nom_article, System::String^ couleur, System::String^ nature, System::String^ remise_commerciale, System::String^ marge_commerciale, System::String^ reference_article)
 {
 System::String^ sql;
 
@@ -148,6 +149,7 @@ this->oMappArticle->setcouleur(couleur);
 this->oMappArticle->setnature(nature);
 this->oMappArticle->setremise_commerciale(remise_commerciale);
 this->oMappArticle->setmarge_commerciale(marge_commerciale);
+this->oMappArticle->setreference_article(reference_article);
 sql = this->oMappArticle->Update();
 
 this->oCad->actionRows(sql);

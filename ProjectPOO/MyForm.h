@@ -120,6 +120,13 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown6;
 private: System::Windows::Forms::Label^ label18;
 private: System::Windows::Forms::NumericUpDown^ numericUpDown7;
 private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
+private: System::Windows::Forms::TextBox^ textBox6;
+private: System::Windows::Forms::TextBox^ textBox11;
+
+private: System::Windows::Forms::Label^ label19;
+private: System::Windows::Forms::DateTimePicker^ dateTimePicker4;
+private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
+private: System::Windows::Forms::Label^ label20;
 
 
 
@@ -192,6 +199,12 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown7 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown8 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker4 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label20 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -202,6 +215,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dgv_enr
@@ -235,7 +249,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(49, 265);
+			this->label2->Location = System::Drawing::Point(131, 246);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(94, 16);
 			this->label2->TabIndex = 7;
@@ -244,7 +258,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			// textBox7
 			// 
 			this->textBox7->ForeColor = System::Drawing::Color::DarkGray;
-			this->textBox7->Location = System::Drawing::Point(1305, 311);
+			this->textBox7->Location = System::Drawing::Point(1043, 341);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(171, 20);
 			this->textBox7->TabIndex = 14;
@@ -253,7 +267,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			// textBox8
 			// 
 			this->textBox8->ForeColor = System::Drawing::Color::DarkGray;
-			this->textBox8->Location = System::Drawing::Point(1305, 337);
+			this->textBox8->Location = System::Drawing::Point(1043, 315);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(171, 20);
 			this->textBox8->TabIndex = 13;
@@ -305,7 +319,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->pictureBox1->ImageLocation = L"https://media.discordapp.net/attachments/881518424663158826/914885743392989214/me"
 				L"at.png";
-			this->pictureBox1->Location = System::Drawing::Point(850, 227);
+			this->pictureBox1->Location = System::Drawing::Point(816, 458);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(366, 123);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -365,16 +379,17 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1371, 265);
+			this->label5->Location = System::Drawing::Point(1283, 246);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(60, 16);
 			this->label5->TabIndex = 36;
 			this->label5->Text = L"Facture";
+			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
 			// 
 			// textBox1
 			// 
 			this->textBox1->ForeColor = System::Drawing::Color::DarkGray;
-			this->textBox1->Location = System::Drawing::Point(1303, 415);
+			this->textBox1->Location = System::Drawing::Point(1043, 369);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(171, 20);
 			this->textBox1->TabIndex = 37;
@@ -386,7 +401,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			this->dateTimePicker2->CalendarTrailingForeColor = System::Drawing::SystemColors::ButtonShadow;
 			this->dateTimePicker2->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker2->Location = System::Drawing::Point(1394, 360);
+			this->dateTimePicker2->Location = System::Drawing::Point(1132, 289);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(82, 20);
 			this->dateTimePicker2->TabIndex = 39;
@@ -394,7 +409,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(1292, 363);
+			this->label6->Location = System::Drawing::Point(1030, 291);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(96, 13);
 			this->label6->TabIndex = 40;
@@ -476,7 +491,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			// 
 			// numericUpDown2
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(1392, 287);
+			this->numericUpDown2->Location = System::Drawing::Point(1132, 263);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
@@ -487,7 +502,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(1300, 291);
+			this->label3->Location = System::Drawing::Point(1040, 267);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(54, 13);
 			this->label3->TabIndex = 54;
@@ -703,11 +718,75 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			this->numericUpDown8->Size = System::Drawing::Size(82, 20);
 			this->numericUpDown8->TabIndex = 79;
 			// 
+			// textBox6
+			// 
+			this->textBox6->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox6->Location = System::Drawing::Point(1043, 395);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(171, 20);
+			this->textBox6->TabIndex = 80;
+			this->textBox6->Text = L"reference commande";
+			// 
+			// textBox11
+			// 
+			this->textBox11->ForeColor = System::Drawing::Color::DarkGray;
+			this->textBox11->Location = System::Drawing::Point(1303, 321);
+			this->textBox11->Name = L"textBox11";
+			this->textBox11->Size = System::Drawing::Size(171, 20);
+			this->textBox11->TabIndex = 81;
+			this->textBox11->Text = L"moyen paiement";
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(1283, 299);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(89, 13);
+			this->label19->TabIndex = 85;
+			this->label19->Text = L"date de paiement";
+			this->label19->Click += gcnew System::EventHandler(this, &MyForm::label19_Click);
+			// 
+			// dateTimePicker4
+			// 
+			this->dateTimePicker4->CalendarTitleForeColor = System::Drawing::SystemColors::ControlText;
+			this->dateTimePicker4->CalendarTrailingForeColor = System::Drawing::SystemColors::ButtonShadow;
+			this->dateTimePicker4->CustomFormat = L"yyyy-MM-dd";
+			this->dateTimePicker4->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateTimePicker4->Location = System::Drawing::Point(1392, 293);
+			this->dateTimePicker4->Name = L"dateTimePicker4";
+			this->dateTimePicker4->Size = System::Drawing::Size(82, 20);
+			this->dateTimePicker4->TabIndex = 84;
+			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Location = System::Drawing::Point(1392, 268);
+			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->numericUpDown3->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(82, 20);
+			this->numericUpDown3->TabIndex = 86;
+			this->numericUpDown3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(1289, 270);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(88, 13);
+			this->label20->TabIndex = 87;
+			this->label20->Text = L"numero paiement";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1488, 611);
+			this->Controls->Add(this->label20);
+			this->Controls->Add(this->numericUpDown3);
+			this->Controls->Add(this->label19);
+			this->Controls->Add(this->dateTimePicker4);
+			this->Controls->Add(this->textBox11);
+			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->numericUpDown8);
 			this->Controls->Add(this->numericUpDown7);
 			this->Controls->Add(this->label18);
@@ -773,6 +852,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -807,7 +887,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 		this->oSvc->updateUnCommandes(this->numericUpDown1->Text, this->textBox4->Text, this->textBox5->Text, this->dateTimePicker1->Text, this->textBox2->Text, this->numericUpDown1->Text);
 	}
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc->updateUnArticle(this->textBox3->Text, this->numericUpDown5->Text->Replace(",", "."), this->textBox9->Text, this->textBox10->Text, this->numericUpDown8->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."));
+		this->oSvc->updateUnArticle(this->textBox3->Text, this->numericUpDown5->Text->Replace(",", "."), this->textBox9->Text, this->textBox10->Text, this->numericUpDown8->Text->Replace(",", "."), this->numericUpDown7->Text->Replace(",", "."), this->numericUpDown6->Text);
 	}
 	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dataGridView1->Refresh();
@@ -815,6 +895,12 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown8;
 		this->dataGridView1->DataSource = this->oDs2;
 		this->dataGridView1->DataMember = "Facture";
 	}
+	private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc2->ajouterUnFactures(this->numericUpDown3->Text, this->dateTimePicker4->Text, this->textBox11->Text, this->numericUpDown2->Text, this->dateTimePicker2->Text, this
+	}
+
+
+
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -828,6 +914,10 @@ private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
 		this->dataGridView2->DataMember = "Article";
 	}
 private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label19_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

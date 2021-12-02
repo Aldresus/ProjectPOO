@@ -6,7 +6,8 @@ System::String^ NS_Comp_Mappage::CLMappageFactures::Select(void)
 }
 System::String^ NS_Comp_Mappage::CLMappageFactures::Insert(void)
 {
-	return "INSERT INTO Facture (nom_societe, num_service,date_facturation, adresse_facturation, date_livraison) VALUES('" + this->nom_societe + "','" + this->num_service + "',CAST(' " + this->date_facturation + "'AS date),'" + this->adresse_facturation + "');";
+	return "insert into Paiement(numero_paiement, date_paiement, moyen_paiement, ID_facture) values('" + this->numero_paiement + "', '" + "', CAST('" + this->date_paiement + "' AS date), '" + this->moyen_paiement + "', '" + this->id_facture + "')";
+	"insert into Facture(date_facturation, num_service, nom_societe, adresse_facturation, reference_commande) values(CAST('" + this->date_facturation + "' AS date), '" + this->num_service + "', '" + this->nom_societe + "', '" + this->adresse_facturation + "', '" + this->reference_commande + "'";
 }
 System::String^ NS_Comp_Mappage::CLMappageFactures::Delete(void)
 {
