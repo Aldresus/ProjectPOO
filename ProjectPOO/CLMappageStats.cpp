@@ -6,12 +6,12 @@ System::String^ NS_Comp_Mappage::CLMappageStats::produitSousSeuilReapro(void)
 
 System::String^ NS_Comp_Mappage::CLMappageStats::panierMoyenApresRemise(void)
 {
-	return " Select dbo.Client.id_client, AVG(total_HT*(1+TVA)) from dbo.Client LEFT JOIN dbo.Commande ON dbo.Client.id_client = dbo.Commande.id_client;";
+	return "Select dbo.Client.id_client, AVG(total_HT*(1+TVA)*remise_commerciale) AS panier from dbo.Client FULL OUTER JOIN dbo.Commande ON dbo.Client.id_client = dbo.Commande.id_client FULL OUTER JOIN Composer ON Composer.id_commande = Commande.id_commande FULL OUTER JOIN Article ON Composer.reference_article = Article.reference_article GROUP BY Client.id_client";
 }
 
 System::String^ NS_Comp_Mappage::CLMappageStats::CASurUnMois(void)
 {
-	return "Select SUM(total_HT) as 'CA' from dbo.Commande LEFT JOIN dbo.Facture ON dbo.Commande.ID_facture = dbo.Facture.ID_facture Where date_facturation Between GETDATE() and GETDATE()-30;";
+	return "Select SUM(prix_produit_HT * quantite * TVA) from dbo.Article FULL OUTER JOIN dbo.Composer ON Article.reference_article = Composer.reference_article FULL OUTER JOIN Commande ON Composer.id_commande = Commande.id_commande FULL OUTER JOIN dbo.Facture ON dbo.Commande.id_commande = dbo.Facture.id_commande where date_facturation BETWEEN '1905-06-20' and '1905-07-20'";
 }
 
 System::String^ NS_Comp_Mappage::CLMappageStats::montantTotalDAchatPourChaqueClient(void)
@@ -26,7 +26,7 @@ System::String^ NS_Comp_Mappage::CLMappageStats::valeurAchatStock(void)
 
 System::String^ NS_Comp_Mappage::CLMappageStats::valeurCommercialeStock(void)
 {
-	return "Select Dbo.Stocks.id_stocks, prix_produit_HT*quantite_stock from dbo.Stocks LEFT JOIN dbo.Article ON dbo.Stocks.reference_article = dbo.Article.reference_article;";
+	return "Select prix_produit_HT*quantite_stock*marge_commerciale*TVA AS Valeur_commerciale from dbo.Stocks FULL OUTER JOIN dbo.Article ON dbo.Stocks.reference_article = dbo.Article.reference_article FULL OUTER JOIN Composer ON Composer.reference_article = Article.reference_article FULL OUTER JOIN Commande ON Composer.reference_article = Commande.reference_commande";
 }
 
 System::String^ NS_Comp_Mappage::CLMappageStats::dixArticleLesPlusVendus(void)
