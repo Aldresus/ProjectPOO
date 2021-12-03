@@ -152,11 +152,11 @@ namespace ProjectPOO {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Roboto", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(83, 18);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(0, 49);
+			this->label1->Size = System::Drawing::Size(0, 42);
 			this->label1->TabIndex = 5;
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
@@ -173,6 +173,7 @@ namespace ProjectPOO {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 23;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
 			// 
 			// MyForm
 			// 
@@ -187,7 +188,7 @@ namespace ProjectPOO {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
-			this->Text = L"Logiciel de gestion.exe";
+			this->Text = L"Menu.exe";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -226,5 +227,7 @@ namespace ProjectPOO {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

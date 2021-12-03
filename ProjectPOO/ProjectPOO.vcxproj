@@ -121,8 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CLCad.cpp" />
+    <ClCompile Include="CLMappageArticle.cpp" />
     <ClCompile Include="CLMappageClient.cpp" />
+    <ClCompile Include="CLMappageCommandes.cpp" />
     <ClCompile Include="CLMappageEmploye.cpp" />
+    <ClCompile Include="CLMappageFactures.cpp" />
+    <ClCompile Include="CLMappagePaiement.cpp" />
     <ClCompile Include="CLMappageStats.cpp" />
     <ClCompile Include="CLMappageStocks.cpp" />
     <ClCompile Include="CLMappageSuperviseurs.cpp" />
@@ -136,8 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLCad.h" />
+    <ClInclude Include="CLMappageArticle.h" />
     <ClInclude Include="CLMappageClient.h" />
+    <ClInclude Include="CLMappageCommandes.h" />
     <ClInclude Include="CLMappageEmploye.h" />
+    <ClInclude Include="CLMappageFactures.h" />
+    <ClInclude Include="CLMappagePaiement.h" />
     <ClInclude Include="CLMappageStats.h" />
     <ClInclude Include="CLMappageStocks.h" />
     <ClInclude Include="CLMappageSuperviseurs.h" />

@@ -195,7 +195,7 @@ namespace ProjectPOO {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dataGridView1);
 			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
+			this->Text = L"GestionStats.exe";
 			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
