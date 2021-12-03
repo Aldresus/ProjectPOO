@@ -2,25 +2,20 @@
 
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Select(void)
 {
-	return "select  Commande.reference_commande as 'reference commande', total_HT as 'total hors taxe', date_commande as 'date commande', date_livraison as 'date livraison', adresse_livraison as 'adresse livraison', Client.id_client as 'id client', nom_client as 'nom client', prenom_client as 'prenom client', ID_facture as 'Id facture', reference_article as 'reference article' from Client FULL OUTER JOIN Commande ON Commande.id_client = Client.id_client FULL OUTER JOIN Facture ON Facture.reference_commande = Commande.reference_commande full outer join Composer on composer.reference_article = Commande.reference_commande ";
+	return "select  Commande.id_commande, Commande.reference_commande as 'reference commande', total_HT as 'total hors taxe', date_commande as 'date commande', date_livraison as 'date livraison', adresse_livraison as 'adresse livraison', Client.id_client as 'id client', nom_client as 'nom client', prenom_client as 'prenom client', ID_facture as 'Id facture', reference_article as 'reference article' from Client INNER JOIN Commande ON Commande.id_client = Client.id_client FULL OUTER JOIN Facture ON Facture.[id_commande] = Commande.[id_commande] full outer join Composer on composer.[id_commande] = Commande.[id_commande];";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Insert(void)
 {
-	return "INSERT INTO Commande (total_HT, TVA,date_commande, adresse_livraison, date_livraison, id_client) VALUES('" + this->total_HT + "','" + this->TVA + "',CAST(' " + this->date_commande + "'AS date),'" + this->adresse_livraison + "',CAST(' " + this->date_livraison + "'AS date), " + this->id_client + ");";
+	return "INSERT INTO Commande(reference_commande, total_HT, TVA, date_commande, date_livraison, adresse_livraison, id_client) SELECT LEFT([nom_client],2)+LEFT([prenom_client],2)+CAST(YEAR(getdate()) AS VARCHAR)+'" + this->adresse_livraison->Substring(0,3) + "'+ CAST(ISNULL((SELECT MAX(id_commande+1) FROM Commande),1) AS varchar), " + this->total_HT + ", " + this->TVA + ",'" + this->date_commande + "', '" + this->date_livraison + "', '" + this->adresse_livraison + "', " + this->id_client + " FROM Client WHERE Client.id_client=" + this->id_client + ";";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Delete(void)
 {
-	return "DELETE FROM Commande WHERE [reference_Commande]=" + this->reference_commande + ";";
+	return "DELETE FROM Commande WHERE [id_commande]=" + this->id_commande + ";";
 }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::Update(void)
 {
-	return "UPDATE Commande SET total_HT='" + this->total_HT + "', TVA='" + this->TVA + "', date_commande='" + this->date_commande + "', date_commande='" + this->date_commande + "', adresse_livraison='" + this->adresse_livraison + " WHERE reference_commande=" + this->reference_commande + ";";
+	return "UPDATE Commande SET total_HT='" + this->total_HT + "', TVA='" + this->TVA + "', date_commande='" + this->date_commande + "', adresse_livraison='" + this->adresse_livraison + "' WHERE id_commande=" + this->id_commande + ";";
 }
-
-
-// reference commande -> ppnnYYYYvvv1
-// p -> prenom / n->nom / YYYY->2021 / v->ville / 1->increment
-
 
 
 void NS_Comp_Mappage::CLMappageCommandes::setreference_commande(System::String^ reference_commande)
@@ -51,6 +46,10 @@ void NS_Comp_Mappage::CLMappageCommandes::setid_client(System::String^ id_client
 {
 	this->id_client = id_client;
 }
+void NS_Comp_Mappage::CLMappageCommandes::setid_commande(System::String^ id_commande)
+{
+	this->id_commande = id_commande;
+}
 
 
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getreference_commande(void) { return this->reference_commande; }
@@ -60,3 +59,4 @@ System::String^ NS_Comp_Mappage::CLMappageCommandes::getdate_commande(void) { re
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getdate_livraison(void) { return this->date_livraison; }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getadresse_livraison(void) { return this->adresse_livraison; }
 System::String^ NS_Comp_Mappage::CLMappageCommandes::getid_client(void) { return this->id_client; }
+System::String^ NS_Comp_Mappage::CLMappageCommandes::getid_commande(void) { return this->id_commande; }

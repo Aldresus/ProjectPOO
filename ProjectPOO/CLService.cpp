@@ -33,11 +33,11 @@ void NS_Comp_Svc::CLservices::ajouterUnCommandes(System::String^ TVA, System::St
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::updateUnCommandes(System::String^ reference_commande, System::String^ total_HT, System::String^ TVA, System::String^ date_commande, System::String^ adresse_livraison, System::String^ date_livraison)
+void NS_Comp_Svc::CLservices::updateUnCommandes(System::String^ id_commande, System::String^ total_HT, System::String^ TVA, System::String^ date_commande, System::String^ adresse_livraison, System::String^ date_livraison)
 {
 	System::String^ sql;
 
-	this->oMappCommandes->setreference_commande(reference_commande);
+	this->oMappCommandes->setid_commande(id_commande);
 	this->oMappCommandes->settotal_HT(total_HT);
 	this->oMappCommandes->setTVA(TVA);
 	this->oMappCommandes->setdate_commande(date_commande);
@@ -48,11 +48,11 @@ void NS_Comp_Svc::CLservices::updateUnCommandes(System::String^ reference_comman
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::supprimerUnCommandes(System::String^ reference_commande)
+void NS_Comp_Svc::CLservices::supprimerUnCommandes(System::String^ id_commande)
 {
 	System::String^ sql;
 
-	this->oMappCommandes->setreference_commande(reference_commande);
+	this->oMappCommandes->setid_commande(id_commande);
 	sql = this->oMappCommandes->Delete();
 
 	this->oCad->actionRows(sql);
@@ -66,7 +66,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesFactures(Sy
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices::ajouterUnFactures(System::String^ nom_societe, System::String^ num_service, System::String^ date_facturation, System::String^ adresse_facturation)
+void NS_Comp_Svc::CLservices::ajouterUnFactures(System::String^ nom_societe, System::String^ num_service, System::String^ date_facturation, System::String^ adresse_facturation, System::String^ logo, System::String^ id_commande)
 {
 	System::String^ sql;
 
@@ -75,6 +75,8 @@ void NS_Comp_Svc::CLservices::ajouterUnFactures(System::String^ nom_societe, Sys
 	this->oMappFactures->setdate_facturation(date_facturation);
 	this->oMappFactures->setadresse_facturation(adresse_facturation);
 	this->oMappFactures->setnum_service(num_service);
+	this->oMappFactures->setlogo(logo);
+	this->oMappFactures->setid_commande(id_commande);
 	sql = this->oMappFactures->Insert();
 
 	this->oCad->actionRows(sql);
@@ -90,7 +92,7 @@ void NS_Comp_Svc::CLservices::supprimerUnFactures(System::String^ id_facture)
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices::updateUnFactures(System::String^ id_facture, System::String^ num_service, System::String^ nom_societe, System::String^ date_facturation, System::String^ adresse_facturation)
+void NS_Comp_Svc::CLservices::updateUnFactures(System::String^ id_facture, System::String^ num_service, System::String^ nom_societe, System::String^ date_facturation, System::String^ adresse_facturation, System::String^ logo)
 {
 	System::String^ sql;
 
@@ -99,6 +101,7 @@ void NS_Comp_Svc::CLservices::updateUnFactures(System::String^ id_facture, Syste
 	this->oMappFactures->setnom_societe(nom_societe);
 	this->oMappFactures->setdate_facturation(date_facturation);
 	this->oMappFactures->setadresse_facturation(adresse_facturation);
+	this->oMappFactures->setlogo(logo);
 	sql = this->oMappFactures->Update();
 
 	this->oCad->actionRows(sql);
